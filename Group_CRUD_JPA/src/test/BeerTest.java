@@ -2,6 +2,8 @@ package test;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -15,6 +17,7 @@ import entities.Brand;
 import entities.Style;
 import entities.Taste;
 import entities.Type;
+import entities.User;
 
 public class BeerTest 
 {
@@ -48,6 +51,9 @@ public class BeerTest
 		
 		Brand brand = beer.getBrand();
 		assertEquals("Bristol Brewing Company", brand.getName());
+		
+		List<User> users = beer.getUsers();
+		assertEquals(1, users.size());
 	}
 	
 	@After
