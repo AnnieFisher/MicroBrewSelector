@@ -43,7 +43,7 @@ public class Beer
 	@JoinColumn(name="brand_idbrand")
 	private Brand brand;
 	
-	//JOIN User
+	//JOIN User To See Which Users Have Favorited This Beer
 	@ManyToMany(mappedBy="favorites")
 	private List<User> users;
 	

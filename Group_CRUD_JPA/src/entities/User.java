@@ -22,7 +22,7 @@ public class User
 	private String username;
 	private String password;
 	
-	//JOIN Beer
+	//JOIN Beer to Add to User Favorites List
 	@ManyToMany
 	@JoinTable(name = "beer_user", joinColumns = @JoinColumn(name = "user_iduser"), 
 				inverseJoinColumns = @JoinColumn(name = "beer_idbeer"))
