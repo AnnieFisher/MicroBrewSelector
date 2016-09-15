@@ -11,6 +11,6 @@
 	<context:component-scan base-package="controllers"/>
 	 <!-- <mvc:annotation-driven/>   So validation works -->
 	
-	<bean id="dao" class="data.InputDbDAO"/>
+	<bean id="dao" class="NEED TO CHANGE THIS"/>
 
 </beans>

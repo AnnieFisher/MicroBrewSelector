@@ -23,7 +23,6 @@ DROP TABLE IF EXISTS `taste` ;
 CREATE TABLE IF NOT EXISTS `taste` (
   `idtaste` INT NOT NULL AUTO_INCREMENT,
   `taste_name` VARCHAR(45) NOT NULL,
-  `taste_desc` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`idtaste`))
 ENGINE = InnoDB;
 
@@ -169,17 +168,17 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `beerdb`;
-INSERT INTO `taste` (`idtaste`, `taste_name`, `taste_desc`) VALUES (1, 'Bitter', DEFAULT);
-INSERT INTO `taste` (`idtaste`, `taste_name`, `taste_desc`) VALUES (2, 'Sweet', DEFAULT);
-INSERT INTO `taste` (`idtaste`, `taste_name`, `taste_desc`) VALUES (3, 'Crisp', DEFAULT);
-INSERT INTO `taste` (`idtaste`, `taste_name`, `taste_desc`) VALUES (4, 'Creamy', DEFAULT);
-INSERT INTO `taste` (`idtaste`, `taste_name`, `taste_desc`) VALUES (5, 'Coffee', DEFAULT);
-INSERT INTO `taste` (`idtaste`, `taste_name`, `taste_desc`) VALUES (6, 'Dry', DEFAULT);
-INSERT INTO `taste` (`idtaste`, `taste_name`, `taste_desc`) VALUES (7, 'Cirtus', DEFAULT);
-INSERT INTO `taste` (`idtaste`, `taste_name`, `taste_desc`) VALUES (8, 'Malty', DEFAULT);
-INSERT INTO `taste` (`idtaste`, `taste_name`, `taste_desc`) VALUES (9, 'Nutty', DEFAULT);
-INSERT INTO `taste` (`idtaste`, `taste_name`, `taste_desc`) VALUES (10, 'Spicy', DEFAULT);
-INSERT INTO `taste` (`idtaste`, `taste_name`, `taste_desc`) VALUES (11, 'Hoppy', DEFAULT);
+INSERT INTO `taste` (`idtaste`, `taste_name`) VALUES (1, 'Bitter');
+INSERT INTO `taste` (`idtaste`, `taste_name`) VALUES (2, 'Sweet');
+INSERT INTO `taste` (`idtaste`, `taste_name`) VALUES (3, 'Crisp');
+INSERT INTO `taste` (`idtaste`, `taste_name`) VALUES (4, 'Creamy');
+INSERT INTO `taste` (`idtaste`, `taste_name`) VALUES (5, 'Coffee');
+INSERT INTO `taste` (`idtaste`, `taste_name`) VALUES (6, 'Dry');
+INSERT INTO `taste` (`idtaste`, `taste_name`) VALUES (7, 'Cirtus');
+INSERT INTO `taste` (`idtaste`, `taste_name`) VALUES (8, 'Malty');
+INSERT INTO `taste` (`idtaste`, `taste_name`) VALUES (9, 'Nutty');
+INSERT INTO `taste` (`idtaste`, `taste_name`) VALUES (10, 'Spicy');
+INSERT INTO `taste` (`idtaste`, `taste_name`) VALUES (11, 'Hoppy');
 
 COMMIT;
 
