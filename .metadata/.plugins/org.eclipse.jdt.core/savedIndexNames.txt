@@ -8,7 +8,6 @@ INDEX VERSION 1.129+/Users/anniefisher/SD/Java/MicroBrewSelector/.metadata/.plug
 185600855.index
 2904613641.index
 2497576214.index
-1898175791.index
 2096620088.index
 1271342938.index
 965360491.index
