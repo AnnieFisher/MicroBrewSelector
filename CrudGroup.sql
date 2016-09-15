@@ -35,7 +35,7 @@ DROP TABLE IF EXISTS `style` ;
 CREATE TABLE IF NOT EXISTS `style` (
   `idstyle` INT NOT NULL AUTO_INCREMENT,
   `style_name` VARCHAR(45) NOT NULL,
-  `style_desc` VARCHAR(45) NOT NULL,
+  `style_desc` VARCHAR(255) NOT NULL,
   PRIMARY KEY (`idstyle`))
 ENGINE = InnoDB;
 
