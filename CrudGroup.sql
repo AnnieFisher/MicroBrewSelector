@@ -269,3 +269,15 @@ INSERT INTO `user` (`iduser`, `username`, `password`, `favorites`) VALUES (1, 't
 
 COMMIT;
 
+
+-- -----------------------------------------------------
+-- Data for table `beer_user`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `beerdb`;
+INSERT INTO `beer_user` (`beer_idbeer`, `user_iduser`) VALUES (1, 1);
+INSERT INTO `beer_user` (`beer_idbeer`, `user_iduser`) VALUES (2, 1);
+INSERT INTO `beer_user` (`beer_idbeer`, `user_iduser`) VALUES (3, 1);
+
+COMMIT;
+
