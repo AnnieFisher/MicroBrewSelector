@@ -1,5 +1,6 @@
 package entities;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -21,7 +22,7 @@ public class User
 	private String username;
 	private String password;
 	
-	//JOIN Beer
+	//JOIN Beer to Add to User Favorites List
 	@ManyToMany
 	@JoinTable(name = "beer_user", joinColumns = @JoinColumn(name = "user_iduser"), 
 				inverseJoinColumns = @JoinColumn(name = "beer_idbeer"))
@@ -62,5 +63,26 @@ public class User
 	public int getId() 
 	{
 		return id;
+	}
+	
+	//Add/Remove
+	public void addBeer(Beer beer) 
+	{
+		if (favorites == null) {
+			favorites = new ArrayList<>();
+		}
+		if (!favorites.contains(beer)) {
+			favorites.add(beer);
+			beer.addUser(this);
+		}
+	}
+
+	public void removeBeer(Beer beer) 
+	{
+		if (favorites != null && favorites.contains(beer)) 
+		{
+			favorites.remove(beer);
+			beer.removeUser(this);
+		}
 	}
 }
