@@ -48,7 +48,7 @@ DROP TABLE IF EXISTS `type` ;
 CREATE TABLE IF NOT EXISTS `type` (
   `idtype` INT NOT NULL AUTO_INCREMENT,
   `type_name` VARCHAR(45) NOT NULL,
-  `type_desc` VARCHAR(45) NOT NULL,
+  `type_desc` VARCHAR(255) NOT NULL,
   PRIMARY KEY (`idtype`))
 ENGINE = InnoDB;
 
@@ -174,7 +174,7 @@ INSERT INTO `taste` (`idtaste`, `taste_name`) VALUES (3, 'Crisp');
 INSERT INTO `taste` (`idtaste`, `taste_name`) VALUES (4, 'Creamy');
 INSERT INTO `taste` (`idtaste`, `taste_name`) VALUES (5, 'Coffee');
 INSERT INTO `taste` (`idtaste`, `taste_name`) VALUES (6, 'Dry');
-INSERT INTO `taste` (`idtaste`, `taste_name`) VALUES (7, 'Cirtus');
+INSERT INTO `taste` (`idtaste`, `taste_name`) VALUES (7, 'Citrus');
 INSERT INTO `taste` (`idtaste`, `taste_name`) VALUES (8, 'Malty');
 INSERT INTO `taste` (`idtaste`, `taste_name`) VALUES (9, 'Nutty');
 INSERT INTO `taste` (`idtaste`, `taste_name`) VALUES (10, 'Spicy');
@@ -188,20 +188,21 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `beerdb`;
-INSERT INTO `style` (`idstyle`, `style_name`, `style_desc`) VALUES (1, 'Amber', DEFAULT);
-INSERT INTO `style` (`idstyle`, `style_name`, `style_desc`) VALUES (2, 'Blonde', DEFAULT);
-INSERT INTO `style` (`idstyle`, `style_name`, `style_desc`) VALUES (3, 'Brown', DEFAULT);
-INSERT INTO `style` (`idstyle`, `style_name`, `style_desc`) VALUES (4, 'Creme', DEFAULT);
-INSERT INTO `style` (`idstyle`, `style_name`, `style_desc`) VALUES (5, 'Dark', DEFAULT);
-INSERT INTO `style` (`idstyle`, `style_name`, `style_desc`) VALUES (6, 'Golden', DEFAULT);
-INSERT INTO `style` (`idstyle`, `style_name`, `style_desc`) VALUES (7, 'Honey', DEFAULT);
-INSERT INTO `style` (`idstyle`, `style_name`, `style_desc`) VALUES (8, 'India Pale Ale', DEFAULT);
-INSERT INTO `style` (`idstyle`, `style_name`, `style_desc`) VALUES (9, 'Light', DEFAULT);
-INSERT INTO `style` (`idstyle`, `style_name`, `style_desc`) VALUES (10, 'Pale', DEFAULT);
-INSERT INTO `style` (`idstyle`, `style_name`, `style_desc`) VALUES (11, 'Pilsner', DEFAULT);
-INSERT INTO `style` (`idstyle`, `style_name`, `style_desc`) VALUES (12, 'Red', DEFAULT);
-INSERT INTO `style` (`idstyle`, `style_name`, `style_desc`) VALUES (13, 'Strong', DEFAULT);
-INSERT INTO `style` (`idstyle`, `style_name`, `style_desc`) VALUES (14, 'Wheat', DEFAULT);
+INSERT INTO `style` (`idstyle`, `style_name`, `style_desc`) VALUES (1, 'Amber', 'Full bodied malt aromas with hints of caramel. These beers could be either lager or ale.');
+INSERT INTO `style` (`idstyle`, `style_name`, `style_desc`) VALUES (2, 'Blonde', 'Very pale in color and tend to be clear, crisp, and dry, with low-to-medium bitterness and aroma from hops and some sweetness from malt.');
+INSERT INTO `style` (`idstyle`, `style_name`, `style_desc`) VALUES (3, 'Brown', 'Dark amber or brown in color. Have evidence of caramel and chocolate flavors and may have a slight citrus accent or be strong, malty or nutty.');
+INSERT INTO `style` (`idstyle`, `style_name`, `style_desc`) VALUES (4, 'Cream', 'A very mild, sweetish, golden style of ale.');
+INSERT INTO `style` (`idstyle`, `style_name`, `style_desc`) VALUES (5, 'Dark', 'British type beer, combining hops, yeast and a blend of malts. It is a medium chestnut brown color, with a delicate fruity smell and robust, malty character.');
+INSERT INTO `style` (`idstyle`, `style_name`, `style_desc`) VALUES (6, 'Fruit', 'Most fruit beers are ales however, they typically do not carry an ale character. In order to allow for the fruit flavor to come through, the malt’s flavor is not dominant and there is a low bitterness level to the beer.');
+INSERT INTO `style` (`idstyle`, `style_name`, `style_desc`) VALUES (7, 'Golden', 'First developed in the UK, Golden ales are straw colored with a slight hint of citrus and vanilla. The beer can sometimes contain spicier flavors.');
+INSERT INTO `style` (`idstyle`, `style_name`, `style_desc`) VALUES (8, 'Honey', 'A full-bodied beer with a creamy texture and copper color. Honey beers are slightly sweet with hints of caramel.');
+INSERT INTO `style` (`idstyle`, `style_name`, `style_desc`) VALUES (9, 'India Pale Ale (I.P.A)', 'A hoppier version of pale ale. Originally brewed in England with extra hops to survive the journey to British troops stationed in India.');
+INSERT INTO `style` (`idstyle`, `style_name`, `style_desc`) VALUES (10, 'Light', 'Extremely light in color and mild in flavor. Light beer has fewer calories and/or lower alcohol content.');
+INSERT INTO `style` (`idstyle`, `style_name`, `style_desc`) VALUES (11, 'Pale', 'Pale ale has a fruity, copper-colored style. It originated from England. Pale ales are robust beers that can be enjoyed with strongly spiced foods.');
+INSERT INTO `style` (`idstyle`, `style_name`, `style_desc`) VALUES (12, 'Pilsner', 'Made with neutral and hard water. Tend to be golden in color with a dry, crisp, and somewhat bitter flavor. Pilsner stands out from other lagers due to its more distinctive hop taste.');
+INSERT INTO `style` (`idstyle`, `style_name`, `style_desc`) VALUES (13, 'Red', 'Red ales can either be red or light brown in color. They are moderate to heavy in flavor and contain hints of caramel that is offset by the predominant hop characteristic of the beer.');
+INSERT INTO `style` (`idstyle`, `style_name`, `style_desc`) VALUES (14, 'Strong', 'This is a broad grouping that can describe any beer over 7% ABV. Strong beers are typically dark in color, some are almost black. Different styles can include old ales, double IPAs, and barley wines.');
+INSERT INTO `style` (`idstyle`, `style_name`, `style_desc`) VALUES (15, 'Wheat', 'Light and easy to drink with very little aftertaste. Wheat provides a soft character to beer and is sometimes hazy or cloudy with a touch of spice notes.');
 
 COMMIT;
 
@@ -211,12 +212,12 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `beerdb`;
-INSERT INTO `type` (`idtype`, `type_name`, `type_desc`) VALUES (1, 'Ale', DEFAULT);
-INSERT INTO `type` (`idtype`, `type_name`, `type_desc`) VALUES (2, 'Lager', DEFAULT);
-INSERT INTO `type` (`idtype`, `type_name`, `type_desc`) VALUES (3, 'Stout', DEFAULT);
-INSERT INTO `type` (`idtype`, `type_name`, `type_desc`) VALUES (4, 'Porter', DEFAULT);
-INSERT INTO `type` (`idtype`, `type_name`, `type_desc`) VALUES (5, 'Malt', DEFAULT);
-INSERT INTO `type` (`idtype`, `type_name`, `type_desc`) VALUES (6, 'Cider', DEFAULT);
+INSERT INTO `type` (`idtype`, `type_name`, `type_desc`) VALUES (1, 'Ale', 'Fuller-bodied, with nuances of fruit or spice and a hoppy finish.');
+INSERT INTO `type` (`idtype`, `type_name`, `type_desc`) VALUES (2, 'Lager', 'Crisp and refreshing with a smooth finish from longer aging.');
+INSERT INTO `type` (`idtype`, `type_name`, `type_desc`) VALUES (3, 'Stout', 'Rich creamy head and flavored and colored by barley.');
+INSERT INTO `type` (`idtype`, `type_name`, `type_desc`) VALUES (4, 'Porter', 'Dark, almost black, fruity-dry fermenting style. Brewed with a combination of roasted malt to impart flavor, color, and aroma.');
+INSERT INTO `type` (`idtype`, `type_name`, `type_desc`) VALUES (5, 'Malt', 'Dark and sweet in flavor. Contain hints of caramel, toffee, and nuts. Light to full bodied.');
+INSERT INTO `type` (`idtype`, `type_name`, `type_desc`) VALUES (6, 'Cider', 'High juice content and sharp taste.');
 
 COMMIT;
 
