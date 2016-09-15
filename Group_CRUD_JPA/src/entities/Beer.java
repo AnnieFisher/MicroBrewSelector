@@ -1,5 +1,6 @@
 package entities;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -102,6 +103,27 @@ public class Beer
 
 	public void setBrand(Brand brand) {
 		this.brand = brand;
+	}
+	
+	//Add/Remove
+	public void addUser(User user) 
+	{
+		if (users == null) {
+			users = new ArrayList<>();
+		}
+		if (!users.contains(user)) {
+			users.add(user);
+			user.addBeer(this);
+		}
+	}
+
+	public void removeUser(User user) 
+	{
+		if (users != null && users.contains(user)) 
+		{
+			users.remove(user);
+			user.removeBeer(this);
+		}
 	}
 	
 }
