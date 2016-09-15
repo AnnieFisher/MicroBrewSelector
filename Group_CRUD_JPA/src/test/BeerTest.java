@@ -1,12 +1,10 @@
 package test;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import javax.swing.text.Style;
 
 import org.junit.After;
 import org.junit.Before;
@@ -14,6 +12,7 @@ import org.junit.Test;
 
 import entities.Beer;
 import entities.Brand;
+import entities.Style;
 import entities.Taste;
 import entities.Type;
 
@@ -43,8 +42,9 @@ public class BeerTest
 		Taste taste = beer.getTaste();
 		assertEquals("Nutty", taste.getName());
 		
-		entities.Style style = beer.getStyle();
-		assertEquals("Red", style.getName());
+		Style style = beer.getStyle();
+		assertEquals("Pilsner", style.getName());
+		//assertEquals("Description", style.getDesc()); //Works
 		
 		Brand brand = beer.getBrand();
 		assertEquals("Bristol Brewing Company", brand.getName());
