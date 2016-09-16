@@ -116,7 +116,6 @@ CREATE TABLE IF NOT EXISTS `user` (
   `iduser` INT NOT NULL AUTO_INCREMENT,
   `username` VARCHAR(45) NOT NULL,
   `password` VARCHAR(45) NOT NULL,
-  `favorites` VARCHAR(45) NULL,
   `first_name` VARCHAR(45) NULL,
   `last_name` VARCHAR(45) NULL,
   `city` VARCHAR(45) NULL,
@@ -321,19 +320,7 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `beerdb`;
-INSERT INTO `user` (`iduser`, `username`, `password`, `favorites`, `first_name`, `last_name`, `city`, `state`) VALUES (1, 'testUser@test.com', 'password', NULL, 'Jane', 'Doe', 'Denver', 'CO');
-
-COMMIT;
-
-
--- -----------------------------------------------------
--- Data for table `beer_user`
--- -----------------------------------------------------
-START TRANSACTION;
-USE `beerdb`;
-INSERT INTO `beer_user` (`beer_idbeer`, `user_iduser`) VALUES (1, 1);
-INSERT INTO `beer_user` (`beer_idbeer`, `user_iduser`) VALUES (2, 1);
-INSERT INTO `beer_user` (`beer_idbeer`, `user_iduser`) VALUES (3, 1);
+INSERT INTO `user` (`iduser`, `username`, `password`, `first_name`, `last_name`, `city`, `state`) VALUES (1, 'testUser@test.com', 'password', 'Jane', 'Doe', 'Denver', 'CO');
 
 COMMIT;
 
