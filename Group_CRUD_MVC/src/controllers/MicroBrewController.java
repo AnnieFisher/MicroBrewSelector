@@ -34,16 +34,16 @@ public class MicroBrewController {
 	{
 		boolean flag = dao.login(username, password);
 		ModelAndView mv;
+		mv = new ModelAndView();
 		
 		if(flag == true)
 		{
-			mv = new ModelAndView("beer.jsp", "beer", flag);
-			
+			mv.setViewName("beer.jsp");
 			System.out.println("Found user");
 		}
 		else 
 		{
-			mv = new ModelAndView("index.html", "beer", flag);
+			mv.setViewName("index.html");
 			System.out.println("Did not find user");
 		}
 		
