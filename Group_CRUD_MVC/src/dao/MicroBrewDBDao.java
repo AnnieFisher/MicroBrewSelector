@@ -21,10 +21,6 @@ public class MicroBrewDBDao implements MicroBrewDao {
 
 		Beer beer = em.find(Beer.class, id);
 		beer.setRating(rating);
-<<<<<<< HEAD
-=======
-
->>>>>>> 83fe0714971872b0eebed18d745df3ecb6471464
 		return beer;
 	}
 
