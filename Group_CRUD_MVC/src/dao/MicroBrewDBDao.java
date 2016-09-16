@@ -35,7 +35,7 @@ public class MicroBrewDBDao implements MicroBrewDao {
 
 		if (results.size() == 1) {
 			flag = true;
-			System.out.println("Results = 1");
+			System.out.println("Results =  1");
 		}
 
 		return flag;
