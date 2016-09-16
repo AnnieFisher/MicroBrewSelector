@@ -3,6 +3,7 @@
 	<name>Group_CRUD_MVC</name>
 	<comment></comment>
 	<projects>
+		<project>Group_CRUD_JPA</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

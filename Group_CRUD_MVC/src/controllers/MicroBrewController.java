@@ -1,10 +1,13 @@
 package controllers;
 
-public class MicroBrewController 
-{
-	public static void main(String[] args) 
-	{
-		System.out.println("This is steven testing!");
-	}
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
+import dao.MicroBrewDao;
+
+@Controller
+public class MicroBrewController {
+	@Autowired
+	private MicroBrewDao dao;
 
 }
