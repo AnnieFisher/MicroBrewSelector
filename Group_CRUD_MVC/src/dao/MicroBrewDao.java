@@ -1,5 +1,7 @@
 package dao;
 
+import java.util.List;
+
 import entities.Beer;
 
 public interface MicroBrewDao {
@@ -7,5 +9,6 @@ public interface MicroBrewDao {
 //	public User addUser(User user);
 //	public User removeUser(User user);
 	public boolean login(String username, String password);
+	public List<Beer> getBeers();
 	
 }
