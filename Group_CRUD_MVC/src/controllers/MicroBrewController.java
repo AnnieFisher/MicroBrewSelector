@@ -53,5 +53,17 @@ public class MicroBrewController {
 		
 		return mv;
 	}
+	
+	@RequestMapping(path = "goToFavorites.do")
+	public ModelAndView goToFavorites()
+	{
+		int id = 1;
+		ModelAndView mv = new ModelAndView();
+		List<Beer> favorites = dao.getUserFavorites(id);
+		mv.addObject("faveList", favorites);
+		mv.setViewName("faves.jsp");
+		return mv;
+	}
+	
 
 }

@@ -30,7 +30,8 @@ public class MicroBrewDBDao implements MicroBrewDao {
 		boolean flag = false;
 		String querytxt = "SELECT u FROM User u WHERE u.username = ?1 AND u.password = ?2";
 
-		List<User> results = em.createQuery(querytxt, User.class).setParameter(1, username).setParameter(2, password)
+		List<User> results = em.createQuery(querytxt, User.class)
+				.setParameter(1, username).setParameter(2, password)
 				.getResultList();
 
 		if (results.size() == 1) {
@@ -51,6 +52,13 @@ public class MicroBrewDBDao implements MicroBrewDao {
 			System.out.println(beer.getName());
 		}
 		return results;
+	}
+
+	@Override
+	public List<Beer> getUserFavorites(int id) {
+		User u = em.find(User.class, id);
+
+		return u.getFavorites();
 	}
 
 }

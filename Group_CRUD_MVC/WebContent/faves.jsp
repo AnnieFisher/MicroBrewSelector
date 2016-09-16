@@ -2,15 +2,11 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
-<title>PLACEHOLDER</title>
+<title>Your Faves</title>
 </head>
 <body>
 
 <p>You're logged in to this mother</p>
-
-<form method="GET" action="goToFavorites.do">
-	<input type="submit" value="Go To Favorites"/>
-</form>
 
 <table>
 		<thead>
@@ -25,7 +21,7 @@
 		</thead>
 		<tbody>
 		
-		<c:forEach var="beer" items="${beerList}">
+		<c:forEach var="beer" items="${faveList}">
 			
 			<tr>
 				<td>${beer.name}</td>
