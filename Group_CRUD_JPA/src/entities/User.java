@@ -21,6 +21,12 @@ public class User
 	private int id;
 	private String username;
 	private String password;
+	@Column(name="first_name")
+	private String firstName;
+	@Column(name="last_name")
+	private String lastName;
+	private String city;
+	private String state;
 	
 	//JOIN Beer to Add to User Favorites List
 	@ManyToMany
@@ -48,6 +54,46 @@ public class User
 	public void setPassword(String password) 
 	{
 		this.password = password;
+	}
+
+	public String getFirstName() 
+	{
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) 
+	{
+		this.firstName = firstName;
+	}
+
+	public String getLastName() 
+	{
+		return lastName;
+	}
+
+	public void setLastName(String lastName) 
+	{
+		this.lastName = lastName;
+	}
+
+	public String getCity() 
+	{
+		return city;
+	}
+
+	public void setCity(String city) 
+	{
+		this.city = city;
+	}
+
+	public String getState() 
+	{
+		return state;
+	}
+
+	public void setState(String state) 
+	{
+		this.state = state;
 	}
 
 	public List<Beer> getFavorites() 

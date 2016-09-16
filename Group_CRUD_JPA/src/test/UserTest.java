@@ -33,6 +33,8 @@ public class UserTest {
 	{
 		User user = em.find(User.class, 1);
 		assertEquals("password", user.getPassword());
+		assertEquals("Jane", user.getFirstName());
+		assertEquals("Denver", user.getCity());
 		
 		List<Beer> favorites = user.getFavorites();
 		assertEquals(3, favorites.size());
