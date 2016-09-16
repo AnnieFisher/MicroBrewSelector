@@ -5,7 +5,6 @@
 </head>
 <body>
 
-<p>This is the new rating for beer # ${beer.id}.</p>
-${beer.rating}
+<p>You're logged in to this mother</p>
 </body>
 </html>
