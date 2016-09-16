@@ -1,11 +1,38 @@
 <!DOCTYPE html>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
 <title>PLACEHOLDER</title>
 </head>
 <body>
 
-<p>This is the new rating for beer # ${beer.id}.</p>
-${beer.rating}
+<p>You're logged in to this mother</p>
+
+<table>
+		<thead>
+			<tr>
+				<td>Name</td>
+				<td>Rating</td>
+				<td>Taste</td>
+				<td>Type</td>
+				<td>Style</td>
+				<td>Brand</td>
+			</tr>
+		</thead>
+		<tbody>
+		
+		<c:forEach var="beer" items="${beerList}">
+			
+			<tr>
+				<td>${beer.name}</td>
+				<td>${beer.rating}</td>
+				<td>${beer.taste.name}</td>
+				<td>${beer.type.name}</td>
+				<td>${beer.style.name}</td>
+				<td>${beer.brand.name}</td>
+			</tr>
+		</c:forEach>
+		</tbody>
+	</table>
 </body>
 </html>

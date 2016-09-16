@@ -1,5 +1,7 @@
 package controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,6 +29,29 @@ public class MicroBrewController {
 		
 		return new ModelAndView();
 		
+	}
+	
+	@RequestMapping(path = "login.do")
+	public ModelAndView userLogin(String username, String password)
+	{
+		boolean flag = dao.login(username, password);
+		ModelAndView mv;
+		mv = new ModelAndView();
+		
+		if(flag == true)
+		{
+			List<Beer> beerList = dao.getBeers();
+			mv.addObject("beerList", beerList);
+			mv.setViewName("beer.jsp");
+			System.out.println("Found user");
+		}
+		else 
+		{
+			mv.setViewName("index.html");
+			System.out.println("Did not find user");
+		}
+		
+		return mv;
 	}
 
 }
