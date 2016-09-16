@@ -134,7 +134,6 @@ CREATE TABLE IF NOT EXISTS `beer_user` (
   `user_iduser` INT NOT NULL,
   PRIMARY KEY (`beer_idbeer`, `user_iduser`),
   INDEX `fk_beer_has_user_user1_idx` (`user_iduser` ASC),
-  INDEX `fk_beer_has_user_beer1_idx` (`beer_idbeer` ASC),
   CONSTRAINT `fk_beer_has_user_beer1`
     FOREIGN KEY (`beer_idbeer`)
     REFERENCES `beer` (`idbeer`)
@@ -321,6 +320,18 @@ COMMIT;
 START TRANSACTION;
 USE `beerdb`;
 INSERT INTO `user` (`iduser`, `username`, `password`, `first_name`, `last_name`, `city`, `state`) VALUES (1, 'testUser@test.com', 'password', 'Jane', 'Doe', 'Denver', 'CO');
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `beer_user`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `beerdb`;
+INSERT INTO `beer_user` (`beer_idbeer`, `user_iduser`) VALUES (2, 1);
+INSERT INTO `beer_user` (`beer_idbeer`, `user_iduser`) VALUES (3, 1);
+INSERT INTO `beer_user` (`beer_idbeer`, `user_iduser`) VALUES (1, 1);
 
 COMMIT;
 
