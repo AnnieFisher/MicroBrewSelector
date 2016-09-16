@@ -1,5 +1,7 @@
 package dao;
 
-public interface MicroBrewDao {
+import entities.Beer;
 
+public interface MicroBrewDao {
+	public Beer updateRating (int id, int rating);
 }
