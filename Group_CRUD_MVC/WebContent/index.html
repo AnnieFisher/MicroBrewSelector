@@ -6,9 +6,31 @@
 </head>
 <body>
 	<form method="POST" action="UpdateRating.do">
-			<input type="text" name="id" placeholder="Beer ID" /> 
-			<input type="text" name="rating" placeholder="New Rating" />
-			<input type="submit" value="Update Rating" />
-		</form>
+		<input type="text" name="id" placeholder="Beer ID" /> <input
+			type="text" name="rating" placeholder="New Rating" /> <input
+			type="submit" value="Update Rating" />
+	</form>
+
+	<br>
+	<hr>
+	<br>
+<body>
+	<h2>ADD NEW USER</h2>
+	<form method="POST" action="addUser.do">
+		<input type="text" name="id" placeholder="Username" /> <input
+			type="password" name="rating" placeholder="Password" /> <input
+			type="submit" value="Submit" />
+	</form>
+
+	<br>
+	<hr>
+	<br>
+<h2>LOGIN AS EXISTING USER</h2>
+	<form method="GET" action="login.do">
+		<input type="text" name="id" placeholder="Username" /> <input
+			type="password" name="rating" placeholder="Password" /> <input
+			type="submit" value="Submit" />
+	</form>
+
 </body>
 </html>

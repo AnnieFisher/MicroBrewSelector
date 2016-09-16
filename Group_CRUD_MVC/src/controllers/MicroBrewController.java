@@ -7,6 +7,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import dao.MicroBrewDao;
 import entities.Beer;
+import entities.User;
 
 @Controller
 public class MicroBrewController {
@@ -17,6 +18,14 @@ public class MicroBrewController {
 	public ModelAndView updateRating(int id, int rating){
 		Beer beer = dao.updateRating(id, rating);
 		return new ModelAndView("beer.jsp", "beer", beer);
+	}
+	
+	@RequestMapping(path = "addUser.do")
+	public ModelAndView addUser(){
+		User user = new User();
+		
+		
+		return new ModelAndView();
 		
 	}
 
