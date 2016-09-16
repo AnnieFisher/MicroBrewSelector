@@ -105,6 +105,14 @@ public class Beer
 		this.brand = brand;
 	}
 	
+	public List<User> getUsers() {
+		return users;
+	}
+
+	public void setUsers(List<User> users) {
+		this.users = users;
+	}
+
 	//Add/Remove
 	public void addUser(User user) 
 	{

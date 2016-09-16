@@ -65,6 +65,7 @@ public class User
 		return id;
 	}
 	
+	
 	//Add/Remove
 	public void addBeer(Beer beer) 
 	{

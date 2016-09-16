@@ -1,6 +1,8 @@
 package test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+
+import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -10,6 +12,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import entities.Beer;
 import entities.User;
 
 public class UserTest {
@@ -30,6 +33,9 @@ public class UserTest {
 	{
 		User user = em.find(User.class, 1);
 		assertEquals("password", user.getPassword());
+		
+		List<Beer> favorites = user.getFavorites();
+		assertEquals(3, favorites.size());
 	}
 	
 	@After
