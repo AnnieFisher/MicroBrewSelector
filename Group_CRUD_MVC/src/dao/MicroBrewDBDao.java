@@ -25,20 +25,19 @@ public class MicroBrewDBDao implements MicroBrewDao {
 	}
 
 	@Override
-	public boolean login(String username, String password) {
+	public User login(String username, String password) {
 
-		boolean flag = false;
+		User login = new User();
 		String querytxt = "SELECT u FROM User u WHERE u.username = ?1 AND u.password = ?2";
 
 		List<User> results = em.createQuery(querytxt, User.class).setParameter(1, username).setParameter(2, password)
 				.getResultList();
 
 		if (results.size() == 1) {
-			flag = true;
 			System.out.println("Results =  1");
+			login = results.get(0);
 		}
-
-		return flag;
+		return login;
 	}
 
 	@Override
