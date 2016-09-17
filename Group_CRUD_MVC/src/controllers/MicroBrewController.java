@@ -64,6 +64,13 @@ public class MicroBrewController {
 		mv.setViewName("faves.jsp");
 		return mv;
 	}
-	
+	@RequestMapping(path = "goToBeers.do")
+	public ModelAndView goToBeers(){
+		ModelAndView mv = new ModelAndView();
+		List<Beer> beerList = dao.getBeers();
+		mv.addObject("beerList", beerList);
+		mv.setViewName("beer.jsp");
+		return mv;
+	}
 
 }

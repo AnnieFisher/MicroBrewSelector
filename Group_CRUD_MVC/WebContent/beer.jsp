@@ -9,16 +9,14 @@
 			<li><a href="index.html">Home Page</a></li>
 			<li><a href="UpdateRating.do" >Rate A beer</a></li>
 			<li><a href="goToFavorites.do">Your Favorites</a></li>
-			<li><a class="active" href="">Full List</a></li>
+			<li><a class="active" href="goToBeers.do">Full List</a></li>
 </ul>
 </head>
 <body>
 
 <p>You're logged in to this mother</p>
 
-<form method="GET" action="goToFavorites.do">
-	<input type="submit" value="Go To Favorites"/>
-</form>
+
 
 <table>
 		<thead>
