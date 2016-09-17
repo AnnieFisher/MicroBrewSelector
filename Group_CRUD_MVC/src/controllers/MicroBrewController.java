@@ -65,7 +65,7 @@ public class MicroBrewController {
 		User login = dao.login(username, password);
 		ModelAndView mv;
 		mv = new ModelAndView();
-
+		System.out.println("in login.do");
 		if (!login.getUsername().equals(null)) {
 			List<Beer> beerList = dao.getBeers();
 			mv.addObject("currentUser", login);
