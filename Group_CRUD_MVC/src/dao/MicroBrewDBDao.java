@@ -28,6 +28,7 @@ public class MicroBrewDBDao implements MicroBrewDao {
 	public User login(String username, String password) {
 
 		User login = new User();
+		
 		String querytxt = "SELECT u FROM User u WHERE u.username = ?1 AND u.password = ?2";
 
 		List<User> results = em.createQuery(querytxt, User.class).setParameter(1, username).setParameter(2, password)
@@ -38,6 +39,7 @@ public class MicroBrewDBDao implements MicroBrewDao {
 			login = results.get(0);
 		} else {
 			login.setUsername("INVALID");
+			login.setPassword("INVALID");
 		}
 		return login;
 	}

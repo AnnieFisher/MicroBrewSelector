@@ -21,7 +21,8 @@ public class MicroBrewController {
 
 	@ModelAttribute("currentUser")
 	public User initSessionObject() {
-		return null;
+		User user = new User();
+		return user;
 	}
 
 	@RequestMapping(path = "UpdateRating.do")
@@ -72,8 +73,9 @@ public class MicroBrewController {
 	public ModelAndView userLogin(String username, String password) throws Exception {
 		ModelAndView mv;
 		mv = new ModelAndView();
-		try {
+//		try {
 			User login = dao.login(username, password);
+			System.out.println("test");
 
 			if (!login.getUsername().equals("INVALID")) {
 				List<Beer> beerList = dao.getBeers();
@@ -82,15 +84,14 @@ public class MicroBrewController {
 				mv.setViewName("beer.jsp");
 				System.out.println("Found user");
 			}
-			// else {
-			// mv.setViewName("index.html");
-			// System.out.println("Did not find user");
-			// }
-		} catch (Exception e) {
-			mv.setViewName("index.html");
-			System.out.println("Did not find user");
-		}
-
+			 else {
+			 System.out.println("Did not find user");
+			 }
+//		} catch (Exception e) {
+//			mv.setViewName("index.html");
+//			System.out.println("Did not find user");
+//		}
+		System.out.println(login.getFirstName());
 		return mv;
 	}
 
