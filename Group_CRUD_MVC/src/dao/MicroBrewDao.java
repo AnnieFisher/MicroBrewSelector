@@ -7,7 +7,8 @@ import entities.User;
 
 public interface MicroBrewDao {
 	public Beer updateRating (int id, int rating);
-//	public User addUser(User user);
+	public User addUser(String firstName, String lastName, String username,
+			String password, String city, String state);
 //	public User removeUser(User user);
 	public boolean login(String username, String password);
 	public List<Beer> getBeers();
