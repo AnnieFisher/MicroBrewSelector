@@ -3,12 +3,20 @@
 <html>
 <head>
 <title>Your Faves</title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
 </head>
 <body>
+<ul>
+	<li><a href="index.html">Home Page</a></li>
+	<li><a href="UpdateRating.do">Rate A beer</a></li>
+	<li><a class="active" href="goToFavorites.do">Your Favorites</a></li>
+	<li><a href="goToBeers.do">Full List</a></li>
+	<li><a href="editUser.do">User Settings</a></li>
+</ul>
 
-<p>You're logged in to this mother</p>
+	<p>You're logged in to this mother</p>
 
-<table>
+	<table>
 		<thead>
 			<tr>
 				<td>Name</td>
@@ -20,18 +28,18 @@
 			</tr>
 		</thead>
 		<tbody>
-		
-		<c:forEach var="beer" items="${faveList}">
-			
-			<tr>
-				<td>${beer.name}</td>
-				<td>${beer.rating}</td>
-				<td>${beer.taste.name}</td>
-				<td>${beer.type.name}</td>
-				<td>${beer.style.name}</td>
-				<td>${beer.brand.name}</td>
-			</tr>
-		</c:forEach>
+
+			<c:forEach var="beer" items="${faveList}">
+
+				<tr>
+					<td>${beer.name}</td>
+					<td>${beer.rating}</td>
+					<td>${beer.taste.name}</td>
+					<td>${beer.type.name}</td>
+					<td>${beer.style.name}</td>
+					<td>${beer.brand.name}</td>
+				</tr>
+			</c:forEach>
 		</tbody>
 	</table>
 </body>
