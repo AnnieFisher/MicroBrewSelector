@@ -1,0 +1,120 @@
+@font-face {
+  font-family: 'Lato';
+  src: url('../fonts/lato/lato-black.eot');
+  src: url('../fonts/lato/lato-black.eot?#iefix') format('embedded-opentype'), url('../fonts/lato/lato-black.woff') format('woff'), url('../fonts/lato/lato-black.ttf') format('truetype'), url('../fonts/lato/lato-black.svg#latoblack') format('svg');
+  font-weight: 900;
+  font-style: normal;
+}
+body {
+  font-family: "Lato", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.72222;
+  background-image: url("pics/background.jpg");
+  background-color: #d2a608;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  
+}
+.view {
+  font-family: "Lato", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.72222;
+  background-image: none;
+
+  
+}
+
+table{
+	table-layout: auto;
+	width:92%;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+
+}
+table, th, td {
+   border: 1px solid black;
+   border-collapse: 1px solid black;
+}
+th {
+	height:60%;
+}
+/* unvisited link */
+a:link {
+    color: black;
+    text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+    color: black;
+}
+
+/* mouse over link */
+a:hover {
+    color: #a52cc3;
+     background-color: lightgreen;
+}
+
+/* selected link */
+a:active {
+    color: blue;
+}
+
+input[type=button], input[type=submit]   {
+    background-color: #b4890d;
+    border:groove;
+    color: black;
+    padding: 10px 16px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+   
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #d2a608;
+    border: 1px solid #555;
+}
+
+li a.about{
+    float: right;
+    text-align: center;
+}
+li {
+    float: left;
+    text-align: center;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+li a:hover:not(.active) {
+    background-color: #b4890d;
+    color: white;
+}
+li a:hover {
+    background-color: #111;
+}
+li a.active {
+    background-color: #f25705;
+    color: white;
+}
+.text { 
+font-family: "Lato", Helvetica, Arial, sans-serif;
+font-size: 12px; 
+color: #33CC33; 
+opacity:1; 
+filter:alpha(opacity=100); 
+-moz-opacity:1; 
+-khtml-opacity:1; 
+} 
