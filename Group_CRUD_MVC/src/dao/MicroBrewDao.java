@@ -9,8 +9,7 @@ public interface MicroBrewDao {
 	public Beer updateRating (int id, int rating);
 	public User addUser(String firstName, String lastName, String username,
 			String password, String city, String state);
-//	public User removeUser(User user);
-	public boolean login(String username, String password);
+	public User login(String username, String password);
 	public List<Beer> getBeers();
 	public List<Beer> getUserFavorites(int id);
 	public void removeUser(int id);
