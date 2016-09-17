@@ -29,6 +29,9 @@ public class MicroBrewController {
 		
 		User newUser = dao.addUser(firstName, lastName, username, password, city, state);
 		
+		List<Beer> beerList = dao.getBeers();
+		mv.addObject("beerList", beerList);
+		mv.setViewName("beer.jsp");
 		
 		return mv;
 		
