@@ -23,11 +23,14 @@ public class MicroBrewController {
 	}
 	
 	@RequestMapping(path = "addUser.do")
-	public ModelAndView addUser(){
-		User user = new User();
+	public ModelAndView addUser(String firstName, String lastName, String username,
+			String password, String city, String state){
+		ModelAndView mv = new ModelAndView();
+		
+		User newUser = dao.addUser(firstName, lastName, username, password, city, state);
 		
 		
-		return new ModelAndView();
+		return mv;
 		
 	}
 	

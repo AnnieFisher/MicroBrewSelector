@@ -61,4 +61,19 @@ public class MicroBrewDBDao implements MicroBrewDao {
 		return u.getFavorites();
 	}
 
+	@Override
+	public User addUser(String firstName, String lastName, String username,
+			String password, String city, String state) {
+		User user = new User();
+		user.setFirstName(firstName);
+		user.setLastName(lastName);
+		user.setUsername(username);
+		user.setPassword(password);
+		user.setCity(city);
+		user.setState(state);
+		
+		em.persist(user);
+		return user;
+	}
+
 }
