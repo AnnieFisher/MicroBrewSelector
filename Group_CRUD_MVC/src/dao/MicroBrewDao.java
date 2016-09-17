@@ -14,6 +14,8 @@ public interface MicroBrewDao {
 	public List<Beer> getBeers();
 	public List<Beer> getUserFavorites(int id);
 	public void removeUser(int id);
+	public void updateUser(String firstName, String lastName,
+			 String city, String state);
 	
 	
 }
