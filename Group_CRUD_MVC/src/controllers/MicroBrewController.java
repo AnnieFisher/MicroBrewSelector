@@ -37,6 +37,18 @@ public class MicroBrewController {
 		
 	}
 	
+	@RequestMapping(path = "removeUser.do")
+	public ModelAndView removeUser(int id) {
+		dao.removeUser(id);
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("index.html");
+		return mv;
+		
+	}
+	
+	
+	
+	
 	@RequestMapping(path = "login.do")
 	public ModelAndView userLogin(String username, String password)
 	{

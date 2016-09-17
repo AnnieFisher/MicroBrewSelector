@@ -75,5 +75,12 @@ public class MicroBrewDBDao implements MicroBrewDao {
 		em.persist(user);
 		return user;
 	}
+	
+	@Override
+	public void removeUser(int id) {
+		User user = em.find(User.class, id);
+		em.remove(user);
+	}
+	
 
 }

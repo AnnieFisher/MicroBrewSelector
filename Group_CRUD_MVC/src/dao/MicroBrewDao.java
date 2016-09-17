@@ -13,6 +13,7 @@ public interface MicroBrewDao {
 	public boolean login(String username, String password);
 	public List<Beer> getBeers();
 	public List<Beer> getUserFavorites(int id);
+	public void removeUser(int id);
 	
 	
 }

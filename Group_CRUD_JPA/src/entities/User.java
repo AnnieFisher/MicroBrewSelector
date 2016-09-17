@@ -3,6 +3,7 @@ package entities;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -30,7 +31,7 @@ public class User
 	private String state;
 	
 	//JOIN Beer to Add to User Favorites List
-	@ManyToMany(fetch=FetchType.EAGER)
+	@ManyToMany(fetch=FetchType.EAGER, cascade= CascadeType.ALL)
 	@JoinTable(name = "beer_user", joinColumns = @JoinColumn(name = "user_iduser"), 
 				inverseJoinColumns = @JoinColumn(name = "beer_idbeer"))
 	private List<Beer> favorites;
