@@ -81,8 +81,8 @@ public class MicroBrewController {
 	}
 
 	@RequestMapping(path = "goToFavorites.do")
-	public ModelAndView goToFavorites() {
-		int id = 1;
+	public ModelAndView goToFavorites(@ModelAttribute("currentUser") User currentUser) {
+		int id = currentUser.getId();
 		ModelAndView mv = new ModelAndView();
 		List<Beer> favorites = dao.getUserFavorites(id);
 		mv.addObject("faveList", favorites);
