@@ -13,4 +13,5 @@ public interface MicroBrewDao {
 	public List<Beer> getBeers();
 	public List<Beer> getUserFavorites(int id);
 	
+	
 }
