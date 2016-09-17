@@ -55,24 +55,38 @@ public class MicroBrewController {
 	}
 
 	@RequestMapping(path = "editUser.do")
-	public ModelAndView editUser(String firstName, String lastName, String city, String state) {
+	public ModelAndView editUser(String firstName, String lastName, String city, String state,
+			@ModelAttribute("currentUser") User currentUser) {
+		ModelAndView mv = new ModelAndView();
+		
 		dao.updateUser(firstName, lastName, city, state);
-		return null;
+		List<Beer> beerList = dao.getBeers();
+		
+		mv.addObject("currentUser", currentUser);
+		mv.addObject("beerList", beerList);
+		mv.setViewName("beer.jsp");
+		return mv;
 	}
 
 	@RequestMapping(path = "login.do")
-	public ModelAndView userLogin(String username, String password) {
-		User login = dao.login(username, password);
+	public ModelAndView userLogin(String username, String password) throws Exception {
 		ModelAndView mv;
 		mv = new ModelAndView();
+		try {
+			User login = dao.login(username, password);
 
-		if (!login.getUsername().equals(null)) {
-			List<Beer> beerList = dao.getBeers();
-			mv.addObject("currentUser", login);
-			mv.addObject("beerList", beerList);
-			mv.setViewName("beer.jsp");
-			System.out.println("Found user");
-		} else {
+			if (!login.getUsername().equals("INVALID")) {
+				List<Beer> beerList = dao.getBeers();
+				mv.addObject("currentUser", login);
+				mv.addObject("beerList", beerList);
+				mv.setViewName("beer.jsp");
+				System.out.println("Found user");
+			}
+			// else {
+			// mv.setViewName("index.html");
+			// System.out.println("Did not find user");
+			// }
+		} catch (Exception e) {
 			mv.setViewName("index.html");
 			System.out.println("Did not find user");
 		}
