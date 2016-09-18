@@ -12,6 +12,9 @@ import org.springframework.web.servlet.ModelAndView;
 import dao.MicroBrewDao;
 import entities.Beer;
 import entities.User;
+import entities.Type;
+import entities.Taste;
+import entities.Style;
 
 @Controller
 @SessionAttributes("currentUser")
@@ -73,21 +76,7 @@ public class MicroBrewController {
 	public ModelAndView userLogin(String username, String password) throws Exception {
 		ModelAndView mv;
 		mv = new ModelAndView();
-<<<<<<< HEAD
-		System.out.println("in login.do");
-		if (!login.getUsername().equals(null)) {
-			List<Beer> beerList = dao.getBeers();
-			mv.addObject("currentUser", login);
-			mv.addObject("beerList", beerList);
-			mv.setViewName("beer.jsp");
-			System.out.println("Found user");
-		} else {
-			mv.setViewName("index.html");
-			System.out.println("Did not find user");
-		}
 
-=======
-//		try {
 			User login = dao.login(username, password);
 			System.out.println("test");
 
@@ -101,12 +90,9 @@ public class MicroBrewController {
 			 else {
 			 System.out.println("Did not find user");
 			 }
-//		} catch (Exception e) {
-//			mv.setViewName("index.html");
-//			System.out.println("Did not find user");
-//		}
+
 		System.out.println(login.getFirstName());
->>>>>>> 41f88b818246290e7039d313ec8cfdcaac264438
+
 		return mv;
 	}
 
@@ -150,4 +136,21 @@ line 132 was line 131 and the method didn't take int id.
 		return mv;
 	}
 
+	@RequestMapping(path="GetType.do")
+	public ModelAndView getCustomer(int id) {
+		Type type = dao.getType(id);
+		return new ModelAndView("type.jsp","type",type);
+	}
+	@RequestMapping(path="GetTaste.do")
+	public ModelAndView getTaste(int id) {
+		Taste taste = dao.getTaste(id);
+		return new ModelAndView("taste.jsp","taste",taste);
+	}
+	@RequestMapping(path="GetStyle.do")
+	public ModelAndView getStyel(int id) {
+		Style style = dao.getStyle(id);
+		return new ModelAndView("style.jsp","style",style);
+	}
+	
+	
 }
