@@ -110,4 +110,10 @@ public class MicroBrewDBDao implements MicroBrewDao {
 		}
 	}
 
+	@Override
+	public Beer getBeer(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

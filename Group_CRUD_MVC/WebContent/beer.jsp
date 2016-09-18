@@ -36,6 +36,9 @@
 			<c:forEach var="beer" items="${beerList}">
 
 				<tr>
+				<td>
+				 <a href="goToDetails.do?${beer.id}">${beer.name}</a>
+				</td>
 					<td>${beer.name}</td>
 					<td>${beer.rating}</td>
 					<td>${beer.taste.name}</td>
