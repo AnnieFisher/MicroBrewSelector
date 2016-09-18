@@ -112,8 +112,14 @@ public class MicroBrewDBDao implements MicroBrewDao {
 
 	@Override
 	public Beer getBeer(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		String querytxt = "SELECT b FROM Beer b WHERE idbeer = ?1";
+
+		List<Beer> results = em.createQuery(querytxt, Beer.class).getResultList();
+
+		for (Beer beer : results) {
+			System.out.println(beer.getId());
+		}
+		return results;
 	}
 
 }
