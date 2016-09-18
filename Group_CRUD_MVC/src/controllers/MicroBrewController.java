@@ -21,7 +21,8 @@ public class MicroBrewController {
 
 	@ModelAttribute("currentUser")
 	public User initSessionObject() {
-		return null;
+		User user = new User();
+		return user;
 	}
 
 	@RequestMapping(path = "UpdateRating.do")
@@ -35,7 +36,7 @@ public class MicroBrewController {
 			String state) {
 		ModelAndView mv = new ModelAndView();
 
-		User newUser = dao.addUser(firstName, lastName, username, password, city, state);
+//		User newUser = dao.addUser(firstName, lastName, username, password, city, state);
 
 		List<Beer> beerList = dao.getBeers();
 		mv.addObject("beerList", beerList);
@@ -55,16 +56,24 @@ public class MicroBrewController {
 	}
 
 	@RequestMapping(path = "editUser.do")
-	public ModelAndView editUser(String firstName, String lastName, String city, String state) {
+	public ModelAndView editUser(String firstName, String lastName, String city, String state,
+			@ModelAttribute("currentUser") User currentUser) {
+		ModelAndView mv = new ModelAndView();
+		
 		dao.updateUser(firstName, lastName, city, state);
-		return null;
+		List<Beer> beerList = dao.getBeers();
+		
+		mv.addObject("currentUser", currentUser);
+		mv.addObject("beerList", beerList);
+		mv.setViewName("beer.jsp");
+		return mv;
 	}
 
 	@RequestMapping(path = "login.do")
-	public ModelAndView userLogin(String username, String password) {
-		User login = dao.login(username, password);
+	public ModelAndView userLogin(String username, String password) throws Exception {
 		ModelAndView mv;
 		mv = new ModelAndView();
+<<<<<<< HEAD
 		System.out.println("in login.do");
 		if (!login.getUsername().equals(null)) {
 			List<Beer> beerList = dao.getBeers();
@@ -77,6 +86,27 @@ public class MicroBrewController {
 			System.out.println("Did not find user");
 		}
 
+=======
+//		try {
+			User login = dao.login(username, password);
+			System.out.println("test");
+
+			if (!login.getUsername().equals("INVALID")) {
+				List<Beer> beerList = dao.getBeers();
+				mv.addObject("currentUser", login);
+				mv.addObject("beerList", beerList);
+				mv.setViewName("beer.jsp");
+				System.out.println("Found user");
+			}
+			 else {
+			 System.out.println("Did not find user");
+			 }
+//		} catch (Exception e) {
+//			mv.setViewName("index.html");
+//			System.out.println("Did not find user");
+//		}
+		System.out.println(login.getFirstName());
+>>>>>>> 41f88b818246290e7039d313ec8cfdcaac264438
 		return mv;
 	}
 
@@ -96,6 +126,27 @@ public class MicroBrewController {
 		List<Beer> beerList = dao.getBeers();
 		mv.addObject("beerList", beerList);
 		mv.setViewName("beer.jsp");
+		return mv;
+	}
+/*	
+Ok, so what I'm trying to do is have the link in the table in beer.jsp pass the id of
+that beer into this method. Then, I'm attempting to use that id to return that beer
+object (I had to add the method to the interface. I've been at it for a while and
+am taking a break since my brain is getting burnt out. I'm leaving this giant 
+comment in case one of you come accross this before I get it working. 
+
+Currently, every beer name in the beer.jsp is a link to the new details.jsp page, 
+which has the skeleton of what it's supposed to do. Before I was attempting to pass
+the id, it actually took me to the page, but it didn't populate. When it "worked"
+line 132 was line 131 and the method didn't take int id.
+*/	
+	@RequestMapping("goToDetails.do")
+	public ModelAndView goToDetails(int id) {
+		
+		ModelAndView mv = new ModelAndView();
+//		mv.addObject("beerInfo", dao.getBeers());
+		mv.addObject("beerInfo", dao.getBeer(id));
+		mv.setViewName("details.jsp");
 		return mv;
 	}
 

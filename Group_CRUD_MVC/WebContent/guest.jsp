@@ -12,7 +12,7 @@
 	<li><a href="UpdateRating.do">Rate A beer</a></li>
 	<li><a href="goToFavorites.do">Your Favorites</a></li>
 	<li><a class="active" href="goToBeers.do">Full List</a></li>
-	<li><a href="editUser.jsp">User Settings</a></li>
+	<li><a href="editUser.do">User Settings</a></li>
 
 </ul>
 
@@ -36,9 +36,7 @@
 			<c:forEach var="beer" items="${beerList}">
 
 				<tr>
-				<td>
-				 <a href="goToDetails.do?${beer.id}">${beer.name}</a>
-				</td>
+					<td>${beer.name}</td>
 					<td>${beer.rating}</td>
 					<td>${beer.taste.name}</td>
 					<td>${beer.type.name}</td>
