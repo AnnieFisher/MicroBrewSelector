@@ -139,17 +139,17 @@ line 132 was line 131 and the method didn't take int id.
 	@RequestMapping(path="GetType.do")
 	public ModelAndView getCustomer(int id) {
 		Type type = dao.getType(id);
-		return new ModelAndView("type.jsp","type",type);
+		return new ModelAndView("selections.jsp","type",type);
 	}
 	@RequestMapping(path="GetTaste.do")
 	public ModelAndView getTaste(int id) {
 		Taste taste = dao.getTaste(id);
-		return new ModelAndView("taste.jsp","taste",taste);
+		return new ModelAndView("selections.jsp","taste",taste);
 	}
 	@RequestMapping(path="GetStyle.do")
 	public ModelAndView getStyel(int id) {
 		Style style = dao.getStyle(id);
-		return new ModelAndView("style.jsp","style",style);
+		return new ModelAndView("selections.jsp","style",style);
 	}
 	
 	

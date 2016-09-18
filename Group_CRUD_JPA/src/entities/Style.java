@@ -16,7 +16,7 @@ public class Style
 	@Column(name="style_name")
 	private String name;
 	@Column(name="style_desc")
-	private String desc;
+	private String description;
 	
 	
 	// Gets and Sets
@@ -30,16 +30,14 @@ public class Style
 		this.name = name;
 	}
 	
-	public String getDesc() 
-	{
-		return desc;
+	public String getDescription() {
+		return description;
 	}
-	
-	public void setDesc(String desc) 
-	{
-		this.desc = desc;
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
-	
+
 	public int getId() 
 	{
 		return id;

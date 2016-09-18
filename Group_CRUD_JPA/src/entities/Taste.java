@@ -27,7 +27,7 @@ public class Taste
 	{
 		this.name = name;
 	}
-	
+
 	public int getId() 
 	{
 		return id;
