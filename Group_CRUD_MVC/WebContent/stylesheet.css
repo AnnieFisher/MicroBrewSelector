@@ -125,3 +125,7 @@ filter:alpha(opacity=100);
 p {
 color: white;
 }
+#logo {
+	width: 15%;
+	height: 15%;
+}

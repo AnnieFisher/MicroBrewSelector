@@ -16,21 +16,22 @@
 		<li><a href="goToOptions.do">Palate Options</a></li>
 		<li><a href="editUser.do">User Settings</a></li>
 	</ul>
-	<h2>${beer.name }this should be beer name</h2>
+	<h2>Name of Beer: ${beer.name }</h2>
 	<br>
+	<p>Brand: ${beer.brand.name }</p>
+	<img id="logo" src="${beer.brand.url}" alt="logo"/>
+	<br>
+	<p>Beer Rating: ${beer.rating }</p>
 
-	<p>${beer.rating }this should be rating</p>
+	<p>Taste: ${beer.taste.name }</p>
+	<br>
+	<p>Style: ${beer.style.name }</p>
+	<p>${beer.style.description }</p>
+	<br>
+	<p>Type: ${beer.type.name }</p>
+	<p>${beer.type.description }</p>
 
-	<p>${beer.taste.name }this should be taste name</p>
-
-	<p>${beer.style.name }this should be style name</p>
-	<p>${beer.style.description }this should be style description</p>
-
-	<p>${beer.type.name }this should be type name</p>
-	<p>${beer.type.description }this should be type description</p>
-
-	<p>${beer.brand.name }this should be brand name</p>
->>>>>>> 6f601b210df83617c2c7d495627c1789cd46c071
+	<br>
 
 	<p>Rate This Beer</p>
 
