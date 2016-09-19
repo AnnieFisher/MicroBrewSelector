@@ -3,8 +3,8 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Options</title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
 </head>
 <body>
 
@@ -33,7 +33,7 @@
 			<option value="10">Spicy</option>
 			<option value="11">Hoppy</option>
 		</select>
-	<input type ="submit" value="Taste of Beer"/>
+	<input type ="submit" value="Get Taste of Beer"/>
 </form>
 <form method="GET" action="GetStyle.do">
 	<select name="id">

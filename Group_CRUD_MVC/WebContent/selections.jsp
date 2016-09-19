@@ -3,8 +3,9 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+
+<title>Selections</title>
 </head>
 <body>
 
