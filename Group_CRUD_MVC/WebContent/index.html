@@ -4,19 +4,11 @@
 <head>
 <meta charset="UTF-8">
 <title>PLACEHOLDER</title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+
 </head>
 <body>
-<h2>CHANGE BEER RATING</h2>
-	<form method="POST" action="UpdateRating.do">
-		<input type="text" name="id" placeholder="Beer ID" /> <input
-			type="text" name="rating" placeholder="New Rating" /> <input
-			type="submit" value="Update Rating" />
-	</form>
 
-	<br>
-	<hr>
-	<br>
-<body>
 	<h2>ADD NEW USER</h2>
 	<form method="POST" action="newUser.jsp">
 		<input type="submit" value="Create An Account" />
@@ -25,16 +17,17 @@
 	<br>
 	<hr>
 	<br>
-<h2>LOGIN AS EXISTING USER</h2>
+	
+	<h2>LOGIN AS EXISTING USER</h2>
 	<form method="GET" action="login.do">
 		<input type="text" name="username" placeholder="Username" /> <input
 			type="password" name="password" placeholder="Password" /> <input
 			type="submit" value="Submit" />
 	</form>
 	<br>
-	<form method="GET" action = "goToBeers.do">
- <input type="Submit" value="Browse As Guest" />
- </form>
+	<form method="GET" action="goToBeers.do">
+		<input type="Submit" value="Browse As Guest" />
+	</form>
 
 </body>
 </html>

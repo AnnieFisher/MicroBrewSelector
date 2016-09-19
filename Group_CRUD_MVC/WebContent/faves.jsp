@@ -8,13 +8,11 @@
 <body>
 <ul>
 	<li><a href="index.html">Home Page</a></li>
-	<li><a href="UpdateRating.do">Rate A beer</a></li>
 	<li><a class="active" href="goToFavorites.do">Your Favorites</a></li>
 	<li><a href="goToBeers.do">Full List</a></li>
+	<li><a href="goToOptions.do">Palate Options</a></li>
 	<li><a href="editUser.do">User Settings</a></li>
 </ul>
-
-	<p>You're logged in to this mother</p>
 
 	<table>
 		<thead>

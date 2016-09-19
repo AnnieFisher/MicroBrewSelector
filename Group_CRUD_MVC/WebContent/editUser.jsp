@@ -8,13 +8,13 @@
 <link rel="stylesheet" type="text/css" href="stylesheet.css" />
 </head>
 <body>
-<ul>
-	<li><a href="index.html">Home Page</a></li>
-	<li><a href="UpdateRating.do">Rate A beer</a></li>
-	<li><a href="goToFavorites.do">Your Favorites</a></li>
-	<li><a href="goToBeers.do">Full List</a></li>
-	<li><a class="active" href="editUser.do">User Settings</a></li>
-</ul>
+	<ul>
+		<li><a href="index.html">Home Page</a></li>
+		<li><a href="goToFavorites.do">Your Favorites</a></li>
+		<li><a href="goToBeers.do">Full List</a></li>
+		<li><a href="goToOptions.do">Palate Options</a></li>
+		<li><a class="active" href="editUser.do">User Settings</a></li>
+	</ul>
 	<h2>Update Your Information Below</h2>
 	<br>
 	<form method="POST" action="editUser.do">
