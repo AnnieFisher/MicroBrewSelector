@@ -198,9 +198,15 @@ public class MicroBrewController {
 		mv.setViewName("suggestBeer.jsp");
 		return mv;
 	}
+	
 	@RequestMapping(path="suggestBeer.do")
-	public ModelAndView suggestBeer(String name, int styleId, int typeId, int tasteId, int brand) {
-		return null;
+	public ModelAndView suggestBeer(String name,int rating, int styleId, int typeId, int tasteId, int brandId) {
+		dao.addSuggestions( name, rating, styleId, typeId, tasteId, brandId);
+		ModelAndView mv = new ModelAndView();
+		List<Beer> beerList = dao.getBeers();
+		mv.addObject("beerList", beerList);
+		mv.setViewName("beer.jsp");
+		return mv;
 	}
 	
 }

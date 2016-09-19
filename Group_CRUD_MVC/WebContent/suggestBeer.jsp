@@ -20,13 +20,13 @@
 
 	<h2>Tell Us Your Suggestion!</h2>
 
-<form method="suggestBeer.do" method="POST">">
+<form action="suggestBeer.do" method="POST">">
 
 		<select name="typeId">
 			<c:forEach var="type" items="${typeList}">
 				<option value="${type.id}">${type.name}</option>
 			</c:forEach>
-
+		</select>
 		<select name="tasteId">
 			<c:forEach var="taste" items="${tasteList}">
 				<option value="${taste.id}">${taste.name}</option>
@@ -39,9 +39,10 @@
 			</c:forEach>
 		</select>
 		
-		 <input type="text" name="rating" />
-		 <input	type="text" name="brand" /><br>
-		<br>
+		 <input type="text" name="name" placeholder="name"/>
+		 <input type="number" name="rating" placeholder="Rate 1-5"/>
+		 <input	type="text" name="brandId" placeholder="Brand id 1-20"/>
+	
 		 <input type="submit" value="Submit Your Suggestion" />
 	</form>
 </body>
