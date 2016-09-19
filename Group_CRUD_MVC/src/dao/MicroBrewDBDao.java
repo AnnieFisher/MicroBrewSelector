@@ -8,9 +8,6 @@ import javax.persistence.PersistenceContext;
 import org.springframework.transaction.annotation.Transactional;
 
 import entities.Beer;
-import entities.Style;
-import entities.Taste;
-import entities.Type;
 import entities.User;
 
 @Transactional
@@ -53,9 +50,6 @@ public class MicroBrewDBDao implements MicroBrewDao {
 
 		List<Beer> results = em.createQuery(querytxt, Beer.class).getResultList();
 
-		for (Beer beer : results) {
-			System.out.println(beer.getName());
-		}
 		return results;
 	}
 

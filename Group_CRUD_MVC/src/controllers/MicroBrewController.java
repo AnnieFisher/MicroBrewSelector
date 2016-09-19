@@ -12,9 +12,6 @@ import org.springframework.web.servlet.ModelAndView;
 import dao.MicroBrewDao;
 import entities.Beer;
 import entities.User;
-import entities.Type;
-import entities.Taste;
-import entities.Style;
 
 @Controller
 @SessionAttributes("currentUser")
