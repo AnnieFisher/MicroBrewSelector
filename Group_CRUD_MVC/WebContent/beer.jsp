@@ -58,7 +58,7 @@
 	<br>
 	
 	<p>Don't See Your Favorite Beer? Add One Here!</p>
-	<form action="suggestBeer.jsp" method="GET">
+	<form action="goToSuggestBeer.do" method="GET">
 		<input type="submit" value="Add"/>	
 	</form>
 </body>

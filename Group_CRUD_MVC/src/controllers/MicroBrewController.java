@@ -155,7 +155,6 @@ public class MicroBrewController {
 
 	@RequestMapping("goToDetails.do")
 	public ModelAndView goToDetails(int id, @ModelAttribute("currentUser") User currentUser){
-		ModelAndView mv = new ModelAndView();
 		Beer beer = dao.getBeer(id);
 		
 		return new ModelAndView("details.jsp", "beer", beer);
@@ -189,4 +188,19 @@ public class MicroBrewController {
 		
 	}
 
+	@RequestMapping(path="goToSuggestBeer.do")
+	public ModelAndView suggestBeer(@ModelAttribute("currentUser") User currentUser) {
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("tasteList", dao.getTasteList());
+		mv.addObject("brandList", dao.getBrandList());
+		mv.addObject("typeList", dao.getTypeList());
+		mv.addObject("styleList", dao.getStyleList());
+		mv.setViewName("suggestBeer.jsp");
+		return mv;
+	}
+	@RequestMapping(path="suggestBeer.do")
+	public ModelAndView suggestBeer(String name, int styleId, int typeId, int tasteId, int brand) {
+		return null;
+	}
+	
 }

@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <html>
 <head>
 <title>Tell Us Your Suggestion</title>
@@ -18,14 +20,29 @@
 
 	<h2>Tell Us Your Suggestion!</h2>
 
-	<form method="suggestBeer.do" method="POST"> <!-- suggestBeer.do not implemented yet -->
-		Name:<br> <input type="text" name="name" /><br> Rating:<br>
-		<input type="text" name="rating" /><br> Style:<br> <input
-			type="text" name="style" /><br> Type:<br> <input
-			type="text" name="type" /><br> Taste:<br> <input
-			type="text" name="taste" /><br> Brand:<br> <input
-			type="text" name="brand" /><br>
-		<br> <input type="submit" value="Submit Your Suggestion" />
+<form method="suggestBeer.do" method="POST">">
+
+		<select name="typeId">
+			<c:forEach var="type" items="${typeList}">
+				<option value="${type.id}">${type.name}</option>
+			</c:forEach>
+
+		<select name="tasteId">
+			<c:forEach var="taste" items="${tasteList}">
+				<option value="${taste.id}">${taste.name}</option>
+			</c:forEach>
+		</select> 
+
+		<select name="styleId">
+			<c:forEach var="style" items="${styleList}">
+				<option value="${style.id}">${style.name}</option>
+			</c:forEach>
+		</select>
+		
+		 <input type="text" name="rating" />
+		 <input	type="text" name="brand" /><br>
+		<br>
+		 <input type="submit" value="Submit Your Suggestion" />
 	</form>
 </body>
 </html>
