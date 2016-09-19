@@ -105,10 +105,10 @@ public class MicroBrewController {
 	}
 	
 	@RequestMapping(path="addToFavorites.do") 
-	public ModelAndView addToFavorites(Beer addBeer, @ModelAttribute("currentUser") User currentUser) {
+	public ModelAndView addToFavorites(int addBeerId, @ModelAttribute("currentUser") User currentUser) {
 		ModelAndView mv = new ModelAndView();
 		
-		dao.addToFavorites(addBeer, currentUser);
+		dao.addToFavorites(addBeerId, currentUser);
 		
 		List<Beer> beerList = dao.getBeers();
 		mv.addObject("beerList", beerList);

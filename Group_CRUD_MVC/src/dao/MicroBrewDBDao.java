@@ -203,9 +203,9 @@ public class MicroBrewDBDao implements MicroBrewDao {
 	}
 
 	@Override
-	public void addToFavorites(Beer beer, User user) {
+	public void addToFavorites(int beerId, User user) {
 		User currentUser = em.find(User.class, user.getId());
-		Beer newBeer = em.find(Beer.class, beer.getId());
+		Beer newBeer = em.find(Beer.class, beerId);
 		currentUser.addBeer(newBeer);
 		
 		em.persist(currentUser);
