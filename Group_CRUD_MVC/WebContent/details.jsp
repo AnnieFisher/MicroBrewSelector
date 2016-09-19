@@ -23,10 +23,13 @@
 <p>${beer.taste.name } this should be taste name</p>
 
 <p>${beer.style.name } this should be style name</p>
+<p>${beer.style.description } this should be style description</p>
 
 <p>${beer.type.name } this should be type name</p>
+<p>${beer.type.description } this should be type description</p>
 
 <p>${beer.brand.name } this should be brand name</p>
+
 
 </body>
 
