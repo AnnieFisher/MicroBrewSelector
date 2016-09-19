@@ -25,6 +25,7 @@
 				<td>Type</td>
 				<td>Style</td>
 				<td>Brand</td>
+				<td>Remove From Favorites</td>
 			</tr>
 		</thead>
 		<tbody>
@@ -38,6 +39,13 @@
 					<td>${beer.type.name}</td>
 					<td>${beer.style.name}</td>
 					<td>${beer.brand.name}</td>
+					<td>
+						<form action="removeFromFavorites.do" method="POST">
+
+							<input type="hidden" value="${beer.id}" name="removeBeerId" /> 
+							<input type="submit" value="Remove" />
+						</form>
+					</td>
 				</tr>
 			</c:forEach>
 		</tbody>
