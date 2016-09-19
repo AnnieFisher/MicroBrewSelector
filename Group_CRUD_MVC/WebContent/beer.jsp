@@ -37,7 +37,7 @@
 
 				<tr>
 				<td>
-				 <a href="goToDetails.do?${beer.id}">${beer.name}</a>
+				 <a href="goToDetails.do">${beer.name}</a>
 				</td>
 					<td>${beer.rating}</td>
 					<td>${beer.taste.name}</td>
