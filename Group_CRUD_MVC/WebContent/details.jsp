@@ -19,11 +19,6 @@
 		<li><a href="goToEdit.do">User Settings</a></li>
 	</ul>
 	<h2>Name of Beer: ${beer.name }</h2>
-	<form action="addToFavorites.do" method="POST">
-
-		<input type="hidden" value="${beer.id}" name="addBeerId" /> <input
-			type="submit" value="Add" />
-	</form>
 	<br>
 	<p>Brand: ${beer.brand.name }</p>
 	<img id="logo" src="${beer.brand.url}" alt="logo" />
@@ -46,6 +41,12 @@
 
 
 	<p>Rate This Beer</p>
+	<br>
+	<form action="addToFavorites.do" method="POST">
+
+		<input type="hidden" value="${beer.id}" name="addBeerId" /> <input
+			type="submit" value="Add To Favorites" />
+	</form>
 
 </body>
 
