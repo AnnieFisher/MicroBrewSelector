@@ -9,11 +9,10 @@ body {
   font-family: "Lato", Helvetica, Arial, sans-serif;
   font-size: 18px;
   line-height: 1.72222;
-  background-image: url("pics/background.jpg");
-  background-color: #d2a608;
+  background-image: url("beer-wallpaper.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-attachment: fixed;
   
 }
 .view {
@@ -36,6 +35,10 @@ table{
 	margin-left: auto;
 	margin-right: auto;
     border-collapse: collapse;
+    text-color: black;
+    background-color: white;
+    background: rgba(0,0,0,0.5);
+    color:#fff;
 
 }
 th {
@@ -43,19 +46,18 @@ th {
 }
 /* unvisited link */
 a:link {
-    color: black;
+    color: white;
     text-decoration: none;
 }
 
 /* visited link */
 a:visited {
-    color: black;
+    color: white;
 }
 
 /* mouse over link */
 a:hover {
-    color: #a52cc3;
-     background-color: lightgreen;
+     color: blue;
 }
 
 /* selected link */

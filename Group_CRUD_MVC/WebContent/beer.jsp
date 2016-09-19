@@ -47,7 +47,7 @@
 					<td>${beer.brand.name}</td>
 					<td>
 						<form action="addToFavorites.do" method="POST">
-							<input type="hidden" value="${beer}" name="addBeer" /> 
+							<input type="hidden" value="${beer.id}" name="addBeer" /> 
 							<input type="submit" value="Add" />
 						</form>
 					</td>
