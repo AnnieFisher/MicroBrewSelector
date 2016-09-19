@@ -33,7 +33,12 @@
 	<p>Type: ${beer.type.name }</p>
 	<p>${beer.type.description }</p>
 
+
+	<p>${beer.brand.name }this should be brand name</p>
+
+
 	<br>
+
 
 	<p>Rate This Beer</p>
 
