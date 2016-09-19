@@ -8,6 +8,7 @@
 <link rel="stylesheet" type="text/css" href="stylesheet.css" />
 </head>
 <body>
+
 	<ul>
 		<li><a href="index.html">Home Page</a></li>
 		<li><a href="goToFavorites.do">Your Favorites</a></li>
@@ -29,6 +30,7 @@
 	<p>${beer.type.description }this should be type description</p>
 
 	<p>${beer.brand.name }this should be brand name</p>
+>>>>>>> 6f601b210df83617c2c7d495627c1789cd46c071
 
 	<p>Rate This Beer</p>
 
