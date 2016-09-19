@@ -25,10 +25,12 @@ public interface MicroBrewDao {
 
 	public Beer getBeer(int id);
 
-	public Type getType(int id);
+	public List<Beer> getType(int id);
 
-	public Taste getTaste(int id);
+	public List<Beer> getTaste(int id);
 
-	public Style getStyle(int id);
+	public List<Beer> getStyle(int id);
+	
+	public List<Beer> getBrand(int id);
 
 }

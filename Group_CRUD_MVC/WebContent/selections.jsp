@@ -8,12 +8,34 @@
 </head>
 <body>
 
-<p>${taste.name}</p>
+<%-- <h2>${}</h2> --%>
+<table>
+		<thead>
+			<tr>
+				<td>Name</td>
+				<td>Rating</td>
+				<td>Taste</td>
+				<td>Type</td>
+				<td>Style</td>
+				<td>Brand</td>
+			</tr>
+		</thead>
+		<tbody>
 
-<p> ${style.description} </p>
+			<c:forEach var="beer" items="${beerList}">
 
-<p>${type.name}: ${type.description} </p>
-
-
+				<tr>
+				<td>
+				 <a href="goToDetails.do?id=${beer.id}">${beer.name}</a>
+				</td>
+					<td>${beer.rating}</td>
+					<td>${beer.taste.name}</td>
+					<td>${beer.type.name}</td>
+					<td>${beer.style.name}</td>
+					<td>${beer.brand.name}</td>
+				</tr>
+			</c:forEach>
+		</tbody>
+	</table>
 </body>
 </html>

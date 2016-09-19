@@ -7,18 +7,20 @@
 <link rel="stylesheet" type="text/css" href="stylesheet.css" />
 </head>
 <body>
-<ul>
-	<li><a href="index.html">Home Page</a></li>
-	<li><a href="UpdateRating.do">Rate A beer</a></li>
-	<li><a href="goToFavorites.do">Your Favorites</a></li>
-	<li><a class="active" href="goToBeers.do">Full List</a></li>
-	<li><a href="editUser.jsp">User Settings</a></li>
+	<ul>
+		<li><a href="index.html">Home Page</a></li>
+		<li><a href="UpdateRating.do">Rate A beer</a></li>
+		<li><a href="goToFavorites.do">Your Favorites</a></li>
+		<li><a class="active" href="goToBeers.do">Full List</a></li>
+		<li><a href="editUser.jsp">User Settings</a></li>
 
-</ul>
+	</ul>
 
 	<p>You're logged in to this mother</p>
 
-
+	<ul>
+		<li><a href="options.jsp">Palate Options</a></li>
+	</ul> 
 
 	<table>
 		<thead>
@@ -36,9 +38,7 @@
 			<c:forEach var="beer" items="${beerList}">
 
 				<tr>
-				<td>
-				 <a href="goToDetails.do?id=${beer.id}">${beer.name}</a>
-				</td>
+					<td><a href="goToDetails.do?id=${beer.id}">${beer.name}</a></td>
 					<td>${beer.rating}</td>
 					<td>${beer.taste.name}</td>
 					<td>${beer.type.name}</td>

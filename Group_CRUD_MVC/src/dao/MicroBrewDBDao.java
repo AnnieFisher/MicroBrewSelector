@@ -120,19 +120,75 @@ public class MicroBrewDBDao implements MicroBrewDao {
 		return em.find(Beer.class, id);
 	}
 
-	@Override
-	public Style getStyle(int id) {
-		return em.find(Style.class, id);
-	}
+//	@Override
+//	public Style getStyle(int id) {
+//		return em.find(Style.class, id);
+//	}
 	
 	@Override
-	public Type getType(int id) {
-		return em.find(Type.class, id);
+	public List<Beer> getStyle(int id) {
+		String querytxt = "SELECT b FROM Beer b WHERE b.style.id = ?1";
+
+		List<Beer> results = em.createQuery(querytxt, Beer.class)
+				.setParameter(1, id)
+				.getResultList();
+
+//		for (Beer beer : results) {
+//			System.out.println(beer.getName());
+//		}
+		return results;
+		
 	}
+	
+//	@Override
+//	public Type getType(int id) {
+//		return em.find(Type.class, id);
+//	}
 	
 	@Override
-	public Taste getTaste(int id) {
-		return em.find(Taste.class, id);
+	public List<Beer> getType(int id) {
+		String querytxt = "SELECT b FROM Beer b WHERE b.type.id = ?1";
+
+		List<Beer> results = em.createQuery(querytxt, Beer.class)
+				.setParameter(1, id)
+				.getResultList();
+
+//		for (Beer beer : results) {
+//			System.out.println(beer.getName());
+//		}
+		return results;
 	}
 	
+//	@Override
+//	public Taste getTaste(int id) {
+//		return em.find(Taste.class, id);
+//	}
+	
+	@Override 
+	public List<Beer> getTaste(int id) {
+		String querytxt = "SELECT b FROM Beer b WHERE b.taste.id = ?1";
+
+		List<Beer> results = em.createQuery(querytxt, Beer.class)
+				.setParameter(1, id)
+				.getResultList();
+
+//		for (Beer beer : results) {
+//			System.out.println(beer.getName());
+//		}
+		return results;
+	}
+	
+	@Override 
+	public List<Beer> getBrand(int id) {
+		String querytxt = "SELECT b FROM Beer b WHERE b.brand.id = ?1";
+
+		List<Beer> results = em.createQuery(querytxt, Beer.class)
+				.setParameter(1, id)
+				.getResultList();
+
+//		for (Beer beer : results) {
+//			System.out.println(beer.getName());
+//		}
+		return results;
+	}
 }

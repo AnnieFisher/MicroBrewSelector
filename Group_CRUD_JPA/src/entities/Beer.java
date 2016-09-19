@@ -22,6 +22,7 @@ public class Beer
 	@Column(name="beer_name")
 	private String name;
 	private int rating;
+	@Column(name="beer_image")
 	private String url;
 	
 	//JOIN Type
