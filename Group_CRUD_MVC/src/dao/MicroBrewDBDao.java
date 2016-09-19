@@ -8,6 +8,9 @@ import javax.persistence.PersistenceContext;
 import org.springframework.transaction.annotation.Transactional;
 
 import entities.Beer;
+import entities.Style;
+import entities.Taste;
+import entities.Type;
 import entities.User;
 
 @Transactional
@@ -111,7 +114,7 @@ public class MicroBrewDBDao implements MicroBrewDao {
 	}
 
 	@Override
-	public Beer getBeer(int id) {
+	public List<Beer> getBeer(int id) {
 		String querytxt = "SELECT b FROM Beer b WHERE idbeer = ?1";
 		Beer beer = new Beer();
 		beer = em.createQuery(querytxt, Beer.class).getSingleResult();
@@ -120,5 +123,19 @@ public class MicroBrewDBDao implements MicroBrewDao {
 		
 		return beer;
 	}
-
+	@Override
+	public Style getStyle(int id) {
+		return em.find(Style.class, id);
+	}
+	
+	@Override
+	public Type getType(int id) {
+		return em.find(Type.class, id);
+	}
+	
+	@Override
+	public Taste getTaste(int id) {
+		return em.find(Taste.class, id);
+	}
+	
 }

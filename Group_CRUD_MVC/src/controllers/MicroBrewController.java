@@ -12,6 +12,9 @@ import org.springframework.web.servlet.ModelAndView;
 import dao.MicroBrewDao;
 import entities.Beer;
 import entities.User;
+import entities.Type;
+import entities.Taste;
+import entities.Style;
 
 @Controller
 @SessionAttributes("currentUser")
@@ -73,7 +76,7 @@ public class MicroBrewController {
 	public ModelAndView userLogin(String username, String password) throws Exception {
 		ModelAndView mv;
 		mv = new ModelAndView();
-//		try {
+
 			User login = dao.login(username, password);
 			System.out.println("test");
 
@@ -87,11 +90,9 @@ public class MicroBrewController {
 			 else {
 			 System.out.println("Did not find user");
 			 }
-//		} catch (Exception e) {
-//			mv.setViewName("index.html");
-//			System.out.println("Did not find user");
-//		}
+
 		System.out.println(login.getFirstName());
+
 		return mv;
 	}
 
@@ -135,4 +136,21 @@ line 132 was line 131 and the method didn't take int id.
 		return mv;
 	}
 
+	@RequestMapping(path="GetType.do")
+	public ModelAndView getCustomer(int id) {
+		Type type = dao.getType(id);
+		return new ModelAndView("selections.jsp","type",type);
+	}
+	@RequestMapping(path="GetTaste.do")
+	public ModelAndView getTaste(int id) {
+		Taste taste = dao.getTaste(id);
+		return new ModelAndView("selections.jsp","taste",taste);
+	}
+	@RequestMapping(path="GetStyle.do")
+	public ModelAndView getStyel(int id) {
+		Style style = dao.getStyle(id);
+		return new ModelAndView("selections.jsp","style",style);
+	}
+	
+	
 }
