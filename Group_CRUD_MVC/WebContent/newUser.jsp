@@ -6,7 +6,8 @@
 <meta charset="UTF-8">
 <title>New User</title>
 <link rel="stylesheet" type="text/css" href="stylesheet.css" />
-
+<link rel="stylesheet" type="text/css" href="normalize.css" />
+<link rel="stylesheet" type="text/css" href="skeleton.css" />
 </head>
 <body>
 <h2>Fill out the form below</h2>

@@ -4,7 +4,8 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="stylesheet.css" />
-
+<link rel="stylesheet" type="text/css" href="normalize.css" />
+<link rel="stylesheet" type="text/css" href="skeleton.css" />
 <title>Selections</title>
 </head>
 <body>
