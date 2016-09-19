@@ -55,6 +55,14 @@
 		</select>
 	<input type ="submit" value="Selection of Beer"/>
 </form>
+<form method="GET" action="GetBrand.do">
+	<select name="id">
+				<c:forEach var="brand" items="${brandList}">
+				<option value="${brand.name}">${brand.name}</option>
+				</c:forEach>
+		</select>
+	<input type ="submit" value="Search By Brand"/>
+</form>
 
 </body>
 </html>

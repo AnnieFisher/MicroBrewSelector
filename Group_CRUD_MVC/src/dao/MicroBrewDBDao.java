@@ -162,8 +162,6 @@ public class MicroBrewDBDao implements MicroBrewDao {
 		List<Beer> results = em.createQuery(querytxt, Beer.class)
 				.setParameter(1, id)
 				.getResultList();
-
-
 		return results;
 	}
 }
