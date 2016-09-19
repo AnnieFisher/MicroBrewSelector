@@ -61,6 +61,7 @@ DROP TABLE IF EXISTS `brand` ;
 CREATE TABLE IF NOT EXISTS `brand` (
   `idbrand` INT NOT NULL AUTO_INCREMENT,
   `brand_name` VARCHAR(45) NOT NULL,
+  `brand_image` VARCHAR(256) NULL,
   PRIMARY KEY (`idbrand`))
 ENGINE = InnoDB
 PACK_KEYS = Default;
@@ -198,7 +199,7 @@ INSERT INTO `style` (`idstyle`, `style_name`, `style_desc`) VALUES (5, 'Dark', '
 INSERT INTO `style` (`idstyle`, `style_name`, `style_desc`) VALUES (6, 'Fruit', 'Most fruit beers are ales however, they typically do not carry an ale character. In order to allow for the fruit flavor to come through, the malt’s flavor is not dominant and there is a low bitterness level to the beer.');
 INSERT INTO `style` (`idstyle`, `style_name`, `style_desc`) VALUES (7, 'Golden', 'First developed in the UK, Golden ales are straw colored with a slight hint of citrus and vanilla. The beer can sometimes contain spicier flavors.');
 INSERT INTO `style` (`idstyle`, `style_name`, `style_desc`) VALUES (8, 'Honey', 'A full-bodied beer with a creamy texture and copper color. Honey beers are slightly sweet with hints of caramel.');
-INSERT INTO `style` (`idstyle`, `style_name`, `style_desc`) VALUES (9, 'India Pale Ale (I.P.A)', 'A hoppier version of pale ale. Originally brewed in England with extra hops to survive the journey to British troops stationed in India.');
+INSERT INTO `style` (`idstyle`, `style_name`, `style_desc`) VALUES (9, 'I.P.A.', 'A hoppier version of pale ale. Originally brewed in England with extra hops to survive the journey to British troops stationed in India.');
 INSERT INTO `style` (`idstyle`, `style_name`, `style_desc`) VALUES (10, 'Light', 'Extremely light in color and mild in flavor. Light beer has fewer calories and/or lower alcohol content.');
 INSERT INTO `style` (`idstyle`, `style_name`, `style_desc`) VALUES (11, 'Pale', 'Pale ale has a fruity, copper-colored style. It originated from England. Pale ales are robust beers that can be enjoyed with strongly spiced foods.');
 INSERT INTO `style` (`idstyle`, `style_name`, `style_desc`) VALUES (12, 'Pilsner', 'Made with neutral and hard water. Tend to be golden in color with a dry, crisp, and somewhat bitter flavor. Pilsner stands out from other lagers due to its more distinctive hop taste.');
@@ -229,26 +230,26 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `beerdb`;
-INSERT INTO `brand` (`idbrand`, `brand_name`) VALUES (1, 'Bristol Brewing Company');
-INSERT INTO `brand` (`idbrand`, `brand_name`) VALUES (2, 'Avalanche Brewery');
-INSERT INTO `brand` (`idbrand`, `brand_name`) VALUES (3, 'Alpine Dog Brewery');
-INSERT INTO `brand` (`idbrand`, `brand_name`) VALUES (4, 'Colorado Plus');
-INSERT INTO `brand` (`idbrand`, `brand_name`) VALUES (5, 'Flying Dog Brewery');
-INSERT INTO `brand` (`idbrand`, `brand_name`) VALUES (6, 'Fort Collins Brewery');
-INSERT INTO `brand` (`idbrand`, `brand_name`) VALUES (7, 'Gravity Brewery');
-INSERT INTO `brand` (`idbrand`, `brand_name`) VALUES (8, 'Great Divide Brewing Company');
-INSERT INTO `brand` (`idbrand`, `brand_name`) VALUES (9, 'Left Hand Brewing Company');
-INSERT INTO `brand` (`idbrand`, `brand_name`) VALUES (10, 'Odell Brewing Company');
-INSERT INTO `brand` (`idbrand`, `brand_name`) VALUES (11, 'Avery Brewing Company');
-INSERT INTO `brand` (`idbrand`, `brand_name`) VALUES (12, 'Oskar Blue\'s Brewery');
-INSERT INTO `brand` (`idbrand`, `brand_name`) VALUES (13, 'Dry Dock');
-INSERT INTO `brand` (`idbrand`, `brand_name`) VALUES (14, 'Station 26 Brewing');
-INSERT INTO `brand` (`idbrand`, `brand_name`) VALUES (15, 'Colorado Golden Cider Company');
-INSERT INTO `brand` (`idbrand`, `brand_name`) VALUES (16, 'Golden City Brewery');
-INSERT INTO `brand` (`idbrand`, `brand_name`) VALUES (17, 'Aspen');
-INSERT INTO `brand` (`idbrand`, `brand_name`) VALUES (18, 'New Belgium Brewery');
-INSERT INTO `brand` (`idbrand`, `brand_name`) VALUES (19, 'Breckenridge Brewery');
-INSERT INTO `brand` (`idbrand`, `brand_name`) VALUES (20, 'Crazy Mountain Brewery');
+INSERT INTO `brand` (`idbrand`, `brand_name`, `brand_image`) VALUES (1, 'Bristol Brewing Company', 'http://media.publicbroadcasting.net/kuvo/newsroom/images/3688510.jpg');
+INSERT INTO `brand` (`idbrand`, `brand_name`, `brand_image`) VALUES (2, 'Avalanche Brewery', 'http://bottlemakesthree.com/wp-content/uploads/2015/09/Avalanche-Brewing-Logo.png');
+INSERT INTO `brand` (`idbrand`, `brand_name`, `brand_image`) VALUES (3, 'Alpine Dog Brewery', 'https://pbs.twimg.com/profile_images/501924192091000832/jtGEj8KB.jpeg');
+INSERT INTO `brand` (`idbrand`, `brand_name`, `brand_image`) VALUES (4, 'Colorado Plus', 'http://3.bp.blogspot.com/-kiRj5hkj0J4/UZD_1WJKDqI/AAAAAAAAT70/7lETal-fcyQ/s320/colo-plus.png');
+INSERT INTO `brand` (`idbrand`, `brand_name`, `brand_image`) VALUES (5, 'Flying Dog Brewery', 'http://www.dcbeer.com/sites/default/files/news/flying%20dog%20logo.jpeg');
+INSERT INTO `brand` (`idbrand`, `brand_name`, `brand_image`) VALUES (6, 'Fort Collins Brewery', 'http://fortcollinsbrewery.com/wp-content/uploads/2015/02/FCBandTavernLogo1.png');
+INSERT INTO `brand` (`idbrand`, `brand_name`, `brand_image`) VALUES (7, 'Gravity Brewery', 'https://pbs.twimg.com/profile_images/2312612654/s4mv345qdaeh4mw2gahh_400x400.png');
+INSERT INTO `brand` (`idbrand`, `brand_name`, `brand_image`) VALUES (8, 'Great Divide Brewing Company', 'http://greatdivide.com/wp-content/uploads/2016/05/Great-Divide-Main-Logo-rectangle-HR-copy.png');
+INSERT INTO `brand` (`idbrand`, `brand_name`, `brand_image`) VALUES (9, 'Left Hand Brewing Company', 'http://fuhrerwholesale.com/wp-content/uploads/Left_Hand_Logo.png');
+INSERT INTO `brand` (`idbrand`, `brand_name`, `brand_image`) VALUES (10, 'Odell Brewing Company', 'https://upload.wikimedia.org/wikipedia/en/3/33/Odell_Brewing_Company_logo.png');
+INSERT INTO `brand` (`idbrand`, `brand_name`, `brand_image`) VALUES (11, 'Avery Brewing Company', 'https://upload.wikimedia.org/wikipedia/en/8/8b/Avery_Brewing_Company_logo.jpg');
+INSERT INTO `brand` (`idbrand`, `brand_name`, `brand_image`) VALUES (12, 'Oskar Blue\'s Brewery', 'https://www.oskarblues.com/assets/ob.og.image.png');
+INSERT INTO `brand` (`idbrand`, `brand_name`, `brand_image`) VALUES (13, 'Dry Dock', 'http://co.foodmarketmaker.com/uploads/d6c4e988a73c9cca963525363f0c7996.jpg');
+INSERT INTO `brand` (`idbrand`, `brand_name`, `brand_image`) VALUES (14, 'Station 26 Brewing', 'https://taplister-logos.s3.amazonaws.com/7305cab9-4dbc-4a7a-8e89-3bf0cf3005c3.jpg');
+INSERT INTO `brand` (`idbrand`, `brand_name`, `brand_image`) VALUES (15, 'Colorado Golden Cider Company', 'http://www.coloradocider.com/colorado-cider.jpg');
+INSERT INTO `brand` (`idbrand`, `brand_name`, `brand_image`) VALUES (16, 'Golden City Brewery', 'https://untappd.akamaized.net/photo/2015_11_03/8ca26887823fa1be5a8fecbde46a03eb_320x320.jpg');
+INSERT INTO `brand` (`idbrand`, `brand_name`, `brand_image`) VALUES (17, 'Aspen', 'http://beerpulse.com/wp-content/uploads/2011/12/aspen-logo.jpg');
+INSERT INTO `brand` (`idbrand`, `brand_name`, `brand_image`) VALUES (18, 'New Belgium Brewery', 'http://www.stealingshare.com/wp-content/uploads/2014/07/new-belgium-art-gkeo5hpo-1new-belgium-brewing.jpg');
+INSERT INTO `brand` (`idbrand`, `brand_name`, `brand_image`) VALUES (19, 'Breckenridge Brewery', 'http://www.breckbrew.com/_stay_out/images/logo.png');
+INSERT INTO `brand` (`idbrand`, `brand_name`, `brand_image`) VALUES (20, 'Crazy Mountain Brewery', 'http://neo.worldclassbeer.com/wp-content/beer_spy/images/prodimages/CrazyMountain/lCrazyMountainLogo.png');
 
 COMMIT;
 
