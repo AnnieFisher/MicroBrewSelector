@@ -124,6 +124,10 @@ public class MicroBrewDBDao implements MicroBrewDao {
 		}
 		return results;
 	}
+//	@Override
+//	public Style getStyle(String name) {
+//		return em.find(Style.class, name);
+//	}
 	@Override
 	public Style getStyle(int id) {
 		return em.find(Style.class, id);

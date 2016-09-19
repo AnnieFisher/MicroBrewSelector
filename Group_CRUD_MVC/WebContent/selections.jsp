@@ -10,7 +10,7 @@
 
 <p>${taste.name}</p>
 
-<p>${style.name}: ${style.description} </p>
+<p> ${style.description} </p>
 
 <p>${type.name}: ${type.description} </p>
 

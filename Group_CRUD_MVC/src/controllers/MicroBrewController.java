@@ -147,7 +147,7 @@ line 132 was line 131 and the method didn't take int id.
 		return new ModelAndView("selections.jsp","taste",taste);
 	}
 	@RequestMapping(path="GetStyle.do")
-	public ModelAndView getStyel(int id) {
+	public ModelAndView getStyle(int id) {
 		Style style = dao.getStyle(id);
 		return new ModelAndView("selections.jsp","style",style);
 	}

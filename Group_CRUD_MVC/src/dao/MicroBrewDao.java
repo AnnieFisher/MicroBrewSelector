@@ -19,9 +19,11 @@ public interface MicroBrewDao {
 	public void updateUser(String firstName, String lastName,
 			 String city, String state);
 	public List<Beer> getBeer(int id);
-	public Style getStyle(int id);
+	
 	public Type getType(int id);
 	public Taste getTaste(int id);
+	public Style getStyle(int id);
+
 
 	
 }
