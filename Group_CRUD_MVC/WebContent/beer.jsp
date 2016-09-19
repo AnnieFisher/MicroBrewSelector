@@ -9,17 +9,11 @@
 <body>
 	<ul>
 		<li><a href="index.html">Home Page</a></li>
-		<li><a href="UpdateRating.do">Rate A beer</a></li>
 		<li><a href="goToFavorites.do">Your Favorites</a></li>
 		<li><a class="active" href="goToBeers.do">Full List</a></li>
+		<li><a href="goToOptions.do">Palate Options</a></li>
 		<li><a href="editUser.jsp">User Settings</a></li>
 
-	</ul>
-
-	<p>You're logged in to this mother</p>
-
-	<ul>
-		<li><a href="goToOptions.do">Palate Options</a></li>
 	</ul>
 
 	<table>
@@ -48,8 +42,8 @@
 					<td>
 						<form action="addToFavorites.do" method="POST">
 
-							<input type="hidden" value="${beer.id}" name="addBeerId" /> 
-							<input type="submit" value="Add" />
+							<input type="hidden" value="${beer.id}" name="addBeerId" /> <input
+								type="submit" value="Add" />
 						</form>
 					</td>
 				</tr>
