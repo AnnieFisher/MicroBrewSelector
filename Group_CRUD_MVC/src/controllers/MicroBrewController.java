@@ -116,7 +116,7 @@ public class MicroBrewController {
 	}
 
 	@RequestMapping("goToDetails.do")
-	public ModelAndView goToDetails(int id) {
+	public ModelAndView goToDetails(int id, @ModelAttribute("currentUser") User currentUser){
 		
 		Beer beer = dao.getBeer(id);
 		
