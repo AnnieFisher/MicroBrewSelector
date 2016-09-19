@@ -116,7 +116,10 @@ public class MicroBrewController {
 	public ModelAndView goToOptions()
 	{
 		ModelAndView mv = new ModelAndView();
-		mv.addObject("beerList", dao.getBeers());
+		mv.addObject("tasteList", dao.getTasteList());
+		mv.addObject("brandList", dao.getBrandList());
+		mv.addObject("typeList", dao.getTypeList());
+		mv.addObject("styleList", dao.getStyleList());
 		mv.setViewName("options.jsp");
 		return mv;
 	}

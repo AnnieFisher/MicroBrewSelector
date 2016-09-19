@@ -3,6 +3,7 @@ package dao;
 import java.util.List;
 
 import entities.Beer;
+import entities.Brand;
 import entities.Style;
 import entities.Taste;
 import entities.Type;
@@ -32,5 +33,13 @@ public interface MicroBrewDao {
 	public List<Beer> getStyle(int id);
 	
 	public List<Beer> getBrand(int id);
+
+	List<Type> getTypeList();
+
+	List<Brand> getBrandList();
+
+	List<Style> getStyleList();
+
+	List<Taste> getTasteList();
 
 }
