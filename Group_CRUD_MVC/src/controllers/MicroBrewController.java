@@ -125,15 +125,17 @@ public class MicroBrewController {
 
 
 	@RequestMapping(path="GetType.do")
-	public ModelAndView getCustomer(int id) {
+	public ModelAndView getType(int id) {
 		Type type = dao.getType(id);
 		return new ModelAndView("selections.jsp","type",type);
 	}
+	
 	@RequestMapping(path="GetTaste.do")
 	public ModelAndView getTaste(int id) {
 		Taste taste = dao.getTaste(id);
 		return new ModelAndView("selections.jsp","taste",taste);
 	}
+	
 	@RequestMapping(path="GetStyle.do")
 	public ModelAndView getStyle(int id) {
 		Style style = dao.getStyle(id);
