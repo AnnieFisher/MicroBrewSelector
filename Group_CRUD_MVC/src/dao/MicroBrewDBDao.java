@@ -201,4 +201,13 @@ public class MicroBrewDBDao implements MicroBrewDao {
 				.getResultList();
 		return results;
 	}
+
+	@Override
+	public void addToFavorites(Beer beer, User user) {
+		User currentUser = em.find(User.class, user.getId());
+		Beer newBeer = em.find(Beer.class, beer.getId());
+		currentUser.addBeer(newBeer);
+		
+		em.persist(currentUser);
+	}
 }

@@ -20,7 +20,7 @@
 
 	<ul>
 		<li><a href="goToOptions.do">Palate Options</a></li>
-	</ul> 
+	</ul>
 
 	<table>
 		<thead>
@@ -31,6 +31,7 @@
 				<td>Type</td>
 				<td>Style</td>
 				<td>Brand</td>
+				<td>Add To Favorites</td>
 			</tr>
 		</thead>
 		<tbody>
@@ -44,6 +45,12 @@
 					<td>${beer.type.name}</td>
 					<td>${beer.style.name}</td>
 					<td>${beer.brand.name}</td>
+					<td>
+						<form action="addToFavorites.do" method="POST">
+							<input type="hidden" value="${beer}" name="addBeer" /> 
+							<input type="submit" value="Add" />
+						</form>
+					</td>
 				</tr>
 			</c:forEach>
 		</tbody>

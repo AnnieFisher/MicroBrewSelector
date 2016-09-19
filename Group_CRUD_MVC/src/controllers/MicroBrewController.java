@@ -36,9 +36,10 @@ public class MicroBrewController {
 			String state) {
 		ModelAndView mv = new ModelAndView();
 
-//		User newUser = dao.addUser(firstName, lastName, username, password, city, state);
-
+		User newUser = dao.addUser(firstName, lastName, username, password, city, state);
 		List<Beer> beerList = dao.getBeers();
+		
+		mv.addObject("currentUser", newUser);
 		mv.addObject("beerList", beerList);
 		mv.setViewName("beer.jsp");
 
@@ -100,6 +101,19 @@ public class MicroBrewController {
 		List<Beer> favorites = dao.getUserFavorites(id);
 		mv.addObject("faveList", favorites);
 		mv.setViewName("faves.jsp");
+		return mv;
+	}
+	
+	@RequestMapping(path="addToFavorites.do") 
+	public ModelAndView addToFavorites(Beer addBeer, @ModelAttribute("currentUser") User currentUser) {
+		ModelAndView mv = new ModelAndView();
+		
+		dao.addToFavorites(addBeer, currentUser);
+		
+		List<Beer> beerList = dao.getBeers();
+		mv.addObject("beerList", beerList);
+		mv.setViewName("beer.jsp");
+		
 		return mv;
 	}
 
