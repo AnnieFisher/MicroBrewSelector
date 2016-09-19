@@ -26,6 +26,8 @@
 
 <p>${beer.type.name } this should be type name</p>
 
+<p>${beer.brand.name } this should be brand name</p>
+
 </body>
 
 </html>

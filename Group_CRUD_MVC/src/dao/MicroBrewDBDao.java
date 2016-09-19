@@ -113,16 +113,7 @@ public class MicroBrewDBDao implements MicroBrewDao {
 		}
 	}
 
-//	@Override
-//	public Beer getBeer(int id) {
-//		String querytxt = "SELECT b FROM Beer b WHERE idbeer = ?1";
-//		Beer beer = new Beer();
-//		beer = em.createQuery(querytxt, Beer.class).getSingleResult();
-//
-//		System.out.println("In getBeer in DBDao");
-//		
-//		return beer;
-//	}
+
 	
 	@Override
 	public Beer getBeer(int id){

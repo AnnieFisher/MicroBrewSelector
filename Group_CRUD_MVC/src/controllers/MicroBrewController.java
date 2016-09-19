@@ -122,14 +122,7 @@ public class MicroBrewController {
 		
 		return new ModelAndView("details.jsp", "beer", beer);
 	}
-//	@RequestMapping("goToDetails.do")
-//	public ModelAndView goToDetails(int id) {
-//		
-//		ModelAndView mv = new ModelAndView();
-//		mv.addObject("beerInfo", dao.getBeer(id));
-//		mv.setViewName("details.jsp");
-//		return mv;
-//	}
+
 
 	@RequestMapping(path="GetType.do")
 	public ModelAndView getCustomer(int id) {
