@@ -15,6 +15,8 @@ public class Brand
 	private int id;
 	@Column(name="brand_name")
 	private String name;
+	@Column(name="brand_image")
+	private String url;
 	
 	
 	// Gets and Sets
@@ -32,4 +34,13 @@ public class Brand
 	{
 		return id;
 	}
+
+	public String getUrl() {
+		return url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
+	}
+	
 }
