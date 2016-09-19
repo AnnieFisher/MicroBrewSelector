@@ -114,6 +114,18 @@ public class MicroBrewController {
 		
 		return mv;
 	}
+	
+	@RequestMapping(path="removeFromFavorites.do")
+	public ModelAndView removeFromFavorites(int removeBeerId, @ModelAttribute("currentUser") User currentUser) {
+		ModelAndView mv = new ModelAndView();
+		int id = currentUser.getId();
+		dao.removeFromFavorites(removeBeerId, currentUser);
+		List<Beer> favorites = dao.getUserFavorites(id);
+		mv.addObject("faveList", favorites);
+		mv.setViewName("faves.jsp");
+		
+		return mv;
+	}
 
 	@RequestMapping(path = "goToBeers.do")
 	public ModelAndView goToBeers() {

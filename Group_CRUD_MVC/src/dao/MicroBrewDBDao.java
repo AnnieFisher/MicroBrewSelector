@@ -210,4 +210,13 @@ public class MicroBrewDBDao implements MicroBrewDao {
 		
 		em.persist(currentUser);
 	}
+
+	@Override
+	public void removeFromFavorites(int beerId, User user) {
+		User currentUser = em.find(User.class, user.getId());
+		Beer newBeer = em.find(Beer.class, beerId);
+		currentUser.removeBeer(newBeer);
+		
+		em.merge(currentUser);
+	}
 }

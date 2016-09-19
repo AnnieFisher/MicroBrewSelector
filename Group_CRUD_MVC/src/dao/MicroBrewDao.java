@@ -21,6 +21,8 @@ public interface MicroBrewDao {
 	public List<Beer> getUserFavorites(int id);
 	
 	public void addToFavorites(int beerId, User user);
+	
+	public void removeFromFavorites(int beerId, User user);
 
 	public void removeUser(int id);
 
