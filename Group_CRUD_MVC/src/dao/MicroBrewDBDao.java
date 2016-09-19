@@ -113,21 +113,13 @@ public class MicroBrewDBDao implements MicroBrewDao {
 		}
 	}
 
+
+	
 	@Override
-	public List<Beer> getBeer(int id) {
-		String querytxt = "SELECT b FROM Beer b WHERE idbeer = ?1";
-
-		List<Beer> results = em.createQuery(querytxt, Beer.class).getResultList();
-
-		for (Beer beer : results) {
-			System.out.println(beer.getId());
-		}
-		return results;
+	public Beer getBeer(int id){
+		return em.find(Beer.class, id);
 	}
-//	@Override
-//	public Style getStyle(String name) {
-//		return em.find(Style.class, name);
-//	}
+
 	@Override
 	public Style getStyle(int id) {
 		return em.find(Style.class, id);

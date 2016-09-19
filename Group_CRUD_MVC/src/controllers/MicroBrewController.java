@@ -114,27 +114,15 @@ public class MicroBrewController {
 		mv.setViewName("beer.jsp");
 		return mv;
 	}
-/*	
-Ok, so what I'm trying to do is have the link in the table in beer.jsp pass the id of
-that beer into this method. Then, I'm attempting to use that id to return that beer
-object (I had to add the method to the interface. I've been at it for a while and
-am taking a break since my brain is getting burnt out. I'm leaving this giant 
-comment in case one of you come accross this before I get it working. 
 
-Currently, every beer name in the beer.jsp is a link to the new details.jsp page, 
-which has the skeleton of what it's supposed to do. Before I was attempting to pass
-the id, it actually took me to the page, but it didn't populate. When it "worked"
-line 132 was line 131 and the method didn't take int id.
-*/	
 	@RequestMapping("goToDetails.do")
 	public ModelAndView goToDetails(int id) {
 		
-		ModelAndView mv = new ModelAndView();
-//		mv.addObject("beerInfo", dao.getBeers());
-		mv.addObject("beerInfo", dao.getBeer(id));
-		mv.setViewName("details.jsp");
-		return mv;
+		Beer beer = dao.getBeer(id);
+		
+		return new ModelAndView("details.jsp", "beer", beer);
 	}
+
 
 	@RequestMapping(path="GetType.do")
 	public ModelAndView getCustomer(int id) {
