@@ -9,7 +9,8 @@
 <link rel="stylesheet" type="text/css" href="skeleton.css" />
 </head>
 <body>
-	<ul>
+
+	<ul class=navbar>
 		<li><a href="index.html">Home Page</a></li>
 		<li><a href="goToFavorites.do">Your Favorites</a></li>
 		<li><a class="active" href="goToBeers.do">Full List</a></li>
@@ -17,7 +18,7 @@
 		<li><a href="goToEdit.do">User Settings</a></li>
 
 	</ul>
-
+	
 	<table>
 		<thead>
 			<tr>

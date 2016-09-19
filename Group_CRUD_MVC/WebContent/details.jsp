@@ -19,9 +19,14 @@
 		<li><a href="goToEdit.do">User Settings</a></li>
 	</ul>
 	<h2>Name of Beer: ${beer.name }</h2>
+	<form action="addToFavorites.do" method="POST">
+
+		<input type="hidden" value="${beer.id}" name="addBeerId" /> <input
+			type="submit" value="Add" />
+	</form>
 	<br>
 	<p>Brand: ${beer.brand.name }</p>
-	<img id="logo" src="${beer.brand.url}" alt="logo"/>
+	<img id="logo" src="${beer.brand.url}" alt="logo" />
 	<br>
 	<p>Beer Rating: ${beer.rating }</p>
 
@@ -34,7 +39,7 @@
 	<p>${beer.type.description }</p>
 
 
-	<p>${beer.brand.name }this should be brand name</p>
+	<p>${beer.brand.name }thisshould be brand name</p>
 
 
 	<br>

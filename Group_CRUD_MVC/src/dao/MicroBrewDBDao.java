@@ -219,4 +219,26 @@ public class MicroBrewDBDao implements MicroBrewDao {
 		
 		em.merge(currentUser);
 	}
+	
+	@Override
+	public void addSuggestions(String name, int rating, int styleId, int typeId, int tasteId, int brandId) {
+		Beer newBeer = new Beer();
+		newBeer.setName(name);
+		newBeer.setRating(rating);
+		
+		Style style = em.find(Style.class, styleId);
+		newBeer.setStyle(style);
+		
+		Type type = em.find(Type.class, typeId);
+		newBeer.setType(type);
+		
+		Taste taste = em.find(Taste.class, tasteId);
+		newBeer.setTaste(taste);
+		
+		Brand brand = em.find(Brand.class, brandId);
+		newBeer.setBrand(brand);
+		
+		em.persist(newBeer);
+	}
+
 }

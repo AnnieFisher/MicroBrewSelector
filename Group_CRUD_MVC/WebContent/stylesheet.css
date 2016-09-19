@@ -129,3 +129,10 @@ color: white;
 	width: 15%;
 	height: 15%;
 }
+.navbar{
+  background-color: black;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  text-color: white;
+}
