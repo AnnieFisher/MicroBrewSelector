@@ -22,6 +22,7 @@ public class Beer
 	@Column(name="beer_name")
 	private String name;
 	private int rating;
+	private String url;
 	
 	//JOIN Type
 	@OneToOne
@@ -71,6 +72,14 @@ public class Beer
 	public int getId() 
 	{
 		return id;
+	}
+
+	public String getUrl() {
+		return url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
 	}
 
 	public Type getType() {
