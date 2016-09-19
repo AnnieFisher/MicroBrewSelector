@@ -56,6 +56,11 @@ public class MicroBrewController {
 
 	}
 
+	@RequestMapping(path="goToEdit.do") 
+	public ModelAndView goToEdit(@ModelAttribute("currentUser") User currentUser) {
+		return new ModelAndView("editUser.jsp", "user", currentUser);
+	}
+	
 	@RequestMapping(path = "editUser.do")
 	public ModelAndView editUser(String firstName, String lastName, String city, String state,
 			@ModelAttribute("currentUser") User currentUser) {
@@ -128,7 +133,7 @@ public class MicroBrewController {
 	}
 
 	@RequestMapping(path = "goToBeers.do")
-	public ModelAndView goToBeers() {
+	public ModelAndView goToBeers(@ModelAttribute("currentUser") User currentUser) {
 		ModelAndView mv = new ModelAndView();
 		List<Beer> beerList = dao.getBeers();
 		mv.addObject("beerList", beerList);
