@@ -12,7 +12,7 @@
 		<li><a href="goToFavorites.do">Your Favorites</a></li>
 		<li><a class="active" href="goToBeers.do">Full List</a></li>
 		<li><a href="goToOptions.do">Palate Options</a></li>
-		<li><a href="editUser.jsp">User Settings</a></li>
+		<li><a href="goToEdit.do">User Settings</a></li>
 
 	</ul>
 
@@ -50,5 +50,14 @@
 			</c:forEach>
 		</tbody>
 	</table>
+	
+	<br>
+	<hr>
+	<br>
+	
+	<p>Don't See Your Favorite Beer? Add One Here!</p>
+	<form action="suggestBeer.jsp" method="GET">
+		<input type="submit" value="Add"/>	
+	</form>
 </body>
 </html>
