@@ -15,20 +15,21 @@
 	<li><a href="goToBeers.do">Full List</a></li>
 	<li><a href="editUser.do">User Settings</a></li>
 </ul>
-	<h2>${beer.name } this should be beer name</h2>
+	<h2>${beer.name }</h2>
 	<br>
 
-<p>${beer.rating } this should be rating</p>
+<p>${beer.rating }</p>
 
-<p>${beer.taste.name } this should be taste name</p>
+<p>${beer.taste.name }</p>
 
-<p>${beer.style.name } this should be style name</p>
-<p>${beer.style.description } this should be style description</p>
+<p>${beer.style.name }</p>
+<p>${beer.style.description }</p>
 
-<p>${beer.type.name } this should be type name</p>
-<p>${beer.type.description } this should be type description</p>
+<p>${beer.type.name }</p>
 
-<p>${beer.brand.name } this should be brand name</p>
+<p>${beer.type.description }</p>
+
+<p>${beer.brand.name }</p>
 
 
 </body>
