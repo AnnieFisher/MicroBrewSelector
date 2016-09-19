@@ -79,6 +79,7 @@ CREATE TABLE IF NOT EXISTS `beer` (
   `style_idstyle` INT NOT NULL,
   `type_idtype` INT NOT NULL,
   `brand_idbrand` INT NOT NULL,
+  `beer_image` VARCHAR(256) NULL,
   PRIMARY KEY (`idbeer`),
   INDEX `fk_beer_taste_idx` (`taste_idtaste` ASC),
   INDEX `fk_beer_style1_idx` (`style_idstyle` ASC),
@@ -259,57 +260,57 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `beerdb`;
-INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`) VALUES (1, 'Laughing Lab', 5, 9, 12, 1, 1);
-INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`) VALUES (2, 'Pride Of The West', 4, 1, 5, 4, 2);
-INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`) VALUES (3, 'Blind Sherpa', 4, 5, 5, 3, 3);
-INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`) VALUES (4, 'Honey Pot', 3, 2, 7, 4, 4);
-INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`) VALUES (5, 'Snake Dog', 4, 1, 8, 1, 5);
-INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`) VALUES (6, 'Red Banshee', 5, 10, 12, 1, 6);
-INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`) VALUES (7, 'Flight To Mars', 3, 11, 12, 1, 7);
-INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`) VALUES (8, 'Yeti', 5, 8, 13, 3, 8);
-INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`) VALUES (9, 'Nitro', 4, 4, 5, 3, 9);
-INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`) VALUES (10, '90 Shilling', 4, 11, 1, 1, 10);
-INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`) VALUES (11, 'Joe\'s Premium American Pilsner', 5, 11, 12, 2, 11);
-INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`) VALUES (12, 'White Rascall', 1, 3, 15, 1, 11);
-INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`) VALUES (13, 'Dales Pale Ale', 2, 11, 11, 1, 12);
-INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`) VALUES (14, 'Apricot Blonde', 2, 3, 2, 1, 13);
-INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`) VALUES (15, 'Vanilla Porter', 3, 2, 3, 4, 13);
-INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`) VALUES (16, 'Pinner', 3, 7, 9, 5, 12);
-INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`) VALUES (17, 'Priscilla American Wit', 2, 7, 15, 1, 12);
-INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`) VALUES (18, 'Tangerine Cream', 4, 4, 4, 3, 14);
-INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`) VALUES (19, 'Pale Ale', 4, 6, 9, 1, 14);
-INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`) VALUES (20, 'Radl\'Ah', 2, 7, 6, 6, 15);
-INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`) VALUES (21, 'Glider Cider', 3, 6, 6, 6, 15);
-INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`) VALUES (22, 'Clear Creek Gold Pale Ale', 2, 6, 7, 1, 16);
-INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`) VALUES (23, 'Belgian Blonde Ale', 1, 11, 2, 1, 17);
-INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`) VALUES (24, 'Independence Pass Ipa', 2, 11, 9, 1, 17);
-INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`) VALUES (25, 'Samaels Oak Aged Ale', 1, 2, 14, 1, 11);
-INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`) VALUES (26, 'El Gose', 4, 7, 6, 1, 11);
-INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`) VALUES (27, 'Ellies Brown Ale', 5, 9, 3, 1, 11);
-INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`) VALUES (28, 'Ipa', 1, 7, 9, 1, 11);
-INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`) VALUES (51, 'Karma Pale Ale', 2, 6, 11, 1, 11);
-INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`) VALUES (29, 'Liliko\'i Kepolo', 3, 10, 6, 1, 11);
-INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`) VALUES (30, 'Mephistopheles Stout', 3, 1, 5, 3, 11);
-INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`) VALUES (31, 'Old Perseverance', 2, 2, 3, 3, 11);
-INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`) VALUES (32, 'Out Of Mind', 3, 5, 5, 3, 11);
-INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`) VALUES (33, 'Fat Tire', 1, 10, 1, 1, 18);
-INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`) VALUES (34, 'Ranger', 2, 11, 9, 1, 18);
-INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`) VALUES (35, 'Snapshot', 3, 7, 15, 1, 18);
-INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`) VALUES (36, 'Trippel', 1, 10, 7, 1, 18);
-INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`) VALUES (37, 'Sunshine Wheat', 1, 7, 15, 1, 18);
-INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`) VALUES (38, 'Blue Paddle', 3, 3, 12, 2, 18);
-INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`) VALUES (39, '1020 Pale', 3, 7, 6, 1, 6);
-INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`) VALUES (40, 'Black Sheep', 4, 11, 9, 1, 6);
-INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`) VALUES (41, 'Far Away', 2, 7, 9, 1, 6);
-INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`) VALUES (42, 'Major Tom\'s Co Pomegranate Wheat', 4, 7, 9, 1, 6);
-INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`) VALUES (43, 'Shot Down', 2, 4, 4, 3, 6);
-INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`) VALUES (44, '471 Co Double Ipa', 2, 11, 14, 1, 19);
-INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`) VALUES (45, 'Agave Wheat', 3, 7, 15, 1, 19);
-INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`) VALUES (46, 'Kings Dish', 4, 8, 5, 1, 19);
-INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`) VALUES (47, 'Lucky U Ipa', 2, 11, 11, 1, 19);
-INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`) VALUES (48, 'Mango Mosaic', 1, 8, 6, 1, 19);
-INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`) VALUES (49, 'World Peace Death Ray Imp Ipa', 2, 1, 1, 1, 1);
-INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`) VALUES (50, 'Hookiebobb Ipa', 4, 11, 9, 1, 20);
+INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`, `beer_image`) VALUES (1, 'Laughing Lab', 5, 9, 12, 1, 1, NULL);
+INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`, `beer_image`) VALUES (2, 'Pride Of The West', 4, 1, 5, 4, 2, NULL);
+INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`, `beer_image`) VALUES (3, 'Blind Sherpa', 4, 5, 5, 3, 3, NULL);
+INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`, `beer_image`) VALUES (4, 'Honey Pot', 3, 2, 7, 4, 4, NULL);
+INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`, `beer_image`) VALUES (5, 'Snake Dog', 4, 1, 8, 1, 5, NULL);
+INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`, `beer_image`) VALUES (6, 'Red Banshee', 5, 10, 12, 1, 6, NULL);
+INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`, `beer_image`) VALUES (7, 'Flight To Mars', 3, 11, 12, 1, 7, NULL);
+INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`, `beer_image`) VALUES (8, 'Yeti', 5, 8, 13, 3, 8, NULL);
+INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`, `beer_image`) VALUES (9, 'Nitro', 4, 4, 5, 3, 9, NULL);
+INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`, `beer_image`) VALUES (10, '90 Shilling', 4, 11, 1, 1, 10, NULL);
+INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`, `beer_image`) VALUES (11, 'Joe\'s Premium American Pilsner', 5, 11, 12, 2, 11, NULL);
+INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`, `beer_image`) VALUES (12, 'White Rascall', 1, 3, 15, 1, 11, NULL);
+INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`, `beer_image`) VALUES (13, 'Dales Pale Ale', 2, 11, 11, 1, 12, NULL);
+INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`, `beer_image`) VALUES (14, 'Apricot Blonde', 2, 3, 2, 1, 13, NULL);
+INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`, `beer_image`) VALUES (15, 'Vanilla Porter', 3, 2, 3, 4, 13, NULL);
+INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`, `beer_image`) VALUES (16, 'Pinner', 3, 7, 9, 5, 12, NULL);
+INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`, `beer_image`) VALUES (17, 'Priscilla American Wit', 2, 7, 15, 1, 12, NULL);
+INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`, `beer_image`) VALUES (18, 'Tangerine Cream', 4, 4, 4, 3, 14, NULL);
+INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`, `beer_image`) VALUES (19, 'Pale Ale', 4, 6, 9, 1, 14, NULL);
+INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`, `beer_image`) VALUES (20, 'Radl\'Ah', 2, 7, 6, 6, 15, NULL);
+INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`, `beer_image`) VALUES (21, 'Glider Cider', 3, 6, 6, 6, 15, NULL);
+INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`, `beer_image`) VALUES (22, 'Clear Creek Gold Pale Ale', 2, 6, 7, 1, 16, NULL);
+INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`, `beer_image`) VALUES (23, 'Belgian Blonde Ale', 1, 11, 2, 1, 17, NULL);
+INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`, `beer_image`) VALUES (24, 'Independence Pass Ipa', 2, 11, 9, 1, 17, NULL);
+INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`, `beer_image`) VALUES (25, 'Samaels Oak Aged Ale', 1, 2, 14, 1, 11, NULL);
+INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`, `beer_image`) VALUES (26, 'El Gose', 4, 7, 6, 1, 11, NULL);
+INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`, `beer_image`) VALUES (27, 'Ellies Brown Ale', 5, 9, 3, 1, 11, NULL);
+INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`, `beer_image`) VALUES (28, 'Ipa', 1, 7, 9, 1, 11, NULL);
+INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`, `beer_image`) VALUES (51, 'Karma Pale Ale', 2, 6, 11, 1, 11, NULL);
+INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`, `beer_image`) VALUES (29, 'Liliko\'i Kepolo', 3, 10, 6, 1, 11, NULL);
+INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`, `beer_image`) VALUES (30, 'Mephistopheles Stout', 3, 1, 5, 3, 11, NULL);
+INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`, `beer_image`) VALUES (31, 'Old Perseverance', 2, 2, 3, 3, 11, NULL);
+INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`, `beer_image`) VALUES (32, 'Out Of Mind', 3, 5, 5, 3, 11, NULL);
+INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`, `beer_image`) VALUES (33, 'Fat Tire', 1, 10, 1, 1, 18, NULL);
+INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`, `beer_image`) VALUES (34, 'Ranger', 2, 11, 9, 1, 18, NULL);
+INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`, `beer_image`) VALUES (35, 'Snapshot', 3, 7, 15, 1, 18, NULL);
+INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`, `beer_image`) VALUES (36, 'Trippel', 1, 10, 7, 1, 18, NULL);
+INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`, `beer_image`) VALUES (37, 'Sunshine Wheat', 1, 7, 15, 1, 18, NULL);
+INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`, `beer_image`) VALUES (38, 'Blue Paddle', 3, 3, 12, 2, 18, NULL);
+INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`, `beer_image`) VALUES (39, '1020 Pale', 3, 7, 6, 1, 6, NULL);
+INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`, `beer_image`) VALUES (40, 'Black Sheep', 4, 11, 9, 1, 6, NULL);
+INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`, `beer_image`) VALUES (41, 'Far Away', 2, 7, 9, 1, 6, NULL);
+INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`, `beer_image`) VALUES (42, 'Major Tom\'s Co Pomegranate Wheat', 4, 7, 9, 1, 6, NULL);
+INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`, `beer_image`) VALUES (43, 'Shot Down', 2, 4, 4, 3, 6, NULL);
+INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`, `beer_image`) VALUES (44, '471 Co Double Ipa', 2, 11, 14, 1, 19, NULL);
+INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`, `beer_image`) VALUES (45, 'Agave Wheat', 3, 7, 15, 1, 19, NULL);
+INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`, `beer_image`) VALUES (46, 'Kings Dish', 4, 8, 5, 1, 19, NULL);
+INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`, `beer_image`) VALUES (47, 'Lucky U Ipa', 2, 11, 11, 1, 19, NULL);
+INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`, `beer_image`) VALUES (48, 'Mango Mosaic', 1, 8, 6, 1, 19, NULL);
+INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`, `beer_image`) VALUES (49, 'World Peace Death Ray Imp Ipa', 2, 1, 1, 1, 1, NULL);
+INSERT INTO `beer` (`idbeer`, `beer_name`, `rating`, `taste_idtaste`, `style_idstyle`, `type_idtype`, `brand_idbrand`, `beer_image`) VALUES (50, 'Hookiebobb Ipa', 4, 11, 9, 1, 20, NULL);
 
 COMMIT;
 

@@ -116,7 +116,7 @@ public class MicroBrewController {
 	}
 
 	@RequestMapping("goToDetails.do")
-	public ModelAndView goToDetails(int id) {
+	public ModelAndView goToDetails(int id, @ModelAttribute("currentUser") User currentUser){
 		
 		Beer beer = dao.getBeer(id);
 		
@@ -125,7 +125,7 @@ public class MicroBrewController {
 
 
 	@RequestMapping(path="GetType.do")
-	public ModelAndView getCustomer(int id) {
+	public ModelAndView getType(int id) {
 		Type type = dao.getType(id);
 		return new ModelAndView("selections.jsp","type",type);
 	}
@@ -135,7 +135,7 @@ public class MicroBrewController {
 		return new ModelAndView("selections.jsp","taste",taste);
 	}
 	@RequestMapping(path="GetStyle.do")
-	public ModelAndView getStyel(int id) {
+	public ModelAndView getStyle(int id) {
 		Style style = dao.getStyle(id);
 		return new ModelAndView("selections.jsp","style",style);
 	}
