@@ -116,18 +116,21 @@ public class MicroBrewController {
 	public ModelAndView goToOptions()
 	{
 		ModelAndView mv = new ModelAndView();
-		mv.addObject("beerList", dao.getBeers());
+		mv.addObject("tasteList", dao.getTasteList());
+		mv.addObject("brandList", dao.getBrandList());
+		mv.addObject("typeList", dao.getTypeList());
+		mv.addObject("styleList", dao.getStyleList());
 		mv.setViewName("options.jsp");
 		return mv;
 	}
 
-//	@RequestMapping("goToDetails.do")
-//	public ModelAndView goToDetails(int id, @ModelAttribute("currentUser") User currentUser){
-//		
-//		Beer beer = dao.getBeer(id);
-//		
-//		return new ModelAndView("details.jsp", "beer", beer);
-//	}
+	@RequestMapping("goToDetails.do")
+	public ModelAndView goToDetails(int id, @ModelAttribute("currentUser") User currentUser){
+		
+		Beer beer = dao.getBeer(id);
+		
+		return new ModelAndView("details.jsp", "beer", beer);
+	}
 
 	@RequestMapping(path="GetType.do")
 	public ModelAndView getType(int id) {

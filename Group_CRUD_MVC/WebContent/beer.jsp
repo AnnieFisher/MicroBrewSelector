@@ -19,7 +19,7 @@
 	<p>You're logged in to this mother</p>
 
 	<ul>
-		<li><a href="options.jsp">Palate Options</a></li>
+		<li><a href="goToOptions.do">Palate Options</a></li>
 	</ul> 
 
 	<table>
