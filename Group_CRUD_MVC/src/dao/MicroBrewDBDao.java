@@ -8,9 +8,6 @@ import javax.persistence.PersistenceContext;
 import org.springframework.transaction.annotation.Transactional;
 
 import entities.Beer;
-import entities.Style;
-import entities.Taste;
-import entities.Type;
 import entities.User;
 
 @Transactional
@@ -38,7 +35,6 @@ public class MicroBrewDBDao implements MicroBrewDao {
 				.getResultList();
 
 		if (results.size() == 1) {
-			System.out.println("Results =  1");
 			login = results.get(0);
 		} else {
 			login.setUsername("INVALID");
@@ -53,9 +49,6 @@ public class MicroBrewDBDao implements MicroBrewDao {
 
 		List<Beer> results = em.createQuery(querytxt, Beer.class).getResultList();
 
-		for (Beer beer : results) {
-			System.out.println(beer.getName());
-		}
 		return results;
 	}
 
@@ -120,10 +113,7 @@ public class MicroBrewDBDao implements MicroBrewDao {
 		return em.find(Beer.class, id);
 	}
 
-//	@Override
-//	public Style getStyle(int id) {
-//		return em.find(Style.class, id);
-//	}
+
 	
 	@Override
 	public List<Beer> getStyle(int id) {
@@ -133,17 +123,11 @@ public class MicroBrewDBDao implements MicroBrewDao {
 				.setParameter(1, id)
 				.getResultList();
 
-//		for (Beer beer : results) {
-//			System.out.println(beer.getName());
-//		}
 		return results;
 		
 	}
 	
-//	@Override
-//	public Type getType(int id) {
-//		return em.find(Type.class, id);
-//	}
+
 	
 	@Override
 	public List<Beer> getType(int id) {
@@ -153,16 +137,11 @@ public class MicroBrewDBDao implements MicroBrewDao {
 				.setParameter(1, id)
 				.getResultList();
 
-//		for (Beer beer : results) {
-//			System.out.println(beer.getName());
-//		}
+
 		return results;
 	}
 	
-//	@Override
-//	public Taste getTaste(int id) {
-//		return em.find(Taste.class, id);
-//	}
+
 	
 	@Override 
 	public List<Beer> getTaste(int id) {
@@ -172,9 +151,7 @@ public class MicroBrewDBDao implements MicroBrewDao {
 				.setParameter(1, id)
 				.getResultList();
 
-//		for (Beer beer : results) {
-//			System.out.println(beer.getName());
-//		}
+
 		return results;
 	}
 	
@@ -186,9 +163,7 @@ public class MicroBrewDBDao implements MicroBrewDao {
 				.setParameter(1, id)
 				.getResultList();
 
-//		for (Beer beer : results) {
-//			System.out.println(beer.getName());
-//		}
+
 		return results;
 	}
 }
