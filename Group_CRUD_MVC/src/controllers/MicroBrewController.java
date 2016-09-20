@@ -220,16 +220,16 @@ public class MicroBrewController {
 		mv.setViewName("beer.jsp");
 		return mv;
 	}
-//	@RequestMapping(path="addToFavoritesFromDetails.do") 
-//	public ModelAndView addToFavoritesFromDetails(int addBeerId, @ModelAttribute("currentUser") User currentUser) {
-//		ModelAndView mv = new ModelAndView();
-//		dao.addToFavorites(addBeerId, currentUser);
-//		List<Beer> beerList = dao.getBeers();
-//		mv.addObject("beerList", beerList);
-//		mv.setViewName("details.jsp");
-//		
-//		return mv;
-//	}
+	@RequestMapping(path="addToFavoritesFromDetails.do") 
+	public ModelAndView addToFavoritesFromDetails(int addBeerId, @ModelAttribute("currentUser") User currentUser) {
+		ModelAndView mv = new ModelAndView();
+		dao.addToFavorites(addBeerId, currentUser);
+		int id = currentUser.getId();
+		List<Beer> favorites = dao.getUserFavorites(id);
+		mv.addObject("faveList", favorites);
+		mv.setViewName("faves.jsp");
+		return mv;
+	}
 
 	
 
