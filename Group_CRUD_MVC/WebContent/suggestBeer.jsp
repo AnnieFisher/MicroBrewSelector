@@ -41,7 +41,7 @@
 		
 		 <input type="text" name="name" placeholder="name"/>
 		 <input type="number" name="rating" placeholder="Rate 1-5"/>
-		 <input	type="text" name="brandId" placeholder="Brand id 1-20"/>
+		 <input	type="text" name="brandId" placeholder="Enter Brand"/>
 	
 		 <input type="submit" value="Submit Your Suggestion" />
 	</form>

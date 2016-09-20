@@ -31,7 +31,7 @@ public class MicroBrewDBDao implements MicroBrewDao {
 	public User login(String username, String password) {
 
 		User login = new User();
-		
+
 		String querytxt = "SELECT u FROM User u WHERE u.username = ?1 AND u.password = ?2";
 
 		List<User> results = em.createQuery(querytxt, User.class).setParameter(1, username).setParameter(2, password)
@@ -107,95 +107,76 @@ public class MicroBrewDBDao implements MicroBrewDao {
 		}
 	}
 
-
-	
 	@Override
-	public Beer getBeer(int id){
+	public Beer getBeer(int id) {
 		return em.find(Beer.class, id);
 	}
 
-
-	
 	@Override
 	public List<Beer> getStyle(int id) {
 		String querytxt = "SELECT b FROM Beer b WHERE b.style.id = ?1";
 
-		List<Beer> results = em.createQuery(querytxt, Beer.class)
-				.setParameter(1, id)
-				.getResultList();
+		List<Beer> results = em.createQuery(querytxt, Beer.class).setParameter(1, id).getResultList();
 
 		return results;
-		
-	}
-	
 
-	
+	}
+
 	@Override
 	public List<Beer> getType(int id) {
 		String querytxt = "SELECT b FROM Beer b WHERE b.type.id = ?1";
 
-		List<Beer> results = em.createQuery(querytxt, Beer.class)
-				.setParameter(1, id)
-				.getResultList();
-
+		List<Beer> results = em.createQuery(querytxt, Beer.class).setParameter(1, id).getResultList();
 
 		return results;
 	}
-	
 
-	
-	@Override 
+	@Override
 	public List<Beer> getTaste(int id) {
 		String querytxt = "SELECT b FROM Beer b WHERE b.taste.id = ?1";
 
-		List<Beer> results = em.createQuery(querytxt, Beer.class)
-				.setParameter(1, id)
-				.getResultList();
-
+		List<Beer> results = em.createQuery(querytxt, Beer.class).setParameter(1, id).getResultList();
 
 		return results;
 	}
-	
-	@Override 
+
+	@Override
 	public List<Beer> getBrand(int id) {
 		String querytxt = "SELECT b FROM Beer b WHERE b.brand.id = ?1";
 
-		List<Beer> results = em.createQuery(querytxt, Beer.class)
-				.setParameter(1, id)
-				.getResultList();
+		List<Beer> results = em.createQuery(querytxt, Beer.class).setParameter(1, id).getResultList();
 		return results;
 	}
-	
+
 	@Override
-	public List<Type> getTypeList(){
+	public List<Type> getTypeList() {
 		String querytxt = "SELECT t FROM Type t";
 
-		List<Type> results = em.createQuery(querytxt, Type.class)
-				.getResultList();
+		List<Type> results = em.createQuery(querytxt, Type.class).getResultList();
 		return results;
 	}
+
 	@Override
-	public List<Taste> getTasteList(){
+	public List<Taste> getTasteList() {
 		String querytxt = "SELECT t FROM Taste t";
-		
-		List<Taste> results = em.createQuery(querytxt, Taste.class)
-				.getResultList();
+
+		List<Taste> results = em.createQuery(querytxt, Taste.class).getResultList();
 		return results;
 	}
+
 	@Override
-	public List<Style> getStyleList(){
+	public List<Style> getStyleList() {
 		String querytxt = "SELECT s FROM Style s";
-		
-		List<Style> results = em.createQuery(querytxt, Style.class)
-				.getResultList();
+
+		List<Style> results = em.createQuery(querytxt, Style.class).getResultList();
 		return results;
 	}
+
 	@Override
-	public List<Brand> getBrandList(){
+	public List<Brand> getBrandList() {
 		String querytxt = "SELECT b FROM Brand b";
-		
-		List<Brand> results = em.createQuery(querytxt, Brand.class)
-				.getResultList();
+
+		List<Brand> results = em.createQuery(querytxt, Brand.class).getResultList();
 		return results;
 	}
 
@@ -204,7 +185,7 @@ public class MicroBrewDBDao implements MicroBrewDao {
 		User currentUser = em.find(User.class, user.getId());
 		Beer newBeer = em.find(Beer.class, beerId);
 		currentUser.addBeer(newBeer);
-		
+
 		em.persist(currentUser);
 	}
 
@@ -213,38 +194,49 @@ public class MicroBrewDBDao implements MicroBrewDao {
 		User currentUser = em.find(User.class, user.getId());
 		Beer newBeer = em.find(Beer.class, beerId);
 		currentUser.removeBeer(newBeer);
-		
+
 		em.merge(currentUser);
 	}
-	
+
 	@Override
-	public void addSuggestions(String name, int rating, int styleId, int typeId, int tasteId, int brandId) {
+	public void addSuggestions(String name, int rating, int styleId, int typeId, int tasteId, String brandName) {
+		Brand brand = new Brand();
+
+		String querytxt = "SELECT b FROM Brand b";
+		List<Brand> results = em.createQuery(querytxt, Brand.class).getResultList();
 		Beer newBeer = new Beer();
+		for (Brand b : results) {
+			if (b.getName().equalsIgnoreCase(brandName)) {
+				newBeer.setBrand(b);
+			}
+		}
+		if (newBeer.getBrand() == null) {
+			brand.setName(brandName);
+			em.persist(brand);
+			newBeer.setBrand(brand);
+		}
+
 		newBeer.setName(name);
 		newBeer.setRating(rating);
-		
+
 		Style style = em.find(Style.class, styleId);
 		newBeer.setStyle(style);
-		
+
 		Type type = em.find(Type.class, typeId);
 		newBeer.setType(type);
-		
+
 		Taste taste = em.find(Taste.class, tasteId);
 		newBeer.setTaste(taste);
-		
-		Brand brand = em.find(Brand.class, brandId);
-		newBeer.setBrand(brand);
-		
+
 		em.persist(newBeer);
 	}
+
 	@Override
-	public List<User> getUserList(){
+	public List<User> getUserList() {
 		String querytxt = "SELECT u FROM User u";
-		
-		List<User> results = em.createQuery(querytxt, User.class)
-				.getResultList();
+
+		List<User> results = em.createQuery(querytxt, User.class).getResultList();
 		return results;
 	}
-	
-	
+
 }

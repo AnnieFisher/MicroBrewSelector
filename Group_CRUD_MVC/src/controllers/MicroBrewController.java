@@ -41,7 +41,7 @@ public class MicroBrewController {
 		List<Beer> beerList = dao.getBeers();
 		return new ModelAndView("beer.jsp", "beerList", beerList);
 	}
-	
+
 	@RequestMapping(path = "UpdateRatingFromFaves.do")
 	public ModelAndView updateRatingFromFaves(int id, @ModelAttribute("currentUser") User currentUser) {
 		dao.updateRating(id);
@@ -53,20 +53,19 @@ public class MicroBrewController {
 	public ModelAndView addUser(String firstName, String lastName, String username, String password, String city,
 			String state) throws Exception {
 		ModelAndView mv = new ModelAndView();
-		try { 
-		
-		User newUser = dao.addUser(firstName, lastName, username, password, city, state);
-		List<Beer> beerList = dao.getBeers();
+		try {
 
-		mv.addObject("currentUser", newUser);
-		mv.addObject("beerList", beerList);
-		mv.setViewName("beer.jsp");
-		}
-		catch (Exception e){
+			User newUser = dao.addUser(firstName, lastName, username, password, city, state);
+			List<Beer> beerList = dao.getBeers();
+
+			mv.addObject("currentUser", newUser);
+			mv.addObject("beerList", beerList);
+			mv.setViewName("beer.jsp");
+		} catch (Exception e) {
 			System.out.println("This guy tried to take a taken username!");
 			mv.setViewName("newUser2.jsp");
 		}
-		
+
 		return mv;
 
 	}
@@ -109,7 +108,12 @@ public class MicroBrewController {
 		User login = dao.login(username, password);
 		System.out.println("test");
 
-		if (!login.getUsername().equals("INVALID")) {
+		if (login.getUsername().equals("admin@test.com")) {
+			List<User> userList = dao.getUserList();
+			mv.addObject("userList", userList);
+			mv.setViewName("admin.jsp");
+		}
+		else if (!login.getUsername().equals("INVALID")) {
 			List<Beer> beerList = dao.getBeers();
 			mv.addObject("currentUser", login);
 			mv.addObject("beerList", beerList);
@@ -118,7 +122,6 @@ public class MicroBrewController {
 		} else {
 			System.out.println("Did not find user");
 			mv.setViewName("index.html");
-
 		}
 
 		System.out.println(login.getFirstName());
@@ -231,7 +234,7 @@ public class MicroBrewController {
 	}
 
 	@RequestMapping(path = "suggestBeer.do")
-	public ModelAndView suggestBeer(String name, int rating, int styleId, int typeId, int tasteId, int brandId) {
+	public ModelAndView suggestBeer(String name, int rating, int styleId, int typeId, int tasteId, String brandId) {
 		dao.addSuggestions(name, rating, styleId, typeId, tasteId, brandId);
 		ModelAndView mv = new ModelAndView();
 		List<Beer> beerList = dao.getBeers();
@@ -255,19 +258,20 @@ public class MicroBrewController {
 	public ModelAndView getUserList() {
 		ModelAndView mv = new ModelAndView();
 		List<User> userList = dao.getUserList();
-		mv.addObject("userList",userList);
+		mv.addObject("userList", userList);
 		mv.setViewName("admin.jsp");
 		return mv;
 	}
+
 	@RequestMapping(path = "removeUserAdmin.do")
 	public ModelAndView removeUserAdmin(int id) {
 		dao.removeUser(id);
 		ModelAndView mv = new ModelAndView();
 		List<User> userList = dao.getUserList();
-		mv.addObject("userList",userList);
+		mv.addObject("userList", userList);
 		mv.setViewName("admin.jsp");
 		return mv;
 
 	}
-	
+
 }
