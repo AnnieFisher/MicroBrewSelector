@@ -62,7 +62,6 @@ public class MicroBrewController {
 			mv.addObject("beerList", beerList);
 			mv.setViewName("beer.jsp");
 		} catch (Exception e) {
-			System.out.println("This guy tried to take a taken username!");
 			mv.setViewName("newUser2.jsp");
 		}
 
@@ -106,7 +105,6 @@ public class MicroBrewController {
 		mv = new ModelAndView();
 
 		User login = dao.login(username, password);
-		System.out.println("test");
 
 		if (login.getUsername().equals("admin@test.com")) {
 			List<User> userList = dao.getUserList();
@@ -118,9 +116,7 @@ public class MicroBrewController {
 			mv.addObject("currentUser", login);
 			mv.addObject("beerList", beerList);
 			mv.setViewName("beer.jsp");
-			System.out.println("Found user");
 		} else {
-			System.out.println("Did not find user");
 			mv.setViewName("index.html");
 		}
 
