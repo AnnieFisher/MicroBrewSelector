@@ -32,27 +32,22 @@ table{
 th {
 	height:60%;
 }
-unvisited link
 a:link {
     color: white;
     text-decoration: none;
 }
-
-visited link
 a:visited {
     color: white;
         text-decoration: none;
     
 }
 
-mouse over link
 a:hover {
      color: blue;
 }
 
-selected link
 a:active {
-    color: white;
+    color: green;
         text-decoration: none;
     
 }
@@ -93,10 +88,7 @@ li a {
     padding: 14px 16px;
     text-decoration: none;
 }
-li a:hover:not(.active) {
-    background-color: #b4890d;
-    color: white;
-}
+
 li a:hover {
     background-color: #111;
 }

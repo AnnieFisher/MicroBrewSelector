@@ -5,12 +5,12 @@
 <head>
 <meta charset="UTF-8">
 <title>New User</title>
-<link rel="stylesheet" type="text/css" href="stylesheet.css" />
 <link rel="stylesheet" type="text/css" href="normalize.css" />
 <link rel="stylesheet" type="text/css" href="skeleton.css" />
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
 </head>
 <body>
-	<ul>
+	<ul class=navbar>
 		<li><a href="index.html">Home Page</a></li>
 		<li><a href="goToFavorites.do">Your Favorites</a></li>
 		<li><a href="goToBeers.do">Full List</a></li>
