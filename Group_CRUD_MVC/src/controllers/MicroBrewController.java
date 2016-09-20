@@ -168,8 +168,13 @@ public class MicroBrewController {
 	@RequestMapping("goToDetails.do")
 	public ModelAndView goToDetails(int id, @ModelAttribute("currentUser") User currentUser){
 		Beer beer = dao.getBeer(id);
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("beer", beer);
+		mv.addObject("user", currentUser);
+		mv.setViewName("details.jsp");
 		
-		return new ModelAndView("details.jsp", "beer", beer);
+		
+		return mv;
 	}
 
 	@RequestMapping(path="GetType.do")
