@@ -240,8 +240,8 @@ public class MicroBrewController {
 	}
 
 	@RequestMapping(path = "suggestBeer.do")
-	public ModelAndView suggestBeer(String name, int rating, int styleId, int typeId, int tasteId, String brandId) {
-		dao.addSuggestions(name, rating, styleId, typeId, tasteId, brandId);
+	public ModelAndView suggestBeer(String name, int styleId, int typeId, int tasteId, String brandId) {
+		dao.addSuggestions(name, styleId, typeId, tasteId, brandId);
 		ModelAndView mv = new ModelAndView();
 		List<Beer> beerList = dao.getBeers();
 		mv.addObject("beerList", beerList);
