@@ -42,7 +42,7 @@
 
 	<p>Rate This Beer</p>
 	<br>
-	<form action="addToFavorites.do" method="POST">
+	<form action="addToFavoritesFromDetails.do" method="POST">
 
 		<input type="hidden" value="${beer.id}" name="addBeerId" /> <input
 			type="submit" value="Add To Favorites" />
