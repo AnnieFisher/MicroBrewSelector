@@ -19,8 +19,12 @@ table, th, td {
 
 .heads{
 	font-size: 22px;
-	color: #ffb43b; 
+	color: #ffcd08; 
+	font-weight: bold;
 }
+/* .specialbutton{
+	padding: 5px, 5px, 5px, 5px;
+} */
 table{
 	table-layout: auto;
 	width:100%;
@@ -34,9 +38,7 @@ table{
     color:#fff;
 
 }
-th {
-	height:60%;
-}
+ 
 a:link {
     color: white;
     text-decoration: none;
@@ -95,7 +97,7 @@ li a:hover {
     background-color: #111;
 }
 li a.active {
-    background-color: #f25705;
+    background-color: #3f4342;
     color: white;
 }
 .text { 
@@ -121,3 +123,6 @@ color: white;
   background-attachment: fixed;
   text-color: white;
 } 
+h1, h2, h3, h4, h5{
+	color: white;
+}

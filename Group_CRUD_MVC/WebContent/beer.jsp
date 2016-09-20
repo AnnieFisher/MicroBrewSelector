@@ -38,7 +38,7 @@
 
 				<tr>
 					<td><a href="goToDetails.do?id=${beer.id}">${beer.name}</a></td>
-					<td>
+					<td class=specialbutton>
 						<form method="POST" action="UpdateRating.do?id=${beer.id}">
 							<input type="submit" value="&#128077 ${beer.rating}"/>
 						</form></td>
@@ -46,7 +46,7 @@
 					<td>${beer.type.name}</td>
 					<td>${beer.style.name}</td>
 					<td>${beer.brand.name}</td>
-					<td>
+					<td class=specialbutton>
 						<form action="addToFavorites.do" method="POST">
 
 							<input type="hidden" value="${beer.id}" name="addBeerId" /> 
