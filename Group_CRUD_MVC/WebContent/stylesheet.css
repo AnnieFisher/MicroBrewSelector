@@ -16,6 +16,15 @@ table, th, td {
    border: 1px solid black;
    padding: 3px;
 }
+
+.heads{
+	font-size: 22px;
+	color: #ffcd08; 
+	font-weight: bold;
+}
+/* .specialbutton{
+	padding: 5px, 5px, 5px, 5px;
+} */
 table{
 	table-layout: auto;
 	width:100%;
@@ -29,30 +38,23 @@ table{
     color:#fff;
 
 }
-th {
-	height:60%;
-}
-unvisited link
+ 
 a:link {
     color: white;
     text-decoration: none;
 }
-
-visited link
 a:visited {
     color: white;
         text-decoration: none;
     
 }
 
-mouse over link
 a:hover {
      color: blue;
 }
 
-selected link
 a:active {
-    color: white;
+    color: green;
         text-decoration: none;
     
 }
@@ -77,10 +79,7 @@ ul {
     border: 1px solid #555;
 }
 
-li a.about{
-    float: right;
-    text-align: center;
-}
+
 li {
     float: left;
     text-align: center;
@@ -93,15 +92,12 @@ li a {
     padding: 14px 16px;
     text-decoration: none;
 }
-li a:hover:not(.active) {
-    background-color: #b4890d;
-    color: white;
-}
+
 li a:hover {
     background-color: #111;
 }
 li a.active {
-    background-color: #f25705;
+    background-color: #3f4342;
     color: white;
 }
 .text { 
@@ -127,3 +123,6 @@ color: white;
   background-attachment: fixed;
   text-color: white;
 } 
+h1, h2, h3, h4, h5{
+	color: white;
+}

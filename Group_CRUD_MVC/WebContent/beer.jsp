@@ -17,13 +17,12 @@
 		<li><a href="goToOptions.do">Palate Options</a></li>
 		<li><a href="goToEdit.do">User Settings</a></li>
 		<li><a href="SignOut.do">Logout</a></li>
-		<li><a href="getUserList.do">admin</a></li>
 
 	</ul>
 	
 	<table>
 		<thead>
-			<tr>
+			<tr class=heads>
 				<td>Name</td>
 				<td>Likes</td>
 				<td>Taste</td>
@@ -39,7 +38,7 @@
 
 				<tr>
 					<td><a href="goToDetails.do?id=${beer.id}">${beer.name}</a></td>
-					<td>
+					<td class=specialbutton>
 						<form method="POST" action="UpdateRating.do?id=${beer.id}">
 							<input type="submit" value="&#128077 ${beer.rating}"/>
 						</form></td>
@@ -47,11 +46,11 @@
 					<td>${beer.type.name}</td>
 					<td>${beer.style.name}</td>
 					<td>${beer.brand.name}</td>
-					<td>
+					<td class=specialbutton>
 						<form action="addToFavorites.do" method="POST">
 
-							<input type="hidden" value="${beer.id}" name="addBeerId" /> <input
-								type="submit" value="Add" />
+							<input type="hidden" value="${beer.id}" name="addBeerId" /> 
+							<input type="submit" value="Add" />
 						</form>
 					</td>
 				</tr>

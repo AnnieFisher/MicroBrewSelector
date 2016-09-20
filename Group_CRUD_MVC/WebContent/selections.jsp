@@ -3,13 +3,13 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="stylesheet.css" />
 <link rel="stylesheet" type="text/css" href="normalize.css" />
 <link rel="stylesheet" type="text/css" href="skeleton.css" />
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
 <title>Selections</title>
 </head>
 <body>
-	<ul>
+	<ul class=navbar>
 		<li><a href="index.html">Home Page</a></li>
 		<li><a href="goToFavorites.do">Your Favorites</a></li>
 		<li><a href="goToBeers.do">Full List</a></li>
@@ -20,7 +20,7 @@
 	<%-- <h2>${}</h2> --%>
 	<table>
 		<thead>
-			<tr>
+			<tr class=heads>
 				<td>Name</td>
 				<td>Rating</td>
 				<td>Taste</td>

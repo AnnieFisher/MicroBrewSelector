@@ -3,12 +3,12 @@
 <html>
 <head>
 <title>Your Faves</title>
-<link rel="stylesheet" type="text/css" href="stylesheet.css" />
 <link rel="stylesheet" type="text/css" href="normalize.css" />
 <link rel="stylesheet" type="text/css" href="skeleton.css" />
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
 </head>
 <body>
-<ul>
+<ul class=navbar>
 	<li><a href="index.html">Home Page</a></li>
 	<li><a class="active" href="goToFavorites.do">Your Favorites</a></li>
 	<li><a href="goToBeers.do">Full List</a></li>
@@ -18,7 +18,7 @@
 
 	<table>
 		<thead>
-			<tr>
+			<tr class=heads>
 				<td>Name</td>
 				<td>Likes</td>
 				<td>Taste</td>
