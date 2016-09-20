@@ -237,5 +237,14 @@ public class MicroBrewDBDao implements MicroBrewDao {
 		
 		em.persist(newBeer);
 	}
-
+	@Override
+	public List<User> getUserList(){
+		String querytxt = "SELECT u FROM User u";
+		
+		List<User> results = em.createQuery(querytxt, User.class)
+				.getResultList();
+		return results;
+	}
+	
+	
 }
