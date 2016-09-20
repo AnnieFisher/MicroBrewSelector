@@ -18,30 +18,28 @@
 		<li><a href="goToOptions.do">Palate Options</a></li>
 		<li><a href="goToEdit.do">User Settings</a></li>
 	</ul>
-	<h2>Name of Beer: ${beer.name }</h2>
+	<div class=looks>
+	<h2><span>Name of Beer: ${beer.name }</span></h2>
 	<br>
-	<p>Brand: ${beer.brand.name }</p>
+	<h4><span>${beer.brand.name }</span></h4>
+	</div>
 	<img id="logo" src="${beer.brand.url}" alt="logo" />
 	<br>
-	<p>Beer Rating: ${beer.rating }</p>
+	<div class=looks>
+	<h5><span>Number of likes: ${beer.rating }</span></h5>
 
-	<p>Taste: ${beer.taste.name }</p>
-	<br>
-	<p>Style: ${beer.style.name }</p>
-	<p>${beer.style.description }</p>
-	<br>
-	<p>Type: ${beer.type.name }</p>
-	<p>${beer.type.description }</p>
-
+	<h5><span>Taste: ${beer.taste.name }</span></h5>
+	<h5><span>About ${beer.style.name }s: ${beer.style.description }</span></h5>
+	<h5><span>About ${beer.type.name }s: ${beer.type.description }</span></h5>
+	</div>
 
 
 
 	<br>
 <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d1306385.860811039!2d-105.5584486352947!3d39.90779742870506!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sliquor+store+${user.city}!5e0!3m2!1sen!2sus!4v1474385739312" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
 
-<p>Find stores near you!</p>
+<p><span>Find stores near you!</span></p>
 
-	<p>Rate This Beer</p>
 	<br>
 	<form action="addToFavoritesFromDetails.do" method="POST">
 
