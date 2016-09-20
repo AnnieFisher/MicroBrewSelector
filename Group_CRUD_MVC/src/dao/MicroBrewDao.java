@@ -49,5 +49,9 @@ public interface MicroBrewDao {
 	public void addSuggestions(String name, int rating, int styleId, int typeId, int tasteId, String brandId);
 
 	public List<User> getUserList();
+	
+	public void editBeerAdmin(int beerId, int type, int style, int taste, String name, String brand);
+	
+	public void deleteBeerAdmin(int id);
 
 }

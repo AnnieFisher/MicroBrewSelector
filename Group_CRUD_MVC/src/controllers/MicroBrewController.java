@@ -108,6 +108,7 @@ public class MicroBrewController {
 
 		if (login.getUsername().equals("admin@test.com")) {
 			List<User> userList = dao.getUserList();
+			mv.addObject("currentUser", login);
 			mv.addObject("userList", userList);
 			mv.setViewName("admin.jsp");
 		}
@@ -164,6 +165,15 @@ public class MicroBrewController {
 		List<Beer> beerList = dao.getBeers();
 		mv.addObject("beerList", beerList);
 		mv.setViewName("beer.jsp");
+		return mv;
+	}
+	
+	@RequestMapping(path = "goToBeersAdmin.do")
+	public ModelAndView goToBeersAdmin(@ModelAttribute("currentUser") User currentUser) {
+		ModelAndView mv = new ModelAndView();
+		List<Beer> beerList = dao.getBeers();
+		mv.addObject("beerList", beerList);
+		mv.setViewName("beerAdmin.jsp");
 		return mv;
 	}
 
@@ -260,7 +270,7 @@ public class MicroBrewController {
 	}
 
 	@RequestMapping(path = "removeUserAdmin.do")
-	public ModelAndView removeUserAdmin(int id) {
+	public ModelAndView removeUserAdmin(int id, @ModelAttribute("currentUser") User currentUser) {
 		dao.removeUser(id);
 		ModelAndView mv = new ModelAndView();
 		List<User> userList = dao.getUserList();
@@ -268,6 +278,41 @@ public class MicroBrewController {
 		mv.setViewName("admin.jsp");
 		return mv;
 
+	}
+	
+	@RequestMapping(path = "goToEditBeer.do")
+	public ModelAndView goToEditBeer(int editBeerId, @ModelAttribute("currentUser") User currentUser) {
+		ModelAndView mv = new ModelAndView();
+		Beer beer = dao.getBeer(editBeerId);
+		mv.addObject("beer", beer);
+		mv.addObject("tasteList", dao.getTasteList());
+		mv.addObject("brandList", dao.getBrandList());
+		mv.addObject("typeList", dao.getTypeList());
+		mv.addObject("styleList", dao.getStyleList());
+		mv.setViewName("editBeer.jsp");
+		return mv;
+	}
+	
+	@RequestMapping(path = "editBeerAdmin.do")
+	public ModelAndView editBeerAdmin(int beerId, int typeId, int styleId, int tasteId, String name, String brand,
+			@ModelAttribute("currentUser") User currentUser) {
+		dao.editBeerAdmin(beerId, typeId, styleId, tasteId, name, brand);
+		ModelAndView mv = new ModelAndView();
+		List<Beer> beerList = dao.getBeers();
+		mv.addObject("beerList", beerList);
+		mv.setViewName("beerAdmin.jsp");
+		
+		return mv;
+	}
+	
+	@RequestMapping(path = "deleteBeerAdmin.do")
+	public ModelAndView deleteBeerAdmin(int deleteBeerId, @ModelAttribute("currentUser") User currentUser) {
+		dao.deleteBeerAdmin(deleteBeerId);
+		ModelAndView mv = new ModelAndView();
+		List<Beer> beerList = dao.getBeers();
+		mv.addObject("beerList", beerList);
+		mv.setViewName("beerAdmin.jsp");
+		return mv;
 	}
 
 }

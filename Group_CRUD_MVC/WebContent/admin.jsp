@@ -4,32 +4,29 @@
 <html>
 <head>
 <title>Admin</title>
-<link rel="stylesheet" type="text/css" href="stylesheet.css" />
 <link rel="stylesheet" type="text/css" href="normalize.css" />
 <link rel="stylesheet" type="text/css" href="skeleton.css" />
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
 </head>
 <body>
 
 <ul class=navbar>
 		<li><a href="index.html">Home Page</a></li>
-		<li><a href="goToFavorites.do">Your Favorites</a></li>
-		<li><a href="goToBeers.do">Full List</a></li>
-		<li><a href="goToOptions.do">Palate Options</a></li>
-		<li><a href="goToEdit.do">User Settings</a></li>
+		<li><a href="goToBeersAdmin.do">Full List</a></li>
+		<li><a class="active" href="getUserList.do">List of Users</a></li>
 		<li><a href="SignOut.do">Logout</a></li>
-		<li><a class="active" href="getUserList.do">Admin</a></li>
 
 	</ul>
 
 	<table>
 		<thead>
 			<tr>
-				<td>username</td>
-				<td>password</td>
-				<td>firstName</td>
-				<td>lastName</td>
-				<td>city</td>
-				<td>state</td>
+				<td>Username</td>
+				<td>Password</td>
+				<td>First Name</td>
+				<td>Last Name</td>
+				<td>City</td>
+				<td>State</td>
 
 				<td>Remove User</td>
 			</tr>
@@ -39,7 +36,6 @@
 			<c:forEach var="user" items="${userList}">
 
 				<tr>
-					<%-- <form method="GET" action="getUserList.do"> --%>
 					<td>${user.username}</td>
 					<td>${user.password}</td>
 					<td>${user.firstName}</td>
