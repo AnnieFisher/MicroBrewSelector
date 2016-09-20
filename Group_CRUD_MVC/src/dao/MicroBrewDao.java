@@ -26,7 +26,7 @@ public interface MicroBrewDao {
 
 	public void removeUser(int id);
 
-	public void updateUser(String firstName, String lastName, String city, String state);
+	public void updateUser(int id, String firstName, String lastName, String city, String state);
 
 	public Beer getBeer(int id);
 
