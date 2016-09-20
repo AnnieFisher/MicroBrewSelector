@@ -19,18 +19,18 @@
 		<li><a href="goToEdit.do">User Settings</a></li>
 	</ul>
 	<div class=looks>
-	<h2><span>Name of Beer: ${beer.name }</span></h2>
+	<h2>Name of Beer: ${beer.name }</h2>
 	<br>
-	<h4><span>${beer.brand.name }</span></h4>
+	<h4>${beer.brand.name }</h4>
 	</div>
 	<img id="logo" src="${beer.brand.url}" alt="logo" />
 	<br>
 	<div class=looks>
-	<h5><span>Number of likes: ${beer.rating }</span></h5>
+	<h5>Number of likes: ${beer.rating }</h5>
 
-	<h5><span>Taste: ${beer.taste.name }</span></h5>
-	<h5><span>About ${beer.style.name }s: ${beer.style.description }</span></h5>
-	<h5><span>About ${beer.type.name }s: ${beer.type.description }</span></h5>
+	<h5>Taste: ${beer.taste.name }</h5>
+	<h5>About ${beer.style.name }s: ${beer.style.description }</h5>
+	<h5>About ${beer.type.name }s: ${beer.type.description }</h5>
 	</div>
 
 

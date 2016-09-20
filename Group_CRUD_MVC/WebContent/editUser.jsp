@@ -17,7 +17,7 @@
 		<li><a href="goToOptions.do">Palate Options</a></li>
 		<li><a class="active" href="goToEdit.do">User Settings</a></li>
 	</ul>
-	<h2>Update Your Information Below</h2>
+	<h2><span>Update Your Information Below</span></h2>
 	<br>
 	<form method="POST" action="editUser.do">
 		<input type="text" name="firstName" placeholder="First Name" /> 
