@@ -17,6 +17,7 @@
 		<li><a href="goToOptions.do">Palate Options</a></li>
 		<li><a href="goToEdit.do">User Settings</a></li>
 		<li><a href="SignOut.do">Logout</a></li>
+		<li><a href="getUserList.do">admin</a></li>
 
 	</ul>
 	

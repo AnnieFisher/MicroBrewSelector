@@ -251,4 +251,23 @@ public class MicroBrewController {
 		return mv;
 	}
 
+	@RequestMapping(path = "getUserList.do")
+	public ModelAndView getUserList() {
+		ModelAndView mv = new ModelAndView();
+		List<User> userList = dao.getUserList();
+		mv.addObject("userList",userList);
+		mv.setViewName("admin.jsp");
+		return mv;
+	}
+	@RequestMapping(path = "removeUserAdmin.do")
+	public ModelAndView removeUserAdmin(int id) {
+		dao.removeUser(id);
+		ModelAndView mv = new ModelAndView();
+		List<User> userList = dao.getUserList();
+		mv.addObject("userList",userList);
+		mv.setViewName("admin.jsp");
+		return mv;
+
+	}
+	
 }
