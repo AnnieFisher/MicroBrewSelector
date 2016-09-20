@@ -40,8 +40,8 @@
 					<td><a href="goToDetails.do?id=${beer.id}">${beer.name}</a></td>
 					<td>
 						<form method="POST" action="UpdateRating.do?id=${beer.id}">
-							<input type="submit" value="Like"/>
-						</form> ${beer.rating}</td>
+							<input type="submit" value="&#128077 ${beer.rating}"/>
+						</form></td>
 					<td>${beer.taste.name}</td>
 					<td>${beer.type.name}</td>
 					<td>${beer.style.name}</td>

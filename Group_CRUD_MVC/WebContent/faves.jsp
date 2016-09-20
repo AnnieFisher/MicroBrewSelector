@@ -35,9 +35,9 @@
 				<tr>
 					<td>${beer.name}</td>
 					<td>
-						<form method="POST" action="UpdateRating.do?id=${beer.id}">
-							<input type="submit" value="Like"/>
-						</form> ${beer.rating}</td>
+							<form method="POST" action="UpdateRatingFromFaves.do?id=${beer.id}">
+							<input type="submit" value="&#128077 ${beer.rating}"/>
+						</form></td>
 					<td>${beer.taste.name}</td>
 					<td>${beer.type.name}</td>
 					<td>${beer.style.name}</td>

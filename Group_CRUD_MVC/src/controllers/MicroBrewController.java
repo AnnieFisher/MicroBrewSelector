@@ -41,6 +41,13 @@ public class MicroBrewController {
 		List<Beer> beerList = dao.getBeers();
 		return new ModelAndView("beer.jsp", "beerList", beerList);
 	}
+	
+	@RequestMapping(path = "UpdateRatingFromFaves.do")
+	public ModelAndView updateRatingFromFaves(int id, @ModelAttribute("currentUser") User currentUser) {
+		dao.updateRating(id);
+		List<Beer> favorites = dao.getUserFavorites(id);
+		return new ModelAndView("faves.jsp", "faveList", favorites);
+	}
 
 	@RequestMapping(path = "addUser.do")
 	public ModelAndView addUser(String firstName, String lastName, String username, String password, String city,
