@@ -50,8 +50,8 @@
 					<td>
 						<form action="addToFavorites.do" method="POST">
 
-							<input type="hidden" value="${beer.id}" name="addBeerId" /> <input
-								type="submit" value="Add" />
+							<input type="hidden" value="${beer.id}" name="addBeerId" /> 
+							<input type="submit" value="Add" />
 						</form>
 					</td>
 				</tr>
