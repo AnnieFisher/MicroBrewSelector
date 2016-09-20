@@ -16,6 +16,7 @@
 		<li><a class="active" href="goToBeers.do">Full List</a></li>
 		<li><a href="goToOptions.do">Palate Options</a></li>
 		<li><a href="goToEdit.do">User Settings</a></li>
+		<li><a href="SignOut.do">Logout</a></li>
 
 	</ul>
 	
