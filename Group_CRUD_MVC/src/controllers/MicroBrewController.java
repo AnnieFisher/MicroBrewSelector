@@ -51,16 +51,22 @@ public class MicroBrewController {
 
 	@RequestMapping(path = "addUser.do")
 	public ModelAndView addUser(String firstName, String lastName, String username, String password, String city,
-			String state) {
+			String state) throws Exception {
 		ModelAndView mv = new ModelAndView();
-
+		try { 
+		
 		User newUser = dao.addUser(firstName, lastName, username, password, city, state);
 		List<Beer> beerList = dao.getBeers();
 
 		mv.addObject("currentUser", newUser);
 		mv.addObject("beerList", beerList);
 		mv.setViewName("beer.jsp");
-
+		}
+		catch (Exception e){
+			System.out.println("This guy tried to take a taken username!");
+			mv.setViewName("newUser2.jsp");
+		}
+		
 		return mv;
 
 	}
