@@ -20,11 +20,14 @@
 	<h2>Update Your Information Below</h2>
 	<br>
 	<form method="POST" action="editUser.do">
-		<input type="text" name="firstName" placeholder="First Name" /> <input
-			type="text" name="lastName" placeholder="Last Name" /> <input
-			type="text" name="city" placeholder="City" /> <input type="text"
-			name="state" placeholder="State" /> <input type="submit"
-			value="Update Information" />
+		<input type="text" name="firstName" placeholder="First Name" /> 
+		<input type="text" name="lastName" placeholder="Last Name" /> 
+		<input type="text" name="city" placeholder="City" /> 
+		<input type="text" name="state" placeholder="State" /> 
+		<input type="submit" value="Update Information" /><br><br>
+	</form>
+	<form method="POST" action="removeUser.do">
+		<input type="submit" value="Delete Account" />
 	</form>
 </body>
 </html>
