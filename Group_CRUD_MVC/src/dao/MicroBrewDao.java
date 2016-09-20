@@ -48,4 +48,6 @@ public interface MicroBrewDao {
 	
 	public void addSuggestions(String name, int rating, int styleId, int typeId, int tasteId, int brandId);
 
+	public List<User> getUserList();
+
 }
