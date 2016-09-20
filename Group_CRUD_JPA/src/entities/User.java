@@ -31,7 +31,7 @@ public class User
 	private String state;
 	
 	//JOIN Beer to Add to User Favorites List
-	@ManyToMany(fetch=FetchType.EAGER, cascade= CascadeType.ALL)
+	@ManyToMany(fetch=FetchType.EAGER)
 	@JoinTable(name = "beer_user", joinColumns = @JoinColumn(name = "user_iduser"), 
 				inverseJoinColumns = @JoinColumn(name = "beer_idbeer"))
 	private List<Beer> favorites;
