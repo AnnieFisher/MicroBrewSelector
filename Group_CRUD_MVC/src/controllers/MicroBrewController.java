@@ -61,12 +61,6 @@ public class MicroBrewController {
 	public ModelAndView removeUser(@ModelAttribute("currentUser") User currentUser) {
 		int id = currentUser.getId();
 		dao.removeUser(id);
-		
-//		HttpSession currentUser = request.getSession(false);
-//		if (currentUser != null)
-//		{
-//			currentUser.invalidate();
-//		}
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("index.html");
 		return mv;
