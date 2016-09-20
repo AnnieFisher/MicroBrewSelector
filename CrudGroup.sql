@@ -320,6 +320,7 @@ COMMIT;
 START TRANSACTION;
 USE `beerdb`;
 INSERT INTO `user` (`iduser`, `username`, `password`, `first_name`, `last_name`, `city`, `state`) VALUES (1, 'testUser@test.com', 'password', 'Jane', 'Doe', 'Denver', 'CO');
+INSERT INTO `user` (`iduser`, `username`, `password`, `first_name`, `last_name`, `city`, `state`) VALUES (2, 'admin@test.com', 'password', 'John', 'Snow', NULL, NULL);
 
 COMMIT;
 
