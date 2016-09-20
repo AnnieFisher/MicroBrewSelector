@@ -20,7 +20,7 @@
 	<%-- <h2>${}</h2> --%>
 	<table>
 		<thead>
-			<tr>
+			<tr class=heads>
 				<td>Name</td>
 				<td>Rating</td>
 				<td>Taste</td>

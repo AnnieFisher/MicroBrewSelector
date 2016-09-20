@@ -18,7 +18,7 @@
 
 	<table>
 		<thead>
-			<tr>
+			<tr class=heads>
 				<td>Name</td>
 				<td>Likes</td>
 				<td>Taste</td>
