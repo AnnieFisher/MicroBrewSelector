@@ -3,7 +3,7 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <html>
 <head>
-<title>Edit Beer</title>
+<title>Edit Beer Information</title>
 <link rel="stylesheet" type="text/css" href="normalize.css" />
 <link rel="stylesheet" type="text/css" href="skeleton.css" />
 <link rel="stylesheet" type="text/css" href="stylesheet.css" />
