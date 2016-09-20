@@ -21,11 +21,10 @@ public class MicroBrewDBDao implements MicroBrewDao {
 	private EntityManager em;
 
 	@Override
-	public Beer updateRating(int id, int rating) {
-
+	public void updateRating(int id) {
 		Beer beer = em.find(Beer.class, id);
-		beer.setRating(rating);
-		return beer;
+		int currentRating = beer.getRating();
+		beer.setRating(currentRating + 1);
 	}
 
 	@Override

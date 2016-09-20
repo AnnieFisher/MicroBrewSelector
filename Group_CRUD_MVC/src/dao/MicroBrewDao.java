@@ -10,7 +10,7 @@ import entities.Type;
 import entities.User;
 
 public interface MicroBrewDao {
-	public Beer updateRating(int id, int rating);
+	public void updateRating(int id);
 
 	public User addUser(String firstName, String lastName, String username, String password, String city, String state);
 

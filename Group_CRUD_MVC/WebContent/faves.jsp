@@ -20,7 +20,7 @@
 		<thead>
 			<tr>
 				<td>Name</td>
-				<td>Rating</td>
+				<td>Likes</td>
 				<td>Taste</td>
 				<td>Type</td>
 				<td>Style</td>
@@ -34,7 +34,10 @@
 
 				<tr>
 					<td>${beer.name}</td>
-					<td>${beer.rating}</td>
+					<td>
+						<form method="POST" action="UpdateRating.do?id=${beer.id}">
+							<input type="submit" value="Like"/>
+						</form> ${beer.rating}</td>
 					<td>${beer.taste.name}</td>
 					<td>${beer.type.name}</td>
 					<td>${beer.style.name}</td>

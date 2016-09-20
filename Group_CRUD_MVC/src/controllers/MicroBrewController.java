@@ -36,9 +36,10 @@ public class MicroBrewController {
 	}
 
 	@RequestMapping(path = "UpdateRating.do")
-	public ModelAndView updateRating(int id, int rating) {
-		Beer beer = dao.updateRating(id, rating);
-		return new ModelAndView("beer.jsp", "beer", beer);
+	public ModelAndView updateRating(int id, @ModelAttribute("currentUser") User currentUser) {
+		dao.updateRating(id);
+		List<Beer> beerList = dao.getBeers();
+		return new ModelAndView("beer.jsp", "beerList", beerList);
 	}
 
 	@RequestMapping(path = "addUser.do")
