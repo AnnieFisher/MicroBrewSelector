@@ -26,7 +26,7 @@ public class MicroBrewController {
 		User user = new User();
 		return user;
 	}
-	
+
 	@RequestMapping("SignOut.do")
 	public ModelAndView logout(HttpSession session) {
 		session.invalidate();
@@ -48,7 +48,7 @@ public class MicroBrewController {
 
 		User newUser = dao.addUser(firstName, lastName, username, password, city, state);
 		List<Beer> beerList = dao.getBeers();
-		
+
 		mv.addObject("currentUser", newUser);
 		mv.addObject("beerList", beerList);
 		mv.setViewName("beer.jsp");
@@ -67,20 +67,20 @@ public class MicroBrewController {
 
 	}
 
-	@RequestMapping(path="goToEdit.do") 
+	@RequestMapping(path = "goToEdit.do")
 	public ModelAndView goToEdit(@ModelAttribute("currentUser") User currentUser) {
 		return new ModelAndView("editUser.jsp", "user", currentUser);
 	}
-	
+
 	@RequestMapping(path = "editUser.do")
 	public ModelAndView editUser(String firstName, String lastName, String city, String state,
 			@ModelAttribute("currentUser") User currentUser) {
 		ModelAndView mv = new ModelAndView();
-		
+
 		int id = currentUser.getId();
 		dao.updateUser(id, firstName, lastName, city, state);
 		List<Beer> beerList = dao.getBeers();
-		
+
 		mv.addObject("currentUser", currentUser);
 		mv.addObject("beerList", beerList);
 		mv.setViewName("beer.jsp");
@@ -92,19 +92,20 @@ public class MicroBrewController {
 		ModelAndView mv;
 		mv = new ModelAndView();
 
-			User login = dao.login(username, password);
-			System.out.println("test");
+		User login = dao.login(username, password);
+		System.out.println("test");
 
-			if (!login.getUsername().equals("INVALID")) {
-				List<Beer> beerList = dao.getBeers();
-				mv.addObject("currentUser", login);
-				mv.addObject("beerList", beerList);
-				mv.setViewName("beer.jsp");
-				System.out.println("Found user");
-			}
-			 else {
-			 System.out.println("Did not find user");
-			 }
+		if (!login.getUsername().equals("INVALID")) {
+			List<Beer> beerList = dao.getBeers();
+			mv.addObject("currentUser", login);
+			mv.addObject("beerList", beerList);
+			mv.setViewName("beer.jsp");
+			System.out.println("Found user");
+		} else {
+			System.out.println("Did not find user");
+			mv.setViewName("index.html");
+
+		}
 
 		System.out.println(login.getFirstName());
 
@@ -120,19 +121,19 @@ public class MicroBrewController {
 		mv.setViewName("faves.jsp");
 		return mv;
 	}
-	
-	@RequestMapping(path="addToFavorites.do") 
+
+	@RequestMapping(path = "addToFavorites.do")
 	public ModelAndView addToFavorites(int addBeerId, @ModelAttribute("currentUser") User currentUser) {
 		ModelAndView mv = new ModelAndView();
 		dao.addToFavorites(addBeerId, currentUser);
 		List<Beer> beerList = dao.getBeers();
 		mv.addObject("beerList", beerList);
 		mv.setViewName("beer.jsp");
-		
+
 		return mv;
 	}
-	
-	@RequestMapping(path="removeFromFavorites.do")
+
+	@RequestMapping(path = "removeFromFavorites.do")
 	public ModelAndView removeFromFavorites(int removeBeerId, @ModelAttribute("currentUser") User currentUser) {
 		ModelAndView mv = new ModelAndView();
 		int id = currentUser.getId();
@@ -140,7 +141,7 @@ public class MicroBrewController {
 		List<Beer> favorites = dao.getUserFavorites(id);
 		mv.addObject("faveList", favorites);
 		mv.setViewName("faves.jsp");
-		
+
 		return mv;
 	}
 
@@ -152,10 +153,9 @@ public class MicroBrewController {
 		mv.setViewName("beer.jsp");
 		return mv;
 	}
-	
+
 	@RequestMapping("goToOptions.do")
-	public ModelAndView goToOptions(@ModelAttribute("currentUser") User currentUser)
-	{
+	public ModelAndView goToOptions(@ModelAttribute("currentUser") User currentUser) {
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("tasteList", dao.getTasteList());
 		mv.addObject("brandList", dao.getBrandList());
@@ -166,46 +166,46 @@ public class MicroBrewController {
 	}
 
 	@RequestMapping("goToDetails.do")
-	public ModelAndView goToDetails(int id, @ModelAttribute("currentUser") User currentUser){
+	public ModelAndView goToDetails(int id, @ModelAttribute("currentUser") User currentUser) {
 		Beer beer = dao.getBeer(id);
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("beer", beer);
 		mv.addObject("user", currentUser);
 		mv.setViewName("details.jsp");
-		
-		
+
 		return mv;
+
 	}
 
-	@RequestMapping(path="GetType.do")
+	@RequestMapping(path = "GetType.do")
 	public ModelAndView getType(int id) {
 		List<Beer> beerTypes = dao.getType(id);
-		return new ModelAndView("selections.jsp","beerList",beerTypes);
-		
-	}
-	
-	@RequestMapping(path="GetTaste.do")
-	public ModelAndView getTaste(int id) {
-		List<Beer> beerTastes = dao.getTaste(id);
-		return new ModelAndView("selections.jsp","beerList",beerTastes);
-		
-	}
-	
-	@RequestMapping(path="GetStyle.do")
-	public ModelAndView getStyle(int id) {
-		List<Beer> beerStyles = dao.getStyle(id);
-		return new ModelAndView("selections.jsp","beerList",beerStyles);
-		
-	}
-	
-	@RequestMapping(path="GetBrand.do")
-	public ModelAndView getBrand(int id) {
-		List<Beer> beerBrands = dao.getBrand(id);
-		return new ModelAndView("selections.jsp","beerList",beerBrands);
-		
+		return new ModelAndView("selections.jsp", "beerList", beerTypes);
+
 	}
 
-	@RequestMapping(path="goToSuggestBeer.do")
+	@RequestMapping(path = "GetTaste.do")
+	public ModelAndView getTaste(int id) {
+		List<Beer> beerTastes = dao.getTaste(id);
+		return new ModelAndView("selections.jsp", "beerList", beerTastes);
+
+	}
+
+	@RequestMapping(path = "GetStyle.do")
+	public ModelAndView getStyle(int id) {
+		List<Beer> beerStyles = dao.getStyle(id);
+		return new ModelAndView("selections.jsp", "beerList", beerStyles);
+
+	}
+
+	@RequestMapping(path = "GetBrand.do")
+	public ModelAndView getBrand(int id) {
+		List<Beer> beerBrands = dao.getBrand(id);
+		return new ModelAndView("selections.jsp", "beerList", beerBrands);
+
+	}
+
+	@RequestMapping(path = "goToSuggestBeer.do")
 	public ModelAndView suggestBeer(@ModelAttribute("currentUser") User currentUser) {
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("tasteList", dao.getTasteList());
@@ -215,17 +215,18 @@ public class MicroBrewController {
 		mv.setViewName("suggestBeer.jsp");
 		return mv;
 	}
-	
-	@RequestMapping(path="suggestBeer.do")
-	public ModelAndView suggestBeer(String name,int rating, int styleId, int typeId, int tasteId, int brandId) {
-		dao.addSuggestions( name, rating, styleId, typeId, tasteId, brandId);
+
+	@RequestMapping(path = "suggestBeer.do")
+	public ModelAndView suggestBeer(String name, int rating, int styleId, int typeId, int tasteId, int brandId) {
+		dao.addSuggestions(name, rating, styleId, typeId, tasteId, brandId);
 		ModelAndView mv = new ModelAndView();
 		List<Beer> beerList = dao.getBeers();
 		mv.addObject("beerList", beerList);
 		mv.setViewName("beer.jsp");
 		return mv;
 	}
-	@RequestMapping(path="addToFavoritesFromDetails.do") 
+
+	@RequestMapping(path = "addToFavoritesFromDetails.do")
 	public ModelAndView addToFavoritesFromDetails(int addBeerId, @ModelAttribute("currentUser") User currentUser) {
 		ModelAndView mv = new ModelAndView();
 		dao.addToFavorites(addBeerId, currentUser);
@@ -236,7 +237,4 @@ public class MicroBrewController {
 		return mv;
 	}
 
-	
-
-	
 }
