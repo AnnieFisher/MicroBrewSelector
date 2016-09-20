@@ -10,22 +10,24 @@
 
 </head>
 <body>
-
-	<h2><span>ADD NEW USER</span></h2>
-	<form method="POST" action="newUser.jsp">
-		<input type="submit" value="Create An Account" />
-	</form>
-
-	<br>
+<h2><span>COLORADO BEER DIRECTORY</span></h2>
+<br>
 	
-	<h2><span>LOGIN AS EXISTING USER</span></h2>
+	<h3><span>Log in as existing user</span></h3>
 	<form method="GET" action="login.do">
 		<input type="text" name="username" placeholder="Username" /> <input
 			type="password" name="password" placeholder="Password" /> <input
 			type="submit" value="Submit" />
 	</form>
 	<br>
-	<form method="GET" action="goToBeers.do">
+
+	<h3><span>Register as new user</span></h3>
+	<form method="POST" action="newUser.jsp">
+		<input type="submit" value="Create An Account" />
+	</form>
+
+	<br>
+	<form method="GET" action="goToGuestBeers.do">
 		<input type="Submit" value="Browse As Guest" />
 	</form>
 

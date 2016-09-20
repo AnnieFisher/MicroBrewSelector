@@ -167,6 +167,14 @@ public class MicroBrewController {
 		mv.setViewName("beer.jsp");
 		return mv;
 	}
+	@RequestMapping(path = "goToGuestBeers.do")
+	public ModelAndView goToGuestBeers(@ModelAttribute("currentUser") User currentUser) {
+		ModelAndView mv = new ModelAndView();
+		List<Beer> beerList = dao.getBeers();
+		mv.addObject("beerList", beerList);
+		mv.setViewName("guest.jsp");
+		return mv;
+	}
 	
 	@RequestMapping(path = "goToBeersAdmin.do")
 	public ModelAndView goToBeersAdmin(@ModelAttribute("currentUser") User currentUser) {

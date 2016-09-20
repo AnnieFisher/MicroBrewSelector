@@ -9,28 +9,24 @@
 <link rel="stylesheet" type="text/css" href="stylesheet.css" />
 </head>
 <body>
-<ul class=navbar>
-	<li><a href="index.html">Home Page</a></li>
-	<li><a href="UpdateRating.do">Rate A beer</a></li>
-	<li><a href="goToFavorites.do">Your Favorites</a></li>
-	<li><a class="active" href="goToBeers.do">Full List</a></li>
-	<li><a href="editUser.do">User Settings</a></li>
 
-</ul>
+	<ul class=navbar>
+		<li><a href="index.html">Home Page</a></li>
+		<li><a class="active" href="goToBeers.do">Full List</a></li>
+		<li><a href="newUser.jsp">Register</a></li>
 
-	<p>You're logged in to this mother</p>
-
-
-
+	</ul>
+	
 	<table>
 		<thead>
-			<tr>
+			<tr class=heads>
 				<td>Name</td>
-				<td>Rating</td>
+				<td>Likes</td>
 				<td>Taste</td>
 				<td>Type</td>
 				<td>Style</td>
 				<td>Brand</td>
+
 			</tr>
 		</thead>
 		<tbody>
@@ -44,9 +40,19 @@
 					<td>${beer.type.name}</td>
 					<td>${beer.style.name}</td>
 					<td>${beer.brand.name}</td>
+
 				</tr>
 			</c:forEach>
 		</tbody>
 	</table>
+	
+	<br>
+	<hr>
+	<br>
+	
+	<p><span>Become a registered user to add beers to the list!</span></p>
+	<form action="newUser.jsp" method="POST">
+		<input type="submit" value="REGISTER"/>	
+	</form>
 </body>
 </html>

@@ -10,13 +10,16 @@
 <link rel="stylesheet" type="text/css" href="stylesheet.css" />
 </head>
 <body>
-<h2>Fill out the form below</h2>
+	<ul class=navbar>
+		<li><a href="index.html">Return to Home Page</a></li>
+	</ul>
+<h2><span>Fill out the form below</span></h2>
 <br>
 	<form method="POST" action="addUser.do">
 		<input type="text" name="firstName" placeholder="First Name" /> 
 		<input type="text" name="lastName" placeholder="Last Name" /> 
 			<input type="text" name="username" placeholder="Username" /> 
-			<h5>This username is taken. Please try another username.</h5>
+			<h5><span>This username is taken. Please try another username.</span></h5>
 			<br>
 			<input type="text" name="password" placeholder="Password" /> 
 			<input type="text" name="city" placeholder="City" /> 
