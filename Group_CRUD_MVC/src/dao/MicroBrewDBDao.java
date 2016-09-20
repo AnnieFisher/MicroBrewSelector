@@ -85,10 +85,8 @@ public class MicroBrewDBDao implements MicroBrewDao {
 	}
 
 	@Override
-	public void updateUser(String firstName, String lastName, String city, String state) {
+	public void updateUser(int id, String firstName, String lastName, String city, String state) {
 		String querytxt = "SELECT u FROM User u WHERE id = ?1";
-
-		int id = 1;
 
 		List<User> results = em.createQuery(querytxt, User.class).setParameter(1, id).getResultList();
 

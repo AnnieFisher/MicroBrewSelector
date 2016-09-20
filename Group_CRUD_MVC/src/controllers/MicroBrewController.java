@@ -2,6 +2,8 @@ package controllers;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -23,6 +25,14 @@ public class MicroBrewController {
 	public User initSessionObject() {
 		User user = new User();
 		return user;
+	}
+	
+	@RequestMapping("SignOut.do")
+	public ModelAndView logout(HttpSession session) {
+		session.invalidate();
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("index.html");
+		return mv;
 	}
 
 	@RequestMapping(path = "UpdateRating.do")
@@ -48,10 +58,17 @@ public class MicroBrewController {
 	}
 
 	@RequestMapping(path = "removeUser.do")
-	public ModelAndView removeUser(int id) {
+	public ModelAndView removeUser(@ModelAttribute("currentUser") User currentUser) {
+		int id = currentUser.getId();
 		dao.removeUser(id);
+		
+//		HttpSession currentUser = request.getSession(false);
+//		if (currentUser != null)
+//		{
+//			currentUser.invalidate();
+//		}
 		ModelAndView mv = new ModelAndView();
-		mv.addObject("index.html");
+		mv.setViewName("index.html");
 		return mv;
 
 	}
@@ -66,7 +83,8 @@ public class MicroBrewController {
 			@ModelAttribute("currentUser") User currentUser) {
 		ModelAndView mv = new ModelAndView();
 		
-		dao.updateUser(firstName, lastName, city, state);
+		int id = currentUser.getId();
+		dao.updateUser(id, firstName, lastName, city, state);
 		List<Beer> beerList = dao.getBeers();
 		
 		mv.addObject("currentUser", currentUser);
