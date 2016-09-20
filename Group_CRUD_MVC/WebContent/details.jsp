@@ -34,11 +34,12 @@
 	<p>${beer.type.description }</p>
 
 
-	<p>${beer.brand.name }thisshould be brand name</p>
 
 
 	<br>
-
+	<iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d196727.05847583924!2d-105.02260884864504!3d39.60782959484812!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sliquor+store+${user.city}!5e0!3m2!1sen!2sus!4v1474382796266" width="600" height="450" frameborder="0" style="border:0"></iframe>
+	<p><a href="https://www.google.com/maps/search/liquor+store/denver/">
+	Find stores near you!</a></p>
 
 	<p>Rate This Beer</p>
 	<br>
