@@ -199,8 +199,10 @@ public class MicroBrewController {
 	@RequestMapping("goToDetails.do")
 	public ModelAndView goToDetails(int id, @ModelAttribute("currentUser") User currentUser) {
 		Beer beer = dao.getBeer(id);
+		List<User> users = dao.usersWhoFavorited(id);
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("beer", beer);
+		mv.addObject("userList", users);
 		mv.addObject("user", currentUser);
 		mv.setViewName("details.jsp");
 

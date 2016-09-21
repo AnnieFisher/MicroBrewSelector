@@ -53,5 +53,7 @@ public interface MicroBrewDao {
 	public void editBeerAdmin(int beerId, int type, int style, int taste, String name, String brand);
 	
 	public void deleteBeerAdmin(int id);
+	
+	public List<User> usersWhoFavorited(int id);
 
 }

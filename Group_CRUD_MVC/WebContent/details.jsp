@@ -58,6 +58,25 @@
 	</form>
 
 </div>
+<h2>Users Who Favorited This Beer!</h2>
+<table>
+		<thead>
+			<tr class=heads>
+				<td>Username</td>
+			</tr>
+		</thead>
+		<tbody>
+
+			<c:forEach var="item" items="${userList}">
+
+				<tr>
+					
+					<td>${item.username}</td>
+					
+				</tr>
+			</c:forEach>
+		</tbody>
+	</table>
 </body>
 
 </html>

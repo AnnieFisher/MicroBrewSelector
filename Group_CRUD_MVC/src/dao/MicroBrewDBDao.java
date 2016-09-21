@@ -279,5 +279,12 @@ public class MicroBrewDBDao implements MicroBrewDao {
 		em.remove(beer);
 	}
 
+	@Override
+	public List<User> usersWhoFavorited(int id) {
+		Beer b = em.find(Beer.class, id);
+
+		return b.getUsers();
+	}
+
 	
 }
