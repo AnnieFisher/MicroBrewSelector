@@ -58,7 +58,7 @@
 	</form>
 
 </div>
-<h2>Users Who Favorited This Beer!</h2>
+<h3><span>Users Who Favorited This Beer!</span></h3>
 <table>
 		<thead>
 			<tr class=heads>
