@@ -73,8 +73,11 @@ public class MicroBrewDBDao implements MicroBrewDao {
 		user.setPassword(password);
 		user.setCity(city);
 		user.setState(state);
-
-		em.persist(user);
+		
+		if (!user.getUsername().equals("") && !user.getPassword().equals(""))
+		{			
+			em.persist(user);
+		}
 		return user;
 	}
 
@@ -205,8 +208,10 @@ public class MicroBrewDBDao implements MicroBrewDao {
 
 		String querytxt = "SELECT b FROM Brand b";
 		List<Brand> results = em.createQuery(querytxt, Brand.class).getResultList();
+	
 		Beer newBeer = new Beer();
-		for (Brand b : results) {
+		
+			for (Brand b : results) {
 			if (b.getName().equalsIgnoreCase(brandName)) {
 				newBeer.setBrand(b);
 			}
@@ -216,7 +221,7 @@ public class MicroBrewDBDao implements MicroBrewDao {
 			em.persist(brand);
 			newBeer.setBrand(brand);
 		}
-
+		
 		newBeer.setName(name);
 		newBeer.setRating(1);
 
@@ -276,7 +281,15 @@ public class MicroBrewDBDao implements MicroBrewDao {
 	@Override
 	public void deleteBeerAdmin(int id) {
 		Beer beer = em.find(Beer.class, id);
-		
+		List<User> users = beer.getUsers();
+		List<User> newUsers = beer.getUsers();
+		for (User user : users) {
+			user.removeBeer(beer);
+			newUsers.add(user);
+		}
+		for (User user : newUsers) {
+			em.merge(user);
+		}
 		em.remove(beer);
 	}
 

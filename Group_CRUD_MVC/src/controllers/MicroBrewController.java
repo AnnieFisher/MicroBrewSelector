@@ -259,7 +259,11 @@ public class MicroBrewController {
 	public ModelAndView suggestBeer(String name, int styleId, int typeId, int tasteId, String brandId) {
 		dao.addSuggestions(name, styleId, typeId, tasteId, brandId);
 		ModelAndView mv = new ModelAndView();
+		
+		
 		List<Beer> beerList = dao.getBeers();
+		
+		
 		mv.addObject("beerList", beerList);
 		mv.setViewName("beer.jsp");
 		return mv;
