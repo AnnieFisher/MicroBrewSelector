@@ -79,8 +79,6 @@
 
 							<c:forEach var="item" items="${userList}">
 
-								<tr>
-
 									<td>${item.username}</td>
 
 								</tr>
