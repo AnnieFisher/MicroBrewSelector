@@ -18,19 +18,29 @@
 		<li><a href="goToOptions.do">Palate Options</a></li>
 		<li><a href="goToEdit.do">User Settings</a></li>
 	</ul>
-	<div class=looks>
-	<h2>Name of Beer: ${beer.name }</h2>
-	<br>
-	<h4>${beer.brand.name }</h4>
-	</div>
-	<img id="logo" src="${beer.brand.url}" alt="logo" />
-	<br>
-	<div class=looks>
-	<h5>Number of likes: ${beer.rating }</h5>
+	<div class="container">
+		<div class="row">
+    			<div class="six columns">
+				<div class=looks> 
+				<h2>${beer.name }</h2>
 
-	<h5>Taste: ${beer.taste.name }</h5>
-	<h5>About ${beer.style.name }s: ${beer.style.description }</h5>
-	<h5>About ${beer.type.name }s: ${beer.type.description }</h5>
+	 
+				<h4>${beer.brand.name }</h4>
+	 			</div> 
+			</div>
+			<div class="six columns">
+				<img id="logo" src="${beer.brand.url}" alt="logo" />
+	
+		    </div>
+		</div>
+	
+	<div class=looks>
+		<h5>Number of likes: ${beer.rating }</h5>
+			<div class="row">
+				<h5>Taste: ${beer.taste.name }</h5>
+				<h5>About ${beer.style.name }s: ${beer.style.description }</h5>
+				<h5>About ${beer.type.name }s: ${beer.type.description }</h5>
+		    </div>
 	</div>
 
 
@@ -47,6 +57,7 @@
 			type="submit" value="Add To Favorites" />
 	</form>
 
+</div>
 </body>
 
 </html>
