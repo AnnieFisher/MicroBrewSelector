@@ -45,7 +45,8 @@ public class MicroBrewController {
 	@RequestMapping(path = "UpdateRatingFromFaves.do")
 	public ModelAndView updateRatingFromFaves(int id, @ModelAttribute("currentUser") User currentUser) {
 		dao.updateRating(id);
-		List<Beer> favorites = dao.getUserFavorites(id);
+		int userId = currentUser.getId();
+		List<Beer> favorites = dao.getUserFavorites(userId);
 		return new ModelAndView("faves.jsp", "faveList", favorites);
 	}
 
