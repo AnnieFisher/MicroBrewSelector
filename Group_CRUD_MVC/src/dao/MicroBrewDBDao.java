@@ -39,7 +39,8 @@ public class MicroBrewDBDao implements MicroBrewDao {
 
 		if (results.size() == 1) {
 			login = results.get(0);
-		} else {
+		} 
+		else {
 			login.setUsername("INVALID");
 			login.setPassword("INVALID");
 		}

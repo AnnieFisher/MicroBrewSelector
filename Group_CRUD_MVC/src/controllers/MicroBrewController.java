@@ -59,9 +59,14 @@ public class MicroBrewController {
 			User newUser = dao.addUser(firstName, lastName, username, password, city, state);
 			List<Beer> beerList = dao.getBeers();
 
-			mv.addObject("currentUser", newUser);
-			mv.addObject("beerList", beerList);
-			mv.setViewName("beer.jsp");
+			if (newUser.getUsername().equals("") || newUser.getPassword().equals("")) {
+				mv.setViewName("newUser2.jsp");
+			}
+			else {
+				mv.addObject("currentUser", newUser);
+				mv.addObject("beerList", beerList);
+				mv.setViewName("beer.jsp");
+			}
 		} catch (Exception e) {
 			mv.setViewName("newUser2.jsp");
 		}
@@ -112,8 +117,7 @@ public class MicroBrewController {
 			mv.addObject("currentUser", login);
 			mv.addObject("userList", userList);
 			mv.setViewName("admin.jsp");
-		}
-		else if (!login.getUsername().equals("INVALID")) {
+		} else if (!login.getUsername().equals("INVALID")) {
 			List<Beer> beerList = dao.getBeers();
 			mv.addObject("currentUser", login);
 			mv.addObject("beerList", beerList);
@@ -168,6 +172,7 @@ public class MicroBrewController {
 		mv.setViewName("beer.jsp");
 		return mv;
 	}
+
 	@RequestMapping(path = "goToGuestBeers.do")
 	public ModelAndView goToGuestBeers(@ModelAttribute("currentUser") User currentUser) {
 		ModelAndView mv = new ModelAndView();
@@ -176,7 +181,7 @@ public class MicroBrewController {
 		mv.setViewName("guest.jsp");
 		return mv;
 	}
-	
+
 	@RequestMapping(path = "goToBeersAdmin.do")
 	public ModelAndView goToBeersAdmin(@ModelAttribute("currentUser") User currentUser) {
 		ModelAndView mv = new ModelAndView();
@@ -290,7 +295,7 @@ public class MicroBrewController {
 		return mv;
 
 	}
-	
+
 	@RequestMapping(path = "goToEditBeer.do")
 	public ModelAndView goToEditBeer(int editBeerId, @ModelAttribute("currentUser") User currentUser) {
 		ModelAndView mv = new ModelAndView();
@@ -303,7 +308,7 @@ public class MicroBrewController {
 		mv.setViewName("editBeer.jsp");
 		return mv;
 	}
-	
+
 	@RequestMapping(path = "editBeerAdmin.do")
 	public ModelAndView editBeerAdmin(int beerId, int typeId, int styleId, int tasteId, String name, String brand,
 			@ModelAttribute("currentUser") User currentUser) {
@@ -312,10 +317,10 @@ public class MicroBrewController {
 		List<Beer> beerList = dao.getBeers();
 		mv.addObject("beerList", beerList);
 		mv.setViewName("beerAdmin.jsp");
-		
+
 		return mv;
 	}
-	
+
 	@RequestMapping(path = "deleteBeerAdmin.do")
 	public ModelAndView deleteBeerAdmin(int deleteBeerId, @ModelAttribute("currentUser") User currentUser) {
 		dao.deleteBeerAdmin(deleteBeerId);
