@@ -66,8 +66,9 @@
 
 			</div>
 			<div class="six columns">
-				<div id="FaveByUser">
+				
 					<h2>Users Who Favorited This Beer!</h2>
+					<div id="FaveByUser">
 					<table>
 						<thead>
 							<tr class=heads>
