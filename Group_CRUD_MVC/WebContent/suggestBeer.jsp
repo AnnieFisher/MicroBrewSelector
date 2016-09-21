@@ -20,7 +20,7 @@
 
 	<h2>Add A Beer to the Directory!</h2>
 
-<form action="suggestBeer.do" method="POST">">
+<form action="suggestBeer.do" method="POST">
 
 		<select name="typeId">
 			<c:forEach var="type" items="${typeList}">

@@ -22,7 +22,7 @@
 
 	</ul>
 	
-	<table class=w3-table-all>
+	<table>
 		<thead>
 			<tr class=heads>
 				<td>Name</td>
