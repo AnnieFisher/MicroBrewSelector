@@ -9,7 +9,7 @@
 <link rel="stylesheet" type="text/css" href="skeleton.css" />
 <link rel="stylesheet" type="text/css" href="stylesheet.css" />
 </head>
-<body>
+<body class ="newUser">
 	<ul class=navbar>
 		<li><a href="index.html">Return to Home Page</a></li>
 	</ul>
@@ -18,11 +18,11 @@
 <br>
 	<form method="POST" action="addUser.do">
 		<input type="text" name="firstName" placeholder="First Name" /> <input
-			type="text" name="lastName" placeholder="Last Name" /> <input
+			type="text" name="lastName" placeholder="Last Name" /> <br><br><input
 			type="text" name="username" placeholder="Username" /> <input
-			type="text" name="password" placeholder="Password" /> <input
+			type="text" name="password" placeholder="Password" /> <br><br><input
 			type="text" name="city" placeholder="City" /> <input
-			type="text" name="state" placeholder="State" /> <input
+			type="text" name="state" placeholder="State" /><br><br> <input
 			type="submit" value="Become User" />
 
  </form>

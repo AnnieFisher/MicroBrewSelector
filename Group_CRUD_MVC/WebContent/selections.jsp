@@ -8,7 +8,7 @@
 <link rel="stylesheet" type="text/css" href="stylesheet.css" />
 <title>Selections</title>
 </head>
-<body>
+<body id="selections">
 	<ul class=navbar>
 		<li><a href="index.html">Home Page</a></li>
 		<li><a href="goToFavorites.do">Your Favorites</a></li>

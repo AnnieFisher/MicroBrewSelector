@@ -7,9 +7,11 @@
 <title>Details</title>
 <link rel="stylesheet" type="text/css" href="normalize.css" />
 <link rel="stylesheet" type="text/css" href="skeleton.css" />
+<link rel="stylesheet" type="text/css" href="stylesheet3.css" />
+<link rel="stylesheet" type="text/css" href="stylesheet2.css" />
 <link rel="stylesheet" type="text/css" href="stylesheet.css" />
 </head>
-<body>
+<body id="details">
 
 	<ul class=navbar>
 		<li><a href="index.html">Home Page</a></li>

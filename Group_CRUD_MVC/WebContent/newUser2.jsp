@@ -9,7 +9,7 @@
 <link rel="stylesheet" type="text/css" href="skeleton.css" />
 <link rel="stylesheet" type="text/css" href="stylesheet.css" />
 </head>
-<body>
+<body class="newUser">
 	<ul class=navbar>
 		<li><a href="index.html">Return to Home Page</a></li>
 	</ul>

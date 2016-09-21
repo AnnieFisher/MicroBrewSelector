@@ -15,28 +15,35 @@
 <div class="w3-display-container w3-animate-opacity">
 <img class="testimg" alt="beerOnTable" src="images/beer-wallpaper.jpg" style=width:100%;min-height:350px;max-height:600px;>
 <div class="w3-container w3-display-topleft w3-margin-bottom">
-<h2><span>COLORADO BEER DIRECTORY</span></h2>
-</div>
-</div>
+<br>
+<h2><span>MicroBrew Selector </span></h2>
+
 <br>
 	
+	
+	<br>
+
+	<h3><span>Register as new user </span></h3>
+	<form method="POST" action="newUser.jsp">
+		<input type="submit" value="Create An Account" />
+	</form>
+	<br>
+	<br>
+	<h3><span>Guest User </span></h3>
+	<form method="GET" action="goToGuestBeers.do">
+		<input type="Submit" value="Browse As Guest" />
+	</form>
+	<br>
+	<br>
+	<br>
 	<h3><span>Log in as existing user</span></h3>
 	<form method="GET" action="login.do">
 		<input type="text" name="username" placeholder="Username" /> <input
 			type="password" name="password" placeholder="Password" /> <input
 			type="submit" value="Submit" />
 	</form>
-	<br>
-
-	<h3><span>Register as new user</span></h3>
-	<form method="POST" action="newUser.jsp">
-		<input type="submit" value="Create An Account" />
-	</form>
-
-	<br>
-	<form method="GET" action="goToGuestBeers.do">
-		<input type="Submit" value="Browse As Guest" />
-	</form>
+	</div>
+</div>
 <div class="w3-container w3-padding-64 w3-center">
 	<h3>Project Developers</h3>
 	<div class=w3-third>

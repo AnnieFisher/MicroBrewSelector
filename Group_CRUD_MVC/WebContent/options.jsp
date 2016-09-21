@@ -6,9 +6,11 @@
 <title>Options</title>
 <link rel="stylesheet" type="text/css" href="normalize.css" />
 <link rel="stylesheet" type="text/css" href="skeleton.css" />
+<link rel="stylesheet" type="text/css" href="stylesheet2.css" />
+<link rel="stylesheet" type="text/css" href="stylesheet3.css" />
 <link rel="stylesheet" type="text/css" href="stylesheet.css" />
 </head>
-<body>
+<body id="options">
 	<ul class=navbar>
 		<li><a href="index.html">Home Page</a></li>
 		<li><a href="goToFavorites.do">Your Favorites</a></li>
@@ -16,7 +18,7 @@
 		<li><a href="goToOptions.do">Palate Options</a></li>
 		<li><a href="goToEdit.do">User Settings</a></li>
 	</ul>
-
+<div class="w3-container w3-display-bottomleft w3-margin-bottom">
 	<form method="GET" action="GetType.do">
 
 		<select name="id">
@@ -52,6 +54,6 @@
 		</select> <input type="submit" value="Search By Brand" />
 	</form>
 
-
+</div>
 </body>
 </html>

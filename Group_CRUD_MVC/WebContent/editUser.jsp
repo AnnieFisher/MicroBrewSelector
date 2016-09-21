@@ -8,8 +8,10 @@
 <link rel="stylesheet" type="text/css" href="normalize.css" />
 <link rel="stylesheet" type="text/css" href="skeleton.css" />
 <link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<link rel="stylesheet" type="text/css" href="stylesheet2.css" />
+<link rel="stylesheet" type="text/css" href="stylesheet3.css" />
 </head>
-<body>
+<body id ="edit">
 	<ul class=navbar>
 		<li><a href="index.html">Home Page</a></li>
 		<li><a href="goToFavorites.do">Your Favorites</a></li>
@@ -21,7 +23,7 @@
 	<br>
 	<form method="POST" action="editUser.do">
 		<input type="text" name="firstName" placeholder="First Name" /> 
-		<input type="text" name="lastName" placeholder="Last Name" /> 
+		<input type="text" name="lastName" placeholder="Last Name" />
 		<input type="text" name="city" placeholder="City" /> 
 		<input type="text" name="state" placeholder="State" /> 
 		<input type="submit" value="Update Information" /><br><br>
