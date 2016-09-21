@@ -20,7 +20,7 @@
 
 	</ul>
 	
-	<table>
+	<table class=w3-table-all>
 		<thead>
 			<tr class=heads>
 				<td>Name</td>
