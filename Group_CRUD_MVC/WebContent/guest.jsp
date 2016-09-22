@@ -51,10 +51,20 @@
 	<br>
 	<hr>
 	<br>
-	
+	<div class="container">
+	<div class="row">
+	<div class="one-third column"></div>
+    
 	<p><span>Become a registered user to add beers to the list!</span></p>
+	<div class="one-third column">
 	<form action="newUser.jsp" method="POST">
 		<input type="submit" value="REGISTER"/>	
 	</form>
+	<br><br>
+	</div>
+	<div class="one-third column"></div>
+	</div>
+	</div>
+	
 </body>
 </html>
