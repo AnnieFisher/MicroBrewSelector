@@ -246,7 +246,7 @@ public class MicroBrewDBDao implements MicroBrewDao {
 	@Override
 	public void editBeerAdmin(int beerId, int typeId, int styleId, int tasteId, String name, String brand) {
 		Beer beer = em.find(Beer.class, beerId);
-
+		
 		if (!name.equals("")) {
 			beer.setName(name);
 		}
