@@ -5,9 +5,9 @@
 <title>Your Faves</title>
 <link rel="stylesheet" type="text/css" href="normalize.css" />
 <link rel="stylesheet" type="text/css" href="skeleton.css" />
-<link rel="stylesheet" type="text/css" href="stylesheet.css" />
 <link rel="stylesheet" type="text/css" href="stylesheet2.css" />
 <link rel="stylesheet" type="text/css" href="stylesheet3.css" />
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
 </head>
 <body id="faves">
 <ul class=navbar>

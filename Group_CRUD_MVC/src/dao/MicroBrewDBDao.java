@@ -268,6 +268,7 @@ public class MicroBrewDBDao implements MicroBrewDao {
 		for (Brand b : results) {
 			if (b.getName().equalsIgnoreCase(brand)) {
 				beer.setBrand(b);
+				em.merge(beer);
 			}
 		}
 		if (!beer.getBrand().equals(brand)) {
@@ -275,7 +276,7 @@ public class MicroBrewDBDao implements MicroBrewDao {
 			em.persist(newBrand);
 			beer.setBrand(newBrand);
 		}
-		em.merge(beer);
+		em.persist(beer);
 	}
 
 	@Override
