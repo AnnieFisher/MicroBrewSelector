@@ -20,31 +20,44 @@
 		<li><a href="goToEdit.do">User Settings</a></li>
 	</ul>
 
-	<h2>Add A Beer to the Directory!</h2>
+	
+<div class="container">
+<h2><span class=suggest>Add A Beer to the Directory!</span></h2><br>
+<div class="row">
 
-	<form action="suggestBeer.do" method="POST">
+			<div class="five columns">
+				<form action="suggestBeer.do" method="POST">
 
-		<p>Type</p>
-		<select name="typeId">
-			<c:forEach var="type" items="${typeList}">
-				<option value="${type.id}">${type.name}</option>
-			</c:forEach>
-		</select> <br>
-		<br>
-		<p>Taste</p>
-		<select name="tasteId">
-			<c:forEach var="taste" items="${tasteList}">
-				<option value="${taste.id}">${taste.name}</option>
-			</c:forEach>
-		</select> <br><br>
-		<p>Style</p>
-		<select name="styleId">
-			<c:forEach var="style" items="${styleList}">
-				<option value="${style.id}">${style.name}</option>
-			</c:forEach>
-		</select> <br> <br><input type="text" name="name" placeholder="Name" /> <br>
-		<input type="text" name="brandId" placeholder="Brand" /> <br><input
+					<span class=suggest>Type</span>  
+					<select name="typeId">
+						<c:forEach var="type" items="${typeList}">
+							<option value="${type.id}">${type.name}</option>
+						</c:forEach>
+					</select> <br> <br>
+					<span class=suggest>Taste</span>
+					<select name="tasteId">
+						<c:forEach var="taste" items="${tasteList}">
+							<option value="${taste.id}">${taste.name}</option>
+						</c:forEach>
+					</select> <br>
+					<br>
+					<span class=suggest>Style</span>
+					<select name="styleId">
+						<c:forEach var="style" items="${styleList}">
+							<option value="${style.id}">${style.name}</option>
+						</c:forEach>
+		</select> 
+		</form>
+		</div>
+			<div class="seven columns">
+	
+			<form action="suggestBeer.do" method="POST">
+		<input type="text" name="name" placeholder="Name" /> <br><br>
+		<input type="text" name="brandId" placeholder="Brand" /> <br><br><input
 			type="submit" value="Submit Your Suggestion" />
-	</form>
+				</form>
+	</div>
+	</div>
+	</div>
 </body>
 </html>
