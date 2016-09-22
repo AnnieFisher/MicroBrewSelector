@@ -15,7 +15,7 @@
 		<li><a href="index.html">Home Page</a></li>
 		<li><a href="goToFavorites.do">Your Favorites</a></li>
 		<li><a href="goToBeers.do">Full List</a></li>
-		<li><a href="goToOptions.do">Palate Options</a></li>
+		<li><a class=active href="goToOptions.do">Palate Options</a></li>
 		<li><a href="goToEdit.do">User Settings</a></li>
 	</ul>
 <div class="w3-container w3-display-bottomleft w3-margin-bottom">

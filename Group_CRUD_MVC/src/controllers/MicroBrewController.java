@@ -126,7 +126,6 @@ public class MicroBrewController {
 			mv.setViewName("index.html");
 		}
 
-		System.out.println(login.getFirstName());
 
 		return mv;
 	}

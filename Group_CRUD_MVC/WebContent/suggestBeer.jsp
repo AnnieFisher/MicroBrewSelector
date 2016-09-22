@@ -22,29 +22,29 @@
 
 	<h2>Add A Beer to the Directory!</h2>
 
-<form action="suggestBeer.do" method="POST">
+	<form action="suggestBeer.do" method="POST">
 
+		<p>Type</p>
 		<select name="typeId">
 			<c:forEach var="type" items="${typeList}">
 				<option value="${type.id}">${type.name}</option>
 			</c:forEach>
-		</select>
+		</select> <br>
+		<br>
+		<p>Taste</p>
 		<select name="tasteId">
 			<c:forEach var="taste" items="${tasteList}">
 				<option value="${taste.id}">${taste.name}</option>
 			</c:forEach>
-		</select> 
-
+		</select> <br><br>
+		<p>Style</p>
 		<select name="styleId">
 			<c:forEach var="style" items="${styleList}">
 				<option value="${style.id}">${style.name}</option>
 			</c:forEach>
-		</select>
-		
-		 <input type="text" name="name" placeholder="name"/>
-		 <input	type="text" name="brandId" placeholder="Enter Brand"/>
-	
-		 <input type="submit" value="Submit Your Suggestion" />
+		</select> <br> <br><input type="text" name="name" placeholder="Name" /> <br>
+		<input type="text" name="brandId" placeholder="Brand" /> <br><input
+			type="submit" value="Submit Your Suggestion" />
 	</form>
 </body>
 </html>

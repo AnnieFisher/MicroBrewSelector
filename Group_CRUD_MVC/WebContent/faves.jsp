@@ -35,7 +35,7 @@
 			<c:forEach var="beer" items="${faveList}">
 
 				<tr>
-					<td>${beer.name}</td>
+					<td><a href="goToDetails.do?id=${beer.id}">${beer.name}</a></td>
 					<td>
 							<form method="POST" action="UpdateRatingFromFaves.do?id=${beer.id}">
 							<input type="submit" value="&#128077 ${beer.rating}"/>
