@@ -48,7 +48,7 @@ public class MicroBrewDBDao implements MicroBrewDao {
 
 	@Override
 	public List<Beer> getBeers() {
-		String querytxt = "SELECT b FROM Beer b";
+		String querytxt = "SELECT b FROM Beer b ORDER BY b.name";
 
 		List<Beer> results = em.createQuery(querytxt, Beer.class).getResultList();
 
