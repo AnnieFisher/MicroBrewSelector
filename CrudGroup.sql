@@ -321,7 +321,8 @@ COMMIT;
 START TRANSACTION;
 USE `beerdb`;
 INSERT INTO `user` (`iduser`, `username`, `password`, `first_name`, `last_name`, `city`, `state`) VALUES (1, 'testUser@test.com', 'password', 'Jane', 'Doe', 'Denver', 'CO');
-INSERT INTO `user` (`iduser`, `username`, `password`, `first_name`, `last_name`, `city`, `state`) VALUES (2, 'admin@test.com', 'password', 'John', 'Snow', NULL, NULL);
+INSERT INTO `user` (`iduser`, `username`, `password`, `first_name`, `last_name`, `city`, `state`) VALUES (2, 'admin@test.com', 'furyforce', 'Fury', 'Force', NULL, NULL);
+INSERT INTO `user` (`iduser`, `username`, `password`, `first_name`, `last_name`, `city`, `state`) VALUES (3, 'INVALID', 'INVALID', 'INVALID', 'INVALID', NULL, NULL);
 
 COMMIT;
 
