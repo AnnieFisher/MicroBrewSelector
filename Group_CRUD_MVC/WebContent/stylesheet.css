@@ -195,3 +195,6 @@ h1 span, h2 span, h3 span, h4 span, h5 span {
 	background-size: cover;
 	background-attachment: fixed;
 }
+.white{
+	color:white;
+}
