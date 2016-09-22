@@ -24,6 +24,7 @@
 	<form method="POST" action="editBeerAdmin.do">
 		<input type="text" name="name" placeholder="Name" /> 
 		<input type="text" name="brand" placeholder="Brand" /><br>
+		<br><br>
 		<select name="typeId">
 			<c:forEach var="type" items="${typeList}">
 				<option value="${type.id}">${type.name}</option>
@@ -40,7 +41,7 @@
 				<option value="${style.id}">${style.name}</option>
 			</c:forEach>
 		</select>
-		<input type="hidden" value="${beer.id}" name="beerId"/>
+		<input type="hidden" value="${beer.id}" name="beerId"/><br><br>
 		<input type="submit" value="Update Information" /><br><br>
 	</form>
 
