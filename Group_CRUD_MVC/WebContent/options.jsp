@@ -25,35 +25,35 @@
 			<c:forEach var="type" items="${typeList}">
 				<option value="${type.id}">${type.name}</option>
 			</c:forEach>
-		</select> <input type="submit" value="Search By Type" />
+		</select> <span class ="editBtn"> <input type="submit" value="Search By Type" /></span>
 	</form>
-
+<br><br>
 
 	<form method="GET" action="GetTaste.do">
 		<select name="id">
 			<c:forEach var="taste" items="${tasteList}">
 				<option value="${taste.id}">${taste.name}</option>
 			</c:forEach>
-		</select> <input type="submit" value="Search By Taste" />
+		</select> <span class ="editBtn"><input type="submit" value="Search By Taste" /></span>
 	</form>
-
+<br><br>
 	<form method="GET" action="GetStyle.do">
 		<select name="id">
 			<c:forEach var="style" items="${styleList}">
 				<option value="${style.id}">${style.name}</option>
 			</c:forEach>
-		</select> <input type="submit" value="Search By Style" />
+		</select> <span class ="editBtn"><input type="submit" value="Search By Style" /></span>
 	</form>
-
+<br><br>
 
 	<form method="GET" action="GetBrand.do">
 		<select name="id">
 			<c:forEach var="brand" items="${brandList}">
 				<option value="${brand.id}">${brand.name}</option>
 			</c:forEach>
-		</select> <input type="submit" value="Search By Brand" />
+		</select> <span class ="editBtn"><input type="submit" value="Search By Brand" /></span>
 	</form>
-
+<br><br>
 </div>
 </body>
 </html>

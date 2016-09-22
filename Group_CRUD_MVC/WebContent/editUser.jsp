@@ -7,9 +7,9 @@
 <title>New User</title>
 <link rel="stylesheet" type="text/css" href="normalize.css" />
 <link rel="stylesheet" type="text/css" href="skeleton.css" />
-<link rel="stylesheet" type="text/css" href="stylesheet.css" />
 <link rel="stylesheet" type="text/css" href="stylesheet2.css" />
 <link rel="stylesheet" type="text/css" href="stylesheet3.css" />
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
 </head>
 <body id ="edit">
 	<ul class=navbar>
@@ -23,13 +23,13 @@
 	<br>
 	<form method="POST" action="editUser.do">
 		<input type="text" name="firstName" placeholder="First Name" /> 
-		<input type="text" name="lastName" placeholder="Last Name" />
+		<input type="text" name="lastName" placeholder="Last Name" /><br><br>
 		<input type="text" name="city" placeholder="City" /> 
-		<input type="text" name="state" placeholder="State" /> 
-		<input type="submit" value="Update Information" /><br><br>
+		<input type="text" name="state" placeholder="State" /> <br><br>
+		<span class ="editBtn"><input type="submit" value="Update Information" /></span><br><br>
 	</form>
 	<form method="POST" action="removeUser.do">
-		<input type="submit" value="Delete Account" />
+		<span class ="editBtn"><input type="submit" value="Delete Account" /></span>
 	</form>
 </body>
 </html>
