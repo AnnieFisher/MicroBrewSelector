@@ -43,11 +43,11 @@ a:visited {
 }
 
 a:hover {
-	color: blue;
+	color: #ffcd08;
 }
 
 a:active {
-	color: green;
+	color: #e6e6e6;
 	text-decoration: none;
 }
 
@@ -194,4 +194,21 @@ h1 span, h2 span, h3 span, h4 span, h5 span {
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
+}
+.white{
+	color:white;
+}
+.site-footerfeet{
+	position:relavtive;
+	margin-top:-150px;
+	height:150px;
+	clear:both;
+}
+.wrap{
+	min-height: 100%;
+}
+.main{
+	overflow:auto;
+	padding-bottom:150px;
+	
 }

@@ -23,7 +23,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="six columns">
-				<div class=looks>
+				<div class=white>
 					<h2>${beer.name }</h2>
 
 
@@ -37,8 +37,8 @@
 		</div>
 
 		<div class=looks>
-			<h5>Number of likes: ${beer.rating }</h5>
-			<div class="row">
+			<h5 class=white>Number of likes: ${beer.rating }</h5>
+			<div class="row, white">
 				<h5>Taste: ${beer.taste.name }</h5>
 				<h5>About ${beer.style.name }s: ${beer.style.description }</h5>
 				<h5>About ${beer.type.name }s: ${beer.type.description }</h5>
@@ -56,25 +56,25 @@
 					allowfullscreen></iframe>
 
 				<p>
-					<span>Find stores near you!</span>
+					<span class=white>Find stores near you!</span>
 				</p>
 
 				<br>
+			</div>
+			<div class="six columns">
+				
 				<form action="addToFavoritesFromDetails.do" method="POST">
 
 					<input type="hidden" value="${beer.id}" name="addBeerId" /> <input
 						type="submit" value="Add To Favorites" />
 				</form>
+<br>
 
-			</div>
-			<div class="six columns">
-				
-					<h2>Users Who Favorited This Beer!</h2>
 					<div id="FaveByUser">
 					<table>
 						<thead>
 							<tr class=heads>
-								<td>Username</td>
+								<td>Users Who Favorited this Beer</td>
 							</tr>
 						</thead>
 						<tbody>
@@ -83,7 +83,7 @@
 
 									<td>${item.username}</td>
 
-								</tr>
+							
 							</c:forEach>
 						</tbody>
 					</table>

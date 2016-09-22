@@ -12,11 +12,13 @@
 </head>
 <body class="fullList">
 
+
 	<ul class=navbar>
 		<li><a href="index.html">Home Page</a></li>
 		<li><a href="goToFavorites.do">Your Favorites</a></li>
 		<li><a class="active" href="goToBeers.do">Full List</a></li>
 		<li><a href="goToOptions.do">Palate Options</a></li>
+		<li><a href="goToSuggestBeer.do">Add A Beer</a>
 		<li><a href="goToEdit.do">User Settings</a></li>
 		<li><a href="SignOut.do">Logout</a></li>
 
@@ -61,12 +63,6 @@
 	</table>
 	
 	<br>
-	<hr>
-	<br>
-	
-	<p>Don't See Your Favorite Beer? Add One Here!</p>
-	<form action="goToSuggestBeer.do" method="GET">
-		<input type="submit" value="Add"/>	
-	</form>
+
 </body>
 </html>
