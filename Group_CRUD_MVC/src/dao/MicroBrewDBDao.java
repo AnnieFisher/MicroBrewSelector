@@ -248,23 +248,16 @@ public class MicroBrewDBDao implements MicroBrewDao {
 	@Override
 	public void editBeerAdmin(int beerId, int typeId, int styleId, int tasteId, String name, String brand) {
 		Beer beer = em.find(Beer.class, beerId);
-		
 		beer.setName(name);
-	
 		Style style = em.find(Style.class, styleId);
 		beer.setStyle(style);
-		
 		Taste taste = em.find(Taste.class, tasteId);
 		beer.setTaste(taste);
-		
 		Type type = em.find(Type.class, typeId);
 		beer.setType(type);
-		
 		Brand newBrand = new Brand();
-
 		String querytxt = "SELECT b FROM Brand b";
 		List<Brand> results = em.createQuery(querytxt, Brand.class).getResultList();
-	
 		for (Brand b : results) {
 			if (b.getName().equalsIgnoreCase(brand)) {
 				beer.setBrand(b);
