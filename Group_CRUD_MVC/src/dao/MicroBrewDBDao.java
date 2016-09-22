@@ -264,13 +264,13 @@ public class MicroBrewDBDao implements MicroBrewDao {
 
 		String querytxt = "SELECT b FROM Brand b";
 		List<Brand> results = em.createQuery(querytxt, Brand.class).getResultList();
-		Beer newBeer = new Beer();
+	
 		for (Brand b : results) {
 			if (b.getName().equalsIgnoreCase(brand)) {
-				newBeer.setBrand(b);
+				beer.setBrand(b);
 			}
 		}
-		if (newBeer.getBrand() == null) {
+		if (!beer.getBrand().equals(brand)) {
 			newBrand.setName(brand);
 			em.persist(newBrand);
 			beer.setBrand(newBrand);
