@@ -39,8 +39,7 @@ public class MicroBrewDBDao implements MicroBrewDao {
 
 		if (results.size() == 1) {
 			login = results.get(0);
-		} 
-		else {
+		} else {
 			login.setUsername("INVALID");
 			login.setPassword("INVALID");
 		}
@@ -73,9 +72,8 @@ public class MicroBrewDBDao implements MicroBrewDao {
 		user.setPassword(password);
 		user.setCity(city);
 		user.setState(state);
-		
-		if (!user.getUsername().equals("") && !user.getPassword().equals(""))
-		{			
+
+		if (!user.getUsername().equals("") && !user.getPassword().equals("")) {
 			em.persist(user);
 		}
 		return user;
@@ -208,10 +206,10 @@ public class MicroBrewDBDao implements MicroBrewDao {
 
 		String querytxt = "SELECT b FROM Brand b";
 		List<Brand> results = em.createQuery(querytxt, Brand.class).getResultList();
-	
+
 		Beer newBeer = new Beer();
-		
-			for (Brand b : results) {
+
+		for (Brand b : results) {
 			if (b.getName().equalsIgnoreCase(brandName)) {
 				newBeer.setBrand(b);
 			}
@@ -221,7 +219,7 @@ public class MicroBrewDBDao implements MicroBrewDao {
 			em.persist(brand);
 			newBeer.setBrand(brand);
 		}
-		
+
 		newBeer.setName(name);
 		newBeer.setRating(1);
 
@@ -248,33 +246,37 @@ public class MicroBrewDBDao implements MicroBrewDao {
 	@Override
 	public void editBeerAdmin(int beerId, int typeId, int styleId, int tasteId, String name, String brand) {
 		Beer beer = em.find(Beer.class, beerId);
-		
-		beer.setName(name);
-	
+
+		if (!name.equals("")) {
+			beer.setName(name);
+		}
+
 		Style style = em.find(Style.class, styleId);
 		beer.setStyle(style);
-		
+
 		Taste taste = em.find(Taste.class, tasteId);
 		beer.setTaste(taste);
-		
+
 		Type type = em.find(Type.class, typeId);
 		beer.setType(type);
-		
-		Brand newBrand = new Brand();
 
-		String querytxt = "SELECT b FROM Brand b";
-		List<Brand> results = em.createQuery(querytxt, Brand.class).getResultList();
-	
-		for (Brand b : results) {
-			if (b.getName().equalsIgnoreCase(brand)) {
-				beer.setBrand(b);
-				em.merge(beer);
+		if (!brand.equals("")) {
+			Brand newBrand = new Brand();
+
+			String querytxt = "SELECT b FROM Brand b";
+			List<Brand> results = em.createQuery(querytxt, Brand.class).getResultList();
+
+			for (Brand b : results) {
+				if (b.getName().equalsIgnoreCase(brand)) {
+					beer.setBrand(b);
+					em.merge(beer);
+				}
 			}
-		}
-		if (!beer.getBrand().equals(brand)) {
-			newBrand.setName(brand);
-			em.persist(newBrand);
-			beer.setBrand(newBrand);
+			if (!beer.getBrand().equals(brand)) {
+				newBrand.setName(brand);
+				em.persist(newBrand);
+				beer.setBrand(newBrand);
+			}
 		}
 		em.persist(beer);
 	}
@@ -301,5 +303,4 @@ public class MicroBrewDBDao implements MicroBrewDao {
 		return b.getUsers();
 	}
 
-	
 }
