@@ -34,7 +34,9 @@ public class MicroBrewDBDao implements MicroBrewDao {
 
 		String querytxt = "SELECT u FROM User u WHERE u.username = ?1 AND u.password = ?2";
 
-		List<User> results = em.createQuery(querytxt, User.class).setParameter(1, username).setParameter(2, password)
+		List<User> results = em.createQuery(querytxt, User.class)
+				.setParameter(1, username)
+				.setParameter(2, password)
 				.getResultList();
 
 		if (results.size() == 1) {
@@ -201,7 +203,8 @@ public class MicroBrewDBDao implements MicroBrewDao {
 	}
 
 	@Override
-	public void addSuggestions(String name, int styleId, int typeId, int tasteId, String brandName) {
+	public void addSuggestions(String name, int styleId, int typeId, int tasteId,
+							   String brandName) {
 		Brand brand = new Brand();
 
 		String querytxt = "SELECT b FROM Brand b";
