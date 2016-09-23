@@ -28,6 +28,14 @@ Users can update their user information, adjusting all fields except username an
 
 The site administrator logs in with a unique username and password and has special privileges. The admin can remove beers from the directory and edit them. The admin can also remove users. 
 
+Access on AWS
+
+Kristen Edwards: http://52.34.37.216:8080/Group_CRUD_MVC/
+
+Annie Fisher: http://52.10.144.122:8080/MicroBrew/index.html
+
+Steven Zuber: http://stevenzuber.info:8080/MicroBrewSelector/
+
 **FOR INSTRUCTORS** 
 
 For assessment purposes, the admin login is username: admin@test.com and the password is furyforce
