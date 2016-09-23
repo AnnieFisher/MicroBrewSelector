@@ -203,7 +203,8 @@ public class MicroBrewDBDao implements MicroBrewDao {
 	}
 
 	@Override
-	public void addSuggestions(String name, int styleId, int typeId, int tasteId, String brandName) {
+	public void addSuggestions(String name, int styleId, int typeId, int tasteId,
+							   String brandName) {
 		Brand brand = new Brand();
 
 		String querytxt = "SELECT b FROM Brand b";
